@@ -13,4 +13,6 @@
 	NewWaistSize decimal(4,2) NOT NULL,
 	NewThighSize decimal(4,2) NOT NULL,
 	NewCalveSize decimal(4,2) NOT NULL,
+	[UserId] UNIQUEIDENTIFIER NOT NULL,
+	CONSTRAINT [FK_UserIdProgressTracker]FOREIGN KEY ([UserId]) REFERENCES [NepFitUser]([UserId])
 )
