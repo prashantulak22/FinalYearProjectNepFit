@@ -60,6 +60,9 @@
   <ItemGroup>
     <Build Include="Exercise.sql" />
     <Build Include="Nutrition.sql" />
+    <Build Include="NepFitUser.sql" />
+    <Build Include="BodyMetrics.sql" />
+    <Build Include="ProgressTracker.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="FinalYearProject_NepFit.refactorlog" />
