@@ -7,4 +7,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ExerciseID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="87c377bd-19a8-4ffd-a59b-012ba4e6458a" ChangeDateTime="12/11/2020 14:13:35">
+    <Property Name="ElementName" Value="[dbo].[NepFitUser].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NepFitUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="40e8dd0f-d94c-427f-9fed-0c1c1726fca1" ChangeDateTime="12/11/2020 14:15:04">
+    <Property Name="ElementName" Value="[dbo].[NepFitUser].[First Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NepFitUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FirstName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0a070b22-9260-4554-9f7c-8c7bdeaf33e7" ChangeDateTime="12/11/2020 14:15:09">
+    <Property Name="ElementName" Value="[dbo].[NepFitUser].[Last Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NepFitUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LastName" />
+  </Operation>
 </Operations>
