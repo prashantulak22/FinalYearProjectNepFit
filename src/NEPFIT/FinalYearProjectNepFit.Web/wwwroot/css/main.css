@@ -1,0 +1,443 @@
+    /*Home Section*/
+    
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #home {
+        background-image: url(../Images/home.jpg);
+        min-height: 940px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .home-heading h3 {
+        text-align: center;
+        font-size: 2vw;
+        color: white;
+        letter-spacing: 4px;
+        padding-top: 10%;
+        font-weight: bold;
+    }
+    
+    .home-heading h2 {
+        text-align: center;
+        font-size: 5vw;
+        color: white;
+        letter-spacing: 2px;
+        padding-top: 4%;
+        font-weight: bold;
+    }
+    /*--------Menu Bar ---------*/
+    /* CORE STYLES */
+    
+     :root {
+        --primary-color: transparent;
+        --overlay-color: rgba(24, 39, 51, 0.85);
+        --menu-speed: 0.75s;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.4;
+    }
+    
+    .container {
+        max-width: 960px;
+        margin: auto;
+        overflow: hidden;
+        padding: 0 3rem;
+    }
+    
+    .showcase {
+        background: var(--primary-color);
+        color: #fff;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .showcase:before {
+        content: '';
+        background: url('https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    .showcase .showcase-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+    }
+    
+    .showcase h1 {
+        font-size: 4rem;
+    }
+    
+    .showcase p {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        display: inline-block;
+        border: none;
+        background: var(--primary-color);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        margin-top: 1rem;
+        transition: opacity 1s ease-in-out;
+        text-decoration: none;
+    }
+    
+    .btn:hover {
+        opacity: 0.7;
+    }
+    /* MENU STYLES */
+    
+    .menu-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .menu-wrap .toggler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    
+    .menu-wrap .hamburger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 1rem;
+        background: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Hamburger Line */
+    
+    .menu-wrap .hamburger>div {
+        position: relative;
+        flex: none;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    /* Hamburger Lines - Top & Bottom */
+    
+    .menu-wrap .hamburger>div::before,
+    .menu-wrap .hamburger>div::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+    /* Moves Line Down */
+    
+    .menu-wrap .hamburger>div::after {
+        top: 10px;
+    }
+    /* Toggler Animation */
+    
+    .menu-wrap .toggler:checked+.hamburger>div {
+        transform: rotate(135deg);
+    }
+    /* Turns Lines Into X */
+    
+    .menu-wrap .toggler:checked+.hamburger>div:before,
+    .menu-wrap .toggler:checked+.hamburger>div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    /* Rotate On Hover When Checked */
+    
+    .menu-wrap .toggler:checked:hover+.hamburger>div {
+        transform: rotate(225deg);
+    }
+    /* Show Menu */
+    
+    .menu-wrap .toggler:checked~.menu {
+        visibility: visible;
+    }
+    
+    .menu-wrap .toggler:checked~.menu>div {
+        transform: scale(1);
+        transition-duration: var(--menu-speed);
+    }
+    
+    .menu-wrap .toggler:checked~.menu>div>div {
+        opacity: 1;
+        transition: opacity 0.4s ease 0.4s;
+    }
+    
+    .menu-wrap .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu-wrap .menu>div {
+        background: var(--overlay-color);
+        border-radius: 50%;
+        width: 200vw;
+        height: 200vw;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+        transition: all 0.4s ease;
+    }
+    
+    .menu-wrap .menu>div>div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    .menu-wrap .menu>div>div>ul>li {
+        list-style: none;
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .menu-wrap .menu>div>div>ul>li>a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.4s ease;
+    }
+    /*----------LogIn Button-------------------*/
+    
+    .Login-Button {
+        display: flex;
+        padding-top: 3%;
+        justify-content: center;
+    }
+    
+    .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    .button1 {
+        background: transparent;
+        color: #FFFFFF;
+        border: 4px solid #FFFFFF;
+    }
+    
+    .button1:hover {
+        background-color: white;
+        color: black;
+    }
+    /*-------------END OF HOME SECTION----------------*/
+    /*---------------About Us Section-------------
+
+    */
+    
+    .about {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    
+    .about-para {
+        text-align: justify;
+        line-height: 2rem;
+        font-size: 20px;
+    }
+    /*---------------END of About Us Section-------------*/
+    /*
+    
+    
+    
+    
+    
+    */
+    /*----------------------Our Courses-------------------*/
+    
+    #ourCourses {
+        padding-bottom: 6rem;
+    }
+    
+    .ourCourses-header {
+        padding-top: 3rem;
+    }
+    
+    .hover {
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 140%;
+    }
+    
+    .hover-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 90;
+        transition: all 0.4s;
+    }
+    
+    .hover img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s;
+    }
+    
+    .hover-content {
+        position: relative;
+        z-index: 99;
+    }
+    
+    .hover-3::after {
+        content: '';
+        width: calc(100% - 3rem);
+        height: calc(100% - 3rem);
+        border: 1px solid #fff;
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        z-index: 90;
+        transition: all 0.3s;
+        transform: scale(1.1);
+        opacity: 0;
+        display: block;
+        opacity: 0;
+    }
+    
+    .hover-3-content {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        text-align: center;
+        z-index: 99;
+    }
+    
+    .hover-3-description {
+        opacity: 0;
+        transform: scale(1.3);
+        transition: all 0.3s;
+    }
+    
+    .hover-3 img {
+        width: 110%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .hover-3 .hover-overlay {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .hover-3:hover img {
+        width: 100%;
+    }
+    
+    .hover-3:hover::after {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .hover-3:hover .hover-3-description {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .hover-3:hover .hover-overlay {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    /*----------------------End of Our Courses-------------------*/
+    
+    #transformations {
+        padding-top: 5rem;
+    }
+    
+    .transformations-header {
+        padding-bottom: 3rem;
+    }
+    /*---------------------SERVICES-------------------------------*/
+    
+    #services {
+        padding-bottom: 6rem;
+        padding-top: 4rem;
+    }
+    
+    .services-header {
+        padding-top: 3rem;
+    }
+    
+    .service-row {
+        padding-top: 3rem;
+    }
+    /*-------------------------FOOTER---------------------------*/
+    
+    #footer {
+        background-color: #111111;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        width: 100%;
+    }
+    
+    .footer-bottom {
+        color: #706F6A;
+    }
+    /*--------------------------END FOOTER-------------------------*/

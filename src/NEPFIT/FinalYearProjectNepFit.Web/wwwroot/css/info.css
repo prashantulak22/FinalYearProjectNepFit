@@ -1,0 +1,21 @@
+.btn1 {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 50%;
+    background-color: #00B0FE;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.bodyMetrics {
+    background-color: #fcfcfc;
+    width: 80%;
+    margin-left: 7.5rem;
+    padding: 3rem;
+}
+
+body {
+    font-weight: bold;
+}

@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    background: white;
+}
+
+.row {
+    background: white;
+    box-shadow: 5px 5px 5px grey;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    background-size: cover;
+}
+
+.btn1 {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: #00B0FE;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
