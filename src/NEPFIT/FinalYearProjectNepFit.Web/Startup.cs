@@ -99,3 +99,6 @@ namespace FinalYearProjectNepFit.Web
         }
     }
 }
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet aspnet-codegenerator identity -dc FinalYearProjectNepFit.Web.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout;Account.RegisterConfirmation"
