@@ -9,7 +9,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FinalYearProject_NepFit", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NepFit.Api", "NepFit.Api\NepFit.Api.csproj", "{33156438-6741-4DFB-94DE-912D5B8BD7F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NepFit.Repository", "NepFit.Repository\NepFit.Repository.csproj", "{EBE30A8A-4098-4617-A8A4-B0B1380AD513}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NepFit.Repository", "NepFit.Repository\NepFit.Repository.csproj", "{EBE30A8A-4098-4617-A8A4-B0B1380AD513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
