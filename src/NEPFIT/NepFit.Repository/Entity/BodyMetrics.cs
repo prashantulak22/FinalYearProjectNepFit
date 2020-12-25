@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NepFit.Repository
+namespace NepFit.Repository.Entity
 {
     public class BodyMetrics
     {
