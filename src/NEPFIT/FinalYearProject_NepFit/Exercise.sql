@@ -1,7 +1,11 @@
-﻿CREATE TABLE [dbo].[Exercise]
+﻿
+CREATE TABLE [dbo].[Exercise]
 (
 	[ExerciseId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
-    [WeightGainRoutine] VARCHAR(MAX) NOT NULL,
-	WeightLossRoutine VARCHAR(MAX) NOT NULL,
-	FitRoutine VARCHAR(MAX) NOT NULL,
+	ChestExercise VARCHAR(5000) NOT NULL,
+	BackExercise VARCHAR(5000) NOT NULL,
+	ShoulderExercise VARCHAR(5000) NOT NULL,
+	BicepExercise VARCHAR(5000) NOT NULL,
+	TricepExercise VARCHAR(5000) NOT NULL,
+	LegExercise VARCHAR(5000) NOT NULL
 )
