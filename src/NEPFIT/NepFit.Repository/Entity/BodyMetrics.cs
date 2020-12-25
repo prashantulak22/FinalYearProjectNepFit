@@ -30,3 +30,8 @@ namespace NepFit.Repository.Entity
         public decimal CalveSize { get; set; }
     }
 }
+ExerciseId ,
+	ExercisePackageId,
+    [UserId] UNIQUEIDENTIFIER NOT NULL,
+    CONSTRAINT[FK_UserIdBodyMetrics] FOREIGN KEY ([UserId]) REFERENCES[NepFitUser]([UserId])
+)
