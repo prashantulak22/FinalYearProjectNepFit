@@ -63,6 +63,9 @@
     <Build Include="NepFitUser.sql" />
     <Build Include="BodyMetrics.sql" />
     <Build Include="ProgressTracker.sql" />
+    <Build Include="ExercisePackage.sql" />
+    <Build Include="ExerciseRoutine.sql" />
+    <Build Include="User_Exercise_Nutrition.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="FinalYearProject_NepFit.refactorlog" />
