@@ -28,4 +28,88 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="LastName" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="6219ec41-1250-4f05-84cc-21fbbfee1fce" ChangeDateTime="02/20/2021 13:15:48">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[WeightLossNutrition]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Meal 1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="917da1c6-4896-4d4e-9b4f-4f6b14b48f55" ChangeDateTime="02/20/2021 13:15:53">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[WeightGainNutrition]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Meal 2" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="65b5e01d-f56b-4a13-b902-472e4cfbd11b" ChangeDateTime="02/20/2021 13:15:58">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[FitNutrition]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Meal 3" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="552aca07-97e6-4bf0-9bb6-14c395363527" ChangeDateTime="02/20/2021 13:38:31">
+    <Property Name="ElementName" Value="[dbo].[NutritionPackage].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NutritionPackage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NutritionPackageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2a4b2988-95d6-4588-9051-9fb1efa6c5b0" ChangeDateTime="02/20/2021 13:48:38">
+    <Property Name="ElementName" Value="[dbo].[NutritionRoutine].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NutritionRoutine]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NutritionRoutineId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a435d97a-219c-480f-ab3d-0c81e1b306b4" ChangeDateTime="02/20/2021 15:04:26">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[Meal 1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MealOne" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="51da0637-e582-4d78-9768-9c4a93f73e9b" ChangeDateTime="02/20/2021 15:04:31">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[Meal 2]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MealTwo" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="62f587b0-4f11-480f-83a3-7beb658d522b" ChangeDateTime="02/20/2021 15:04:35">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[Meal 3]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MealThree" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9edc010e-e031-4d6e-86fa-55c674345acc" ChangeDateTime="02/20/2021 15:04:40">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[Meal 4]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MealFour" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a00cc765-5ce2-481b-beb8-aaca3072494a" ChangeDateTime="02/20/2021 15:04:45">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[Meal 5]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MealFive" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4f4b1d85-4443-413a-9ea5-7338da9f866a" ChangeDateTime="02/20/2021 15:04:50">
+    <Property Name="ElementName" Value="[dbo].[Nutrition].[Meal 6]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Nutrition]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MealSix" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6958d9b0-e034-4f8f-b17f-6d11fb6993a8" ChangeDateTime="02/20/2021 15:12:41">
+    <Property Name="ElementName" Value="[dbo].[NutritionRoutine].[How to prepare]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NutritionRoutine]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HowToPrepare" />
+  </Operation>
 </Operations>

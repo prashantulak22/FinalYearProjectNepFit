@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NepFit.Repository.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace NepFit.Api.Controllers
     public class BodyMetricsController : ControllerBase
     {
         [HttpPost]
-        public void CollectBodyMetrics()
+        public void CollectBodyMetrics(BodyMetrics input)
         {
 
         }

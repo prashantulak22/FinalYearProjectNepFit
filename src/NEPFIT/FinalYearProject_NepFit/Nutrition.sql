@@ -1,7 +1,10 @@
 ﻿CREATE TABLE [dbo].[Nutrition]
 (
 	NutritionId UNIQUEIDENTIFIER PRIMARY KEY,
-	WeightLossNutrition VARCHAR(MAX) NOT NULL,
-	WeightGainNutrition VARCHAR(MAX) NOT NULL,
-	FitNutrition VARCHAR(MAX) NOT NULL,
+	[MealOne] VARCHAR(MAX) NOT NULL,
+	[MealTwo] VARCHAR(MAX) NOT NULL,
+	[MealThree] VARCHAR(MAX) NOT NULL, 
+    [MealFour] VARCHAR(MAX) NOT NULL, 
+    [MealFive] VARCHAR(MAX) NOT NULL, 
+    [MealSix] VARCHAR(MAX) NOT NULL,
 )
