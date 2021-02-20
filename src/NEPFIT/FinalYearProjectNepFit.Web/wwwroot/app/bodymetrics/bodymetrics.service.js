@@ -29,7 +29,7 @@
         function createBodyMetrics(item) {
             return $http({
                 method: 'POST',
-                url: app.bodymetricsApibaseUrl + 'api/bodymetrics/add',
+                url: 'api/bodymetrics/add',
                 data: item
             }).then(
                 function (data, status, headers, config) {
@@ -40,7 +40,7 @@
         function updateBodyMetrics(item) {
             return $http({
                 method: 'POST',
-                url: app.bodymetricsApibaseUrl + 'api/bodymetrics/update',
+                url: 'api/bodymetrics/update',
                 data: item
             }).then(
                 function (data, status, headers, config) {
