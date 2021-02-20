@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[UserExerciseNutrition]
 (
-	[UserId] UNIQUEIDENTIFIER NOT NULL,
+	[UserId] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,
 	CONSTRAINT [FK_UserId]FOREIGN KEY ([UserId]) REFERENCES [NepFitUser]([UserId]),
 	[ExerciseId] UNIQUEIDENTIFIER NOT NUll,
     CONSTRAINT [FK_User_Exercise] FOREIGN KEY ([ExerciseId]) REFERENCES [Exercise]([ExerciseId]), 

@@ -13,6 +13,6 @@
 	WaistSize decimal(4,2) NOT NULL,
 	ThighSize decimal(4,2) NOT NULL,
 	CalveSize decimal(4,2) NOT NULL,
-	[UserId] UNIQUEIDENTIFIER NOT NULL,
+	[UserId] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,
 	CONSTRAINT [FK_UserIdBodyMetrics] FOREIGN KEY ([UserId]) REFERENCES [NepFitUser]([UserId])
 )
