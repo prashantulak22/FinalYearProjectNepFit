@@ -65,7 +65,7 @@
     <Build Include="ProgressTracker.sql" />
     <Build Include="ExercisePackage.sql" />
     <Build Include="ExerciseRoutine.sql" />
-    <Build Include="User_Exercise_Nutrition.sql" />
+    <Build Include="UserExerciseNutrition.sql" />
     <Build Include="NutritionPackage.sql" />
     <Build Include="NutritionRoutine.sql" />
   </ItemGroup>
