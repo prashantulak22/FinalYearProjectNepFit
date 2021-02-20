@@ -15,7 +15,7 @@
                     .state("home",
                         {
                             url: "/",
-                            templateUrl: "/app/home/index.html",
+                            templateUrl: "/app/home/home.html",
                             title: "home"
                         })
                     .state("register",
