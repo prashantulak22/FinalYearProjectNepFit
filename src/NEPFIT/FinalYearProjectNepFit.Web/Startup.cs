@@ -14,7 +14,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using NepFit.BL;
+using NepFit.BL.Interface;
 using NepFit.Repository;
+using NepFit.Repository.Mapper;
+using NepFit.Repository.Repository;
+using NepFit.Repository.Repository.Interface;
 
 namespace FinalYearProjectNepFit.Web
 {
@@ -78,9 +84,18 @@ namespace FinalYearProjectNepFit.Web
                    Configuration["EmailSender:Password"]
                )
            );
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new AutoMapperProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
 
+            services.AddSingleton(mapper);
             services.AddScoped<ISqlServerConnectionProvider>(provider =>
                 new SqlServerConnectionProvider(Configuration.GetConnectionString("DefaultConnection")));
+            
+            services.AddScoped<IBodyMetricsRepository, BodyMetricsRepository>();
+            services.AddScoped<IBodyMetricsService, BodyMetricsService>();
 
 
             services.ConfigureApplicationCookie(options =>

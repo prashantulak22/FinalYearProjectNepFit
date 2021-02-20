@@ -19,7 +19,7 @@ namespace NepFit.Repository.Repository
             return conn.Execute("INSERT INTO BodyMetrics  ([Height] ,[BodyMass] ,[ChestSize] ,[ArmSize] ,[ForearmSize] ,[WristSize] " +
                                 ",[NeckSize] ,[UpperAbs] ,[LowerAbs] ,[HipSize] ,[WaistSize] ,[ThighSize] ,[CalveSize] ,[UserId] ) 	" +
                                 "VALUES	(@Height ,@BodyMass ,@ChestSize ,@ArmSize ,@ForearmSize ,@WristSize ,@NeckSize ,@UpperAbs" +
-                                " ,@LowerAbs ,@HipSize ,@WaistSize ,@ThighSize ,@CalveSize ,@UserId )", input);
+                                " ,@LowerAbs ,@HipSize ,@WaistSize ,@ThighSize ,@CalveSize ,@UserId ) ", input);
 
         }
     }
