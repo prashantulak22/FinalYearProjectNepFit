@@ -14,7 +14,7 @@ namespace FinalYearProjectNepFit.Web.Controller
             _bodyMetricsService = bodyMetricsService;
         }
 
-        [Route("api/body/metric/save")]
+        [Route("api/bodymetrics/add")]
         [HttpPost]
         public ActionResult<int> SaveUser(BodyMetricsCreateDto input)
         {

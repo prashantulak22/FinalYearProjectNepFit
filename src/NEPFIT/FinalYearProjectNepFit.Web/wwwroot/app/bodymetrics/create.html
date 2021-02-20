@@ -1,0 +1,191 @@
+﻿<div id="addbodyMetrics" class="portlet light ">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="navicon icon-bell font-red"></i>
+            {{vm.title}}
+        </div>
+        <a ng-click="vm.close()" class=" pull-right">
+            <i class="far fa-times-circle fa-lg"></i>
+        </a>
+    </div>
+    <div class="portlet-body">
+        <form class="form-horizontal" kendo-validator="validator" ame="addBodyMetricsCreateForm">
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    Height
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.height" />
+                    <span class="help-block"> Short Height for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    BodyMass
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.bodyMass" />
+                    <span class="help-block"> Short BodyMass for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    ChestSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.chestSize" />
+                    <span class="help-block"> Short ChestSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    ArmSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.armSize" />
+                    <span class="help-block"> Short ArmSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    ForearmSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.forearmSize" />
+                    <span class="help-block"> Short ForearmSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    WristSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.wristSize" />
+                    <span class="help-block"> Short WristSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    NeckSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.neckSize" />
+                    <span class="help-block"> Short NeckSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    UpperAbs
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.upperAbs" />
+                    <span class="help-block"> Short UpperAbs for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    LowerAbs
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.lowerAbs" />
+                    <span class="help-block"> Short LowerAbs for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    HipSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.hipSize" />
+                    <span class="help-block"> Short HipSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    WaistSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.waistSize" />
+                    <span class="help-block"> Short WaistSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    ThighSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.thighSize" />
+                    <span class="help-block"> Short ThighSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    CalveSize
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="number" class="required form-control"
+                           ng-model="vm.bodyMetrics.calveSize" />
+                    <span class="help-block"> Short CalveSize for your BodyMetrics (Max  characters </span>
+                </div>
+            </div>
+
+            <div class="item form-group" ng-show="vm.validationError.length > 0">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Please review the following field</div>
+                        <div class="panel-body">
+                            <ul>
+                                <li ng-repeat="message in vm.validationError">
+                                    <span class="black">{{message}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="form-actions">
+            <div class="row">
+                <div class="col-md-offset-5 col-md-12">
+                    <a ng-disabled="addBodyMetricsCreateForm.$invalid" ng-click="vm.saveBodyMetrics()" class="btn green button-submit button-next">
+                        Save
+                        <i class="fa fa-check"></i>
+                    </a>
+
+                    <a ng-click="vm.close()" class="btn btn-primary btn-ok text-center">
+                        Close
+                        <i class="fa fa-close"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
