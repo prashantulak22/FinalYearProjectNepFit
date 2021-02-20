@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalYearProjectNepFit.Web"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FinalYearProject_NepFit", "FinalYearProject_NepFit\FinalYearProject_NepFit.sqlproj", "{A4DC6143-8F2C-4768-A875-5A02A8C0968F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NepFit.Api", "NepFit.Api\NepFit.Api.csproj", "{33156438-6741-4DFB-94DE-912D5B8BD7F6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NepFit.Repository", "NepFit.Repository\NepFit.Repository.csproj", "{EBE30A8A-4098-4617-A8A4-B0B1380AD513}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NepFit.BL", "NepFit.BL\NepFit.BL.csproj", "{834F5AEB-8FE3-4FF1-8D19-A5EA863026D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NepFit.BL", "NepFit.BL\NepFit.BL.csproj", "{834F5AEB-8FE3-4FF1-8D19-A5EA863026D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{A4DC6143-8F2C-4768-A875-5A02A8C0968F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4DC6143-8F2C-4768-A875-5A02A8C0968F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4DC6143-8F2C-4768-A875-5A02A8C0968F}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{33156438-6741-4DFB-94DE-912D5B8BD7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33156438-6741-4DFB-94DE-912D5B8BD7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33156438-6741-4DFB-94DE-912D5B8BD7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33156438-6741-4DFB-94DE-912D5B8BD7F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EBE30A8A-4098-4617-A8A4-B0B1380AD513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBE30A8A-4098-4617-A8A4-B0B1380AD513}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBE30A8A-4098-4617-A8A4-B0B1380AD513}.Release|Any CPU.ActiveCfg = Release|Any CPU

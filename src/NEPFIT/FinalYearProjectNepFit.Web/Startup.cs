@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NepFit.Repository;
 
 namespace FinalYearProjectNepFit.Web
 {
@@ -78,6 +79,8 @@ namespace FinalYearProjectNepFit.Web
                )
            );
 
+            services.AddScoped<ISqlServerConnectionProvider>(provider =>
+                new SqlServerConnectionProvider(Configuration.GetConnectionString("DefaultConnection")));
 
 
             services.ConfigureApplicationCookie(options =>
