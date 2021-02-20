@@ -96,7 +96,7 @@ namespace FinalYearProjectNepFit.Web
             
             services.AddScoped<IBodyMetricsRepository, BodyMetricsRepository>();
             services.AddScoped<IBodyMetricsService, BodyMetricsService>();
-
+            services.AddSwaggerGen();
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -124,7 +124,11 @@ namespace FinalYearProjectNepFit.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -135,6 +139,7 @@ namespace FinalYearProjectNepFit.Web
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }
