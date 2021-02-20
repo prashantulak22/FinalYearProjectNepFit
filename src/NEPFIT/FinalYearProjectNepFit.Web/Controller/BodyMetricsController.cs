@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NepFit.BL.Interface;
 using NepFit.Repository.Dto;
 
 namespace FinalYearProjectNepFit.Web.Controller
 {
     [ApiController]
-    public class BodyMetricsController: ControllerBase
+    [Authorize]
+    public class BodyMetricsController : ControllerBase
     {
         private readonly IBodyMetricsService _bodyMetricsService;
 
@@ -21,6 +25,7 @@ namespace FinalYearProjectNepFit.Web.Controller
 
             if (TryValidateModel(input))
             {
+                input.UserId = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 return _bodyMetricsService.AddBodyMetrics(input);
             }
             else
