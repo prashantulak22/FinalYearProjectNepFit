@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[ProgressTracker]
 (
+	ProgressTrackerId int IDENTITY PRIMARY KEY,
 	NewHeight decimal(3,2) NOT NULL,
 	NewBodyMass decimal(5,2) NOT NULL,
 	NewChestSize decimal(4,2) NOT NULL,
@@ -14,5 +15,6 @@
 	NewThighSize decimal(4,2) NOT NULL,
 	NewCalveSize decimal(4,2) NOT NULL,
 	[UserId] UNIQUEIDENTIFIER NOT NULL,
-	CONSTRAINT [FK_UserIdProgressTracker]FOREIGN KEY ([UserId]) REFERENCES [NepFitUser]([UserId])
+	[DateCreated] DATETIME NOT NULL, 
+    CONSTRAINT [FK_UserIdProgressTracker]FOREIGN KEY ([UserId]) REFERENCES [NepFitUser]([UserId])
 )
