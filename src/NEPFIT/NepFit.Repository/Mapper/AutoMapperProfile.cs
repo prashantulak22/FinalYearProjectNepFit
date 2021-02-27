@@ -9,6 +9,7 @@ namespace NepFit.Repository.Mapper
         public AutoMapperProfile()
         {
             CreateMap<BodyMetricsCreateDto, BodyMetrics>().ReverseMap();
+            CreateMap<ProgressTrackerResultDto, ProgressTracker>().ReverseMap();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace NepFit.Repository.Entity
@@ -8,6 +9,7 @@ namespace NepFit.Repository.Entity
 
     [Serializable]
     [DataContract]
+    [Table("ProgressTracker", Schema="dbo")]
     public partial class ProgressTracker
     {
      /// <summary>
@@ -33,11 +35,13 @@ namespace NepFit.Repository.Entity
                         Decimal newWaistSize,
                         Decimal newThighSize,
                         Decimal newCalveSize,
-                        System.Guid userId)
+                        System.Guid userId,
+                        DateTime dateCreated)
     {
         var @objectToReturn = new ProgressTracker
         {
           
+
             NewHeight = newHeight,
             NewBodyMass = newBodyMass,
             NewChestSize = newChestSize,
@@ -51,11 +55,20 @@ namespace NepFit.Repository.Entity
             NewWaistSize = newWaistSize,
             NewThighSize = newThighSize,
             NewCalveSize = newCalveSize,
-            UserId = userId
+            UserId = userId,
+            DateCreated = dateCreated
         };
 
         return @objectToReturn;
     }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("ProgressTrackerId")]
+        [DataMember]
+        [Key, Column(Order = 0)]
+        public  Int32 ProgressTrackerId { get; set; }
 
         /// <summary>
         /// 
@@ -182,6 +195,15 @@ namespace NepFit.Repository.Entity
         [Required]
         
         public  System.Guid UserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateCreated")]
+        [DataMember]
+        [Required]
+        
+        public  DateTime DateCreated { get; set; }
 
     }
 
