@@ -10,6 +10,7 @@ namespace NepFit.Repository.Mapper
         {
             CreateMap<BodyMetricsCreateDto, BodyMetrics>().ReverseMap();
             CreateMap<ProgressTrackerResultDto, ProgressTracker>().ReverseMap();
+            CreateMap<ProgressTrackerChartResultDto, ProgressTracker>().ReverseMap();
         }
     }
 }

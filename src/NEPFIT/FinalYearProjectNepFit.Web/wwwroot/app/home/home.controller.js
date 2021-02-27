@@ -5,9 +5,59 @@
     angular
         .module('nepFitApp')
         .controller('homeCtrl', homeCtrl);
-    homeCtrl.$inject = ['$uibModal'];
-    function homeCtrl($uibModal) {
+    homeCtrl.$inject = ['$uibModal', 'progressTrackerService'];
+    function homeCtrl($uibModal, progressTrackerService) {
         var vm = this;
+        activate();
+        function activate() {
+            $("#chart").kendoChart({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "api/user/progress",
+                            dataType: "json"
+                        }
+                    }
+                },
+                title: {
+                    text: "Progress Tracker (cm)"
+                },
+                legend: {
+                    position: "top"
+                },
+                seriesDefaults: {
+                    type: "line"
+                },
+                series: [{
+                    field: "newChestSize",
+                    categoryField: "yearMonth",
+                    name: "Chest Size"
+                }, {
+                    field: "newArmSize",
+                    categoryField: "yearMonth",
+                    name: "Arm Size"
+                }],
+                categoryAxis: {
+                    labels: {
+                        rotation: -90
+                    },
+                    crosshair: {
+                        visible: true
+                    }
+                },
+                valueAxis: {
+                    labels: {
+                        format: "N0"
+                    },
+                    majorUnit: 20
+                },
+                tooltip: {
+                    visible: true,
+                    shared: true,
+                    format: "N0"
+                }
+            });
+        }
 
         vm.showAddBodyMetrics = function () {
             var modalInstance = $uibModal.open({

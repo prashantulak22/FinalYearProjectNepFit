@@ -56,6 +56,9 @@ namespace NepFit.Repository.Dto
         
         public DateTime DateCreated { get; set; }
 
- 
+        public string YearMonth => DateCreated.ToString("MM-yyyy");
+
+
+
     }
 }

@@ -18,7 +18,7 @@
         function getAllBodyMetricsById(item) {
             return $http({
                 method: 'POST',
-                url: app.bodymetricsApibaseUrl + 'api/bodymetrics/getbyid',
+                url:  'api/bodymetrics/getbyid',
                 data: item
             }).then(
                 function (data, status, headers, config) {

@@ -96,6 +96,10 @@ namespace FinalYearProjectNepFit.Web
             
             services.AddScoped<IBodyMetricsRepository, BodyMetricsRepository>();
             services.AddScoped<IBodyMetricsService, BodyMetricsService>();
+
+            services.AddScoped<IProgressTrackerRepository, ProgressTrackerRepository>();
+            services.AddScoped<IProgressTrackerService, ProgressTrackerService>();
+
             services.AddSwaggerGen();
 
             services.ConfigureApplicationCookie(options =>
