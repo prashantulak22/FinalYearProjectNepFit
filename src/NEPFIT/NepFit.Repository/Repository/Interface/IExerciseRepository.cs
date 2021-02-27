@@ -7,6 +7,6 @@ namespace NepFit.Repository.Repository.Interface
 {
     public interface IExerciseRepository
     {
-        String Add(Exercise input);
+        int Add(Exercise input);
     }
 }

@@ -17,10 +17,10 @@ namespace NepFit.Repository.Repository
         }
 
         
-        public string Add(Exercise input)
+        public int Add(Exercise input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute()
+            return conn.Execute("");
 
         }
     }
