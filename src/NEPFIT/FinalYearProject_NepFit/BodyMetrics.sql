@@ -16,6 +16,7 @@
 	[LeftThighSize] decimal(4,2) NOT NULL,
 	[RightCalveSize] decimal(4,2) NOT NULL,
 	[LeftCalveSize] decimal(4,2) NOT NULL,
+	[DateCreated] DATETIME NOT NULL,
 	[UserId] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,
 	CONSTRAINT [FK_UserIdBodyMetrics] FOREIGN KEY ([UserId]) REFERENCES [NepFitUser]([UserId])
 )
