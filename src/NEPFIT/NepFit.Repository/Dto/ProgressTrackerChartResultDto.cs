@@ -7,45 +7,152 @@ namespace NepFit.Repository.Dto
 {
     public class ProgressTrackerChartResultDto
     {
- 
+
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("NewChestSize")]
+        [DisplayName("Height")]
         [DataMember]
         [Required]
-        
-        public Decimal NewChestSize { get; set; }
+
+        public Decimal Height { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("NewArmSize")]
+        [DisplayName("BodyMass")]
         [DataMember]
         [Required]
-        
-        public Decimal NewArmSize { get; set; }
+
+        public Decimal BodyMass { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("NewForearmSize")]
+        [DisplayName("NeckSize")]
         [DataMember]
         [Required]
-        
-        public Decimal NewForearmSize { get; set; }
+
+        public Decimal NeckSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("NewWristSize")]
+        [DisplayName("ShoulderSize")]
         [DataMember]
         [Required]
-        
-        public Decimal NewWristSize { get; set; }
 
-       
+        public Decimal ShoulderSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("ChestSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal ChestSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("ForearmSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal ForearmSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("RightBicepSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal RightBicepSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LeftBicepSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LeftBicepSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UpperAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal UpperAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LowerAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LowerAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("WaistSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal WaistSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("HipSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal HipSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("RightThighSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal RightThighSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LeftThighSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LeftThighSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("RightCalveSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal RightCalveSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LeftCalveSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LeftCalveSize { get; set; }
+
 
         /// <summary>
         /// 
