@@ -14,7 +14,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("Height")]
         [DataMember]
         [Required]
-        
+
         public Decimal Height { get; set; }
 
         /// <summary>
@@ -23,44 +23,8 @@ namespace NepFit.Repository.Dto
         [DisplayName("BodyMass")]
         [DataMember]
         [Required]
-        
+
         public Decimal BodyMass { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("ChestSize")]
-        [DataMember]
-        [Required]
-        
-        public Decimal ChestSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("ArmSize")]
-        [DataMember]
-        [Required]
-        
-        public Decimal ArmSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("ForearmSize")]
-        [DataMember]
-        [Required]
-        
-        public Decimal ForearmSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("WristSize")]
-        [DataMember]
-        [Required]
-        
-        public Decimal WristSize { get; set; }
 
         /// <summary>
         /// 
@@ -68,35 +32,71 @@ namespace NepFit.Repository.Dto
         [DisplayName("NeckSize")]
         [DataMember]
         [Required]
-        
+
         public Decimal NeckSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("UpperAbs")]
+        [DisplayName("ShoulderSize")]
         [DataMember]
         [Required]
-        
-        public Decimal UpperAbs { get; set; }
+
+        public Decimal ShoulderSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("LowerAbs")]
+        [DisplayName("ChestSize")]
         [DataMember]
         [Required]
-        
-        public Decimal LowerAbs { get; set; }
+
+        public Decimal ChestSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("HipSize")]
+        [DisplayName("ForearmSize")]
         [DataMember]
         [Required]
-        
-        public Decimal HipSize { get; set; }
+
+        public Decimal ForearmSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("RightBicepSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal RightBicepSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LeftBicepSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LeftBicepSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UpperAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal UpperAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LowerAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LowerAbsSize { get; set; }
 
         /// <summary>
         /// 
@@ -104,26 +104,62 @@ namespace NepFit.Repository.Dto
         [DisplayName("WaistSize")]
         [DataMember]
         [Required]
-        
+
         public Decimal WaistSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ThighSize")]
+        [DisplayName("HipSize")]
         [DataMember]
         [Required]
-        
-        public Decimal ThighSize { get; set; }
+
+        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("CalveSize")]
+        [DisplayName("RightThighSize")]
         [DataMember]
         [Required]
-        
-        public Decimal CalveSize { get; set; }
+
+        public Decimal RightThighSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LeftThighSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LeftThighSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("RightCalveSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal RightCalveSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LeftCalveSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LeftCalveSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateCreated")]
+        [DataMember]
+        [Required]
+
+        public DateTime DateCreated { get; set; }
 
         /// <summary>
         /// 
