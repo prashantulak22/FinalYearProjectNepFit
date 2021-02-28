@@ -5,69 +5,60 @@ using System.Runtime.Serialization;
 
 namespace NepFit.Repository.Dto
 {
-    public class NutritionResultDto
+    public class NutritionRoutineResultDto
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("NutritionRoutineId")]
+        [DataMember]
+
+        public System.Guid NutritionRoutineId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("Name")]
+        [DataMember]
+        [Required]
+        [StringLength(5000)]
+        public String Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("Description_")]
+        [DataMember]
+        [Required]
+        [StringLength(5000)]
+        public String Description_ { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("HowToPrepare")]
+        [DataMember]
+        [Required]
+        [StringLength(2147483647)]
+        public String HowToPrepare { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [DisplayName("NutritionId")]
         [DataMember]
+        [Required]
 
         public System.Guid NutritionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("MealOne")]
+        [DisplayName("NutritionPackageId")]
         [DataMember]
         [Required]
-        [StringLength(2147483647)]
-        public String MealOne { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("MealTwo")]
-        [DataMember]
-        [Required]
-        [StringLength(2147483647)]
-        public String MealTwo { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("MealThree")]
-        [DataMember]
-        [Required]
-        [StringLength(2147483647)]
-        public String MealThree { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("MealFour")]
-        [DataMember]
-        [Required]
-        [StringLength(2147483647)]
-        public String MealFour { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("MealFive")]
-        [DataMember]
-        [Required]
-        [StringLength(2147483647)]
-        public String MealFive { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("MealSix")]
-        [DataMember]
-        [Required]
-        [StringLength(2147483647)]
-        public String MealSix { get; set; }
+        public System.Guid NutritionPackageId { get; set; }
 
         /// <summary>
         /// 

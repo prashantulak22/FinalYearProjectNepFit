@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace NepFit.Repository.Dto
 {
-    class NutritionUpdateDto
+    public class NutritionUpdateDto
     {
         /// <summary>
         /// 
