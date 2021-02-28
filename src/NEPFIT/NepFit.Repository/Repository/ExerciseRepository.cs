@@ -20,7 +20,10 @@ namespace NepFit.Repository.Repository
         public int Add(Exercise input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("");
+            return conn.Execute("INSERT INTO Exercise  ([ExerciseId] ,[ChestExercise] ,[BackExercise] ,[ShoulderExercise] ,[BicepExercise] ,[TricepExercise] " +
+                                ",[LegExercise] ) 	" +
+                                "VALUES	(@ExerciseId ,@ChestExercise ,@BackExercise ,@ShoulderExercise ,@BicepExercise ,@TricepExercise " +
+                                " ,@LegExercise ) ", input);
 
         }
     }
