@@ -112,4 +112,81 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="HowToPrepare" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="f3574eee-bdd0-45c2-95a1-70d98eafa15c" ChangeDateTime="02/28/2021 15:16:45">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[ChestSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NeckSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9b3be6be-5aa7-47c6-bd0e-1d1a025e295c" ChangeDateTime="02/28/2021 15:16:54">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[ArmSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChestSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f1d3cac9-ad78-4f2c-9437-00f6f7d1d6a9" ChangeDateTime="02/28/2021 15:17:43">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[ChestSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ShoulderSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3f9c3644-829f-4aca-86ca-8a46834d18b5" ChangeDateTime="02/28/2021 15:17:54">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[ForearmSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChestSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bfb3c10d-6c15-4b9f-b7f0-c013a73ee978" ChangeDateTime="02/28/2021 15:18:02">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[WristSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ForearmSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c1708c35-3fae-427c-826c-93f7dd3533ce" ChangeDateTime="02/28/2021 15:19:22">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[UpperAbs]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LeftBicep" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="214757ed-6bd3-4527-8f87-5fd6371d88ba" ChangeDateTime="02/28/2021 15:19:32">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[LeftBicep]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LeftBicepSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d3e07453-1030-40c3-ba4e-fa44b2d23578" ChangeDateTime="02/28/2021 15:19:40">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[LowerAbs]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UpperAbsSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="23c2a36c-f902-46cf-9678-db3ff28b6411" ChangeDateTime="02/28/2021 15:20:06">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[HipSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LowerAbsSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0bb70f39-9ce9-4089-bcb8-b274614953b1" ChangeDateTime="02/28/2021 15:20:30">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[ThighSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HipSize" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2fa5db77-db89-45bc-8f9b-a205b36b4b54" ChangeDateTime="02/28/2021 15:20:45">
+    <Property Name="ElementName" Value="[dbo].[BodyMetrics].[CalveSize]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BodyMetrics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RightThighSize" />
+  </Operation>
 </Operations>
