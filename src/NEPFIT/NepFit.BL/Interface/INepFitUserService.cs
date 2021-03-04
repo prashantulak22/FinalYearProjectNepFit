@@ -6,6 +6,6 @@ namespace NepFit.BL.Interface
 {
     public interface INepFitUserService
     {
-        int 
+        
     }
 }
