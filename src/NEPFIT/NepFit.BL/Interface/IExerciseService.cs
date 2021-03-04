@@ -5,7 +5,7 @@ using NepFit.Repository.Dto;
 
 namespace NepFit.BL.Interface
 {
-    public interface IExercise
+    public interface IExerciseService
     {
         int AddExercise(ExerciseCreateDto inputDto);
 
