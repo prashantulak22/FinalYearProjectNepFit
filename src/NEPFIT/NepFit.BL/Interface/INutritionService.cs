@@ -5,7 +5,7 @@ using NepFit.Repository.Dto;
 
 namespace NepFit.BL.Interface
 {
-    public interface INutrition
+    public interface INutritionService
     {
         int AddNutrition(NutritionCreateDto inputDto);
     }
