@@ -4,7 +4,8 @@ using System.Text;
 
 namespace NepFit.BL.Interface
 {
-    class INepFitUserService
+    public interface INepFitUserService
     {
+        int 
     }
 }
