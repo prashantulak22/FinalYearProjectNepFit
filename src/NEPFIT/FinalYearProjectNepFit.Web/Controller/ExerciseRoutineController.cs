@@ -20,7 +20,7 @@ namespace FinalYearProjectNepFit.Web.Controller
             _exerciseRoutineService = exerciseRoutineService;
         }
 
-        [Route("api/exercise/routine")]
-        [HttpPost]
+        //[Route("api/exercise/routine")]
+       //[HttpPost]
     }
 }
