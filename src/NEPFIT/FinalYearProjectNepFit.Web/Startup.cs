@@ -100,6 +100,29 @@ namespace FinalYearProjectNepFit.Web
             services.AddScoped<IProgressTrackerRepository, ProgressTrackerRepository>();
             services.AddScoped<IProgressTrackerService, ProgressTrackerService>();
 
+            services.AddScoped<IExerciseRepository, ExerciseRepository>();
+            services.AddScoped<IExerciseService, ExerciseService>();
+
+            services.AddScoped<IExercisePackageRepository, ExercisePackageRepository>();
+            services.AddScoped<IExercisePackageService, ExercisePackageService>();
+
+            services.AddScoped<IExerciseRoutineRepository, ExerciseRoutineRepository>();
+            services.AddScoped<IExerciseRoutineService, ExerciseRoutineService>();
+
+            services.AddScoped<INutritionRepository, NutritionRepository>();
+            services.AddScoped<INutritionService, NutritionService>();
+
+            services.AddScoped<INutritionRoutineRepository, NutritionRoutineRepository>();
+            services.AddScoped<INutritionRoutineService, NutritionRoutineService>();
+
+            services.AddScoped<INutritionPackageRepository, NutritionPackageRepository>();
+            services.AddScoped<INutritionPackageService, NutritionPackageService>();
+
+
+
+
+
+
             services.AddSwaggerGen();
 
             services.ConfigureApplicationCookie(options =>
