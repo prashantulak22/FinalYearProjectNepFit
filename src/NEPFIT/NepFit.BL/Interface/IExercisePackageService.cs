@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using NepFit.Repository.Dto;
 
 namespace NepFit.BL.Interface
 {
-    class IExercisePackageService
+    public interface IExercisePackage
     {
+        int AddExercisePackage(ExercisePackageCreateDto inputDto);
     }
 }
