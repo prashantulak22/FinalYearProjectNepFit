@@ -1,14 +1,14 @@
 ﻿@page
 @model IndexModel
 @{ ViewData["Title"] = "Home page"; }
-
 <div class="body block-ui-main" block-ui="main">
     <div class="angular-animation-container row">
-        <div ui-view class="shuffle-animation col-12 col-md-12 col-xs-12">
+        <div ui-view class= "shuffle-animation" col-12 col-md-12 col-xs-12>
 
         </div>
     </div>
 </div>
+
 
 @section Scripts {
     <script>var app = app || {};</script>
@@ -26,5 +26,6 @@
     <script src="~/app/bodymetrics/bodymetricsadd.controller.js"></script>
     <script src="~/app/home/home.controller.js"></script>
     <script src="~/app/progresstracker/progresstracker.service.js"></script>
+    
 
 }
