@@ -9,6 +9,7 @@ namespace NepFit.Repository.Repository.Interface
         int Add(ExerciseType input);
         ExerciseType Update(ExerciseType input);
         IEnumerable<ExerciseType> GetAll();
-        bool Delete(Guid id);
+        ExerciseType GetById(Guid id);
+        bool Delete(ExerciseType input);
     }
 }

@@ -21,12 +21,17 @@ namespace NepFit.BL
 
         public int Add(ExerciseTypeCreateDto inputDto)
         {
+            inputDto.DateCreated = DateTime.Now;
+            inputDto.Active = true;
             return _exerciseTypeRepository.Add(_mapper.Map<ExerciseType>(inputDto));
         }
 
         public bool Update(ExerciseTypeUpdateDto input)
         {
-            _exerciseTypeRepository.Update(_mapper.Map<ExerciseType>(input));
+            var original = _exerciseTypeRepository.GetById(input.ExerciseTypeId);
+            original.DateUpdated = DateTime.Now;
+            _mapper.Map(input, original);
+            _exerciseTypeRepository.Update(original);
             return true;
         }
 
@@ -37,9 +42,11 @@ namespace NepFit.BL
                 _exerciseTypeRepository.GetAll());
         }
 
-        public bool Delete(Guid id)
+        public bool Delete(ExerciseTypeUpdateDto input)
         {
-            return _exerciseTypeRepository.Delete(id);
+            var deleteObj = _mapper.Map<ExerciseType>(input);
+            deleteObj.DateUpdated = DateTime.Now;
+            return _exerciseTypeRepository.Delete(deleteObj);
         }
     }
 }

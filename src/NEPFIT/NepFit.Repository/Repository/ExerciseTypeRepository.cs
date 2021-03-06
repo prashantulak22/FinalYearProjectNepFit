@@ -44,16 +44,24 @@ namespace NepFit.Repository.Repository
                 "Select * From [dbo].[ExerciseType] WHERE Active = 1 order by DateCreated");
         }
 
-        public bool Delete(Guid id)
+        public ExerciseType GetById(Guid id)
+        {
+
+            var conn = _sqlServerConnectionProvider.GetDbConnection();
+            return conn.QueryFirstOrDefault<ExerciseType>(
+                "Select * From [dbo].[ExerciseType] WHERE Active = 1 AND ExerciseTypeId = @ExerciseTypeId", new
+                {
+                    ExerciseTypeId = id
+                });
+        }
+
+        public bool Delete(ExerciseType input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            conn.Execute(" UPDATE ExerciseType SET 	" +
+            conn.Execute("	UPDATE ExerciseType SET 	" +
                          "	[Active] = 0 ,		[UpdatedBy] = @UpdatedBy ,	" +
-                         " [DateUpdated] = @DateUpdated ,		" +
-                         " WHERE [ExerciseTypeId]=@ExerciseTypeId", new
-            {
-                ExerciseTypeId = id
-                         });
+                         "	[DateUpdated] = @DateUpdated ,		" +
+                         " WHERE [ExerciseTypeId]=@ExerciseTypeId", input);
             return true;
         }
     }

@@ -9,6 +9,6 @@ namespace NepFit.BL.Interface
         int Add(ExerciseTypeCreateDto input);
         bool Update(ExerciseTypeUpdateDto input);
         IEnumerable<ExerciseTypeResultDto> GetAll();
-        bool Delete(Guid id);
+        bool Delete(ExerciseTypeUpdateDto id);
     }
 }
