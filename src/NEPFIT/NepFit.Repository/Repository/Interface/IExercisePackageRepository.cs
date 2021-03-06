@@ -8,5 +8,13 @@ namespace NepFit.Repository.Repository.Interface
     public interface IExercisePackageRepository
     {
         int Add(ExercisePackage input);
+
+        ExercisePackage Update(ExercisePackage input);
+
+        IEnumerable<ExercisePackage> GetAll();
+
+        ExercisePackage GetById(Guid id);
+
+        bool Delete(ExercisePackage input);
     }
 }
