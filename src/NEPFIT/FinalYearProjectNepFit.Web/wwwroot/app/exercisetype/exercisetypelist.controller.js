@@ -92,9 +92,10 @@
 
 
         vm.showEditExerciseType = function (item) {
+            console.log(item);
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/tableapp/tableapp/edit',
+                templateUrl: '/app/exercisetype/editExerciseType.html',
                 controller: 'exercisetypeEditCtrl as vm',
                 backdrop: 'static',
                 size: "lg",
