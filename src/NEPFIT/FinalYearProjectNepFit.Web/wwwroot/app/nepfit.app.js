@@ -16,7 +16,13 @@
                         {
                             url: "/",
                             templateUrl: "/app/home/home.html",
-                            title: "home"
+                            title: "Home"
+                        })
+                    .state("exerciseType",
+                        {
+                            url: "/exerciseType",
+                            templateUrl: "/app/exerciseType/index.html",
+                            title: "ExerciseType"
                         })
                     .state("register",
                         {

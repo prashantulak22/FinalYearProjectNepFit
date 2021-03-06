@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('homeCtrl', homeCtrl);
-    homeCtrl.$inject = ['$uibModal', 'progressTrackerService'];
-    function homeCtrl($uibModal, progressTrackerService) {
+    homeCtrl.$inject = ['$uibModal', '$state'];
+    function homeCtrl($uibModal, $state) {
         var vm = this;
         activate();
         function activate() {
@@ -69,6 +69,11 @@
             });
 
         }
+
+        vm.showExcerciseType = function () {
+            $state.go('exerciseType');
+        }
+
     }
 
 
