@@ -68,6 +68,7 @@
     <Build Include="NutritionRoutine.sql" />
     <Build Include="ExerciseType.sql" />
     <Build Include="ExercisePackage.sql" />
+    <Build Include="ExercisePackageRoutine.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="FinalYearProject_NepFit.refactorlog" />
