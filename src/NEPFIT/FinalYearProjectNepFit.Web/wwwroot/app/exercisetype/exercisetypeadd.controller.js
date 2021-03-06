@@ -24,8 +24,8 @@
 
             function initialize() {
                 return {
-                    Name: "",
-                    Description: ""
+                    name: "",
+                    description: ""
                 };
             }
             vm.exerciseType = initialize();

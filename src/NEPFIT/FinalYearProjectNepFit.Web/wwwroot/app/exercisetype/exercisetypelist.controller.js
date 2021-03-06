@@ -37,7 +37,8 @@
                     }
                 ],
                 pageable: {
-                    pageSize: 10
+                    pageSize: 10,
+                    refresh: true
                 },
                 columns: [
                     {
@@ -117,7 +118,7 @@
         vm.removeExerciseTypeRequest = function (item) {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/tableapp/tableapp/DeleteConfirm',
+                templateUrl: '/app/exercisetype/deleteExerciseType.html',
                 controller: 'exercisetypeDeleteCtrl as vm',
                 backdrop: 'static',
                 size: "md",

@@ -60,7 +60,7 @@ namespace NepFit.Repository.Repository
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             conn.Execute("	UPDATE ExerciseType SET 	" +
                          "	[Active] = 0 ,		[UpdatedBy] = @UpdatedBy ,	" +
-                         "	[DateUpdated] = @DateUpdated ,		" +
+                         "	[DateUpdated] = @DateUpdated		" +
                          " WHERE [ExerciseTypeId]=@ExerciseTypeId", input);
             return true;
         }
