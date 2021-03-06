@@ -18,10 +18,10 @@ namespace NepFit.Repository.Repository
         public int Add(ExerciseType input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO ExerciseType ([ExerciseTypeId] ,[Name] ,[Description] " +
+            return conn.Execute("INSERT INTO ExerciseType ( [Name] ,[Description] " +
                                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
                                 "	VALUES" +
-                                "	(@ExerciseTypeId ,@Name ,@Description " +
+                                "	( @Name ,@Description " +
                                 ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
         }
 
