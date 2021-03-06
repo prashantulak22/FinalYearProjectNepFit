@@ -9,50 +9,57 @@ namespace NepFit.Repository.Entity
 
     [Serializable]
     [DataContract]
+    [Table("ExerciseRoutine", Schema = "dbo")]
     public partial class ExerciseRoutine
     {
-     /// <summary>
-    /// We don't make constructor public and forcing to create object using <see cref="Create"/> method.
-    /// But constructor can not be private since it's used by EntityFramework.
-    /// Thats why we did it protected.
-    /// </summary>
-    public ExerciseRoutine()
-    {
+        /// <summary>
+        /// We don't make constructor public and forcing to create object using <see cref="Create"/> method.
+        /// But constructor can not be private since it's used by EntityFramework.
+        /// Thats why we did it protected.
+        /// </summary>
+        public ExerciseRoutine()
+        {
 
-    }
-        public static  ExerciseRoutine Create(
+        }
+        public static ExerciseRoutine Create(
                         String name,
                         String description,
                         Int32 repetition,
-                        Int32 sequence,
                         Int32 duration,
-                        System.Guid exerciseId,
-                        System.Guid exercisePackageId)
-    {
-        var @objectToReturn = new ExerciseRoutine
+                        System.Guid exerciseTypeId,
+                        System.Guid createdBy,
+                        DateTime dateCreated,
+                        Boolean? active = null,
+                        System.Guid? updatedBy = null,
+                        DateTime? dateUpdated = null)
         {
-          
-            ExerciseRoutineId = Guid.NewGuid(),
-            Name = name,
-            Description = description,
-            Repetition = repetition,
-            Sequence = sequence,
-            Duration = duration,
-            ExerciseId = exerciseId,
-            ExercisePackageId = exercisePackageId
-        };
+            var @objectToReturn = new ExerciseRoutine
+            {
 
-        return @objectToReturn;
-    }
+                ExerciseRoutineId = Guid.NewGuid(),
+                Name = name,
+                Description = description,
+                Repetition = repetition,
+                Duration = duration,
+                ExerciseTypeId = exerciseTypeId,
+                Active = active,
+                UpdatedBy = updatedBy,
+                CreatedBy = createdBy,
+                DateUpdated = dateUpdated,
+                DateCreated = dateCreated
+            };
+
+            return @objectToReturn;
+        }
 
         /// <summary>
         /// 
         /// </summary>
         [DisplayName("ExerciseRoutineId")]
         [DataMember]
-        
+
         [Key, Column(Order = 0)]
-        public  System.Guid ExerciseRoutineId { get; set; }
+        public System.Guid ExerciseRoutineId { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +68,7 @@ namespace NepFit.Repository.Entity
         [DataMember]
         [Required]
         [StringLength(5000)]
-        public  String Name { get; set; }
+        public String Name { get; set; }
 
         /// <summary>
         /// 
@@ -70,7 +77,7 @@ namespace NepFit.Repository.Entity
         [DataMember]
         [Required]
         [StringLength(5000)]
-        public  String Description { get; set; }
+        public String Description { get; set; }
 
         /// <summary>
         /// 
@@ -78,17 +85,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("Repetition")]
         [DataMember]
         [Required]
-        
-        public  Int32 Repetition { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("Sequence")]
-        [DataMember]
-        [Required]
-        
-        public  Int32 Sequence { get; set; }
+        public Int32 Repetition { get; set; }
 
         /// <summary>
         /// 
@@ -96,26 +94,59 @@ namespace NepFit.Repository.Entity
         [DisplayName("Duration")]
         [DataMember]
         [Required]
-        
-        public  Int32 Duration { get; set; }
+
+        public Int32 Duration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ExerciseId")]
+        [DisplayName("ExerciseTypeId")]
         [DataMember]
         [Required]
-        
-        public  System.Guid ExerciseId { get; set; }
+
+        public System.Guid ExerciseTypeId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ExercisePackageId")]
+        [DisplayName("Active")]
+        [DataMember]
+
+        public Boolean? Active { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UpdatedBy")]
+        [DataMember]
+
+        public System.Guid? UpdatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("CreatedBy")]
         [DataMember]
         [Required]
-        
-        public  System.Guid ExercisePackageId { get; set; }
+
+        public System.Guid CreatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateUpdated")]
+        [DataMember]
+
+        public DateTime? DateUpdated { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateCreated")]
+        [DataMember]
+        [Required]
+
+        public DateTime DateCreated { get; set; }
 
     }
 
