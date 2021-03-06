@@ -119,6 +119,9 @@ namespace FinalYearProjectNepFit.Web
 
 
 
+            services.AddScoped<IExerciseTypeService, ExerciseTypeService>();
+            services.AddScoped<IExerciseTypeRepository, ExerciseTypeRepository>();
+
 
 
 

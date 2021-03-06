@@ -5,15 +5,16 @@ using NepFit.BL.Interface;
 using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 using NepFit.Repository.Repository;
+using NepFit.Repository.Repository.Interface;
 
 namespace NepFit.BL
 {
     public class ExerciseTypeService : IExerciseTypeService
     {
-        private readonly ExerciseTypeRepository _exerciseTypeRepository;
+        private readonly IExerciseTypeRepository _exerciseTypeRepository;
         private readonly IMapper _mapper;
 
-        public ExerciseTypeService(ExerciseTypeRepository exerciseTypeRepository, IMapper mapper)
+        public ExerciseTypeService(IExerciseTypeRepository exerciseTypeRepository, IMapper mapper)
         {
             _exerciseTypeRepository = exerciseTypeRepository;
             _mapper = mapper;
@@ -22,6 +23,8 @@ namespace NepFit.BL
         public int Add(ExerciseTypeCreateDto inputDto)
         {
             inputDto.DateCreated = DateTime.Now;
+            inputDto.DateUpdated = DateTime.Now;
+            inputDto.UpdatedBy = inputDto.CreatedBy;
             inputDto.Active = true;
             return _exerciseTypeRepository.Add(_mapper.Map<ExerciseType>(inputDto));
         }

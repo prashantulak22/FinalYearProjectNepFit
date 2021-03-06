@@ -21,7 +21,7 @@
         function getAllExerciseType() {
             return $http({
                 method: 'GET',
-                url: app.exercisetypeApibaseUrl + 'api/exercisetype/getall',
+                url: '/api/exercisetype/all',
                 headers: { 'Authorization': 'Bearer ' + app.jwtToken },
             }).then(
                 function (data, status, headers, config) {
@@ -32,7 +32,7 @@
         function getAllExerciseTypeById(item) {
             return $http({
                 method: 'POST',
-                url: app.exercisetypeApibaseUrl + 'api/exercisetype/getbyid',
+                url: '/api/exercisetype/getbyid',
                 headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 data: item
             }).then(
@@ -44,7 +44,7 @@
         function createExerciseType(item) {
             return $http({
                 method: 'POST',
-                url: app.exercisetypeApibaseUrl + 'api/exercisetype/add',
+                url: '/api/exercisetype/add',
                 headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 data: item
             }).then(
@@ -56,7 +56,7 @@
         function updateExerciseType(item) {
             return $http({
                 method: 'POST',
-                url: app.exercisetypeApibaseUrl + 'api/exercisetype/update',
+                url: '/api/exercisetype/update',
                 headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 data: item
             }).then(
@@ -68,7 +68,7 @@
         function deleteExerciseType(item) {
             return $http({
                 method: 'POST',
-                url: app.exercisetypeApibaseUrl + 'api/exercisetype/delete',
+                url: '/api/exercisetype/delete',
                 headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 data: item
             }).then(
