@@ -11,7 +11,7 @@ namespace NepFit.BL.Interface
 
         bool Update(ExercisePackageUpdateDto input);
 
-        IEnumerable<ExerciseRoutineResultDto> GetAll();
+        IEnumerable<ExercisePackageResultDto> GetAll();
 
         bool Delete(ExercisePackageUpdateDto id);
     }
