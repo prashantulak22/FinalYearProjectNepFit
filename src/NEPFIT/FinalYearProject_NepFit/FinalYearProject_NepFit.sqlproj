@@ -58,16 +58,16 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Exercise.sql" />
     <Build Include="Nutrition.sql" />
     <Build Include="NepFitUser.sql" />
     <Build Include="BodyMetrics.sql" />
     <Build Include="ProgressTracker.sql" />
-    <Build Include="ExercisePackage.sql" />
     <Build Include="ExerciseRoutine.sql" />
     <Build Include="UserExerciseNutrition.sql" />
     <Build Include="NutritionPackage.sql" />
     <Build Include="NutritionRoutine.sql" />
+    <Build Include="ExerciseType.sql" />
+    <Build Include="ExercisePackage.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="FinalYearProject_NepFit.refactorlog" />
