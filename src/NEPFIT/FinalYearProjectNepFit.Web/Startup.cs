@@ -100,8 +100,7 @@ namespace FinalYearProjectNepFit.Web
             services.AddScoped<IProgressTrackerRepository, ProgressTrackerRepository>();
             services.AddScoped<IProgressTrackerService, ProgressTrackerService>();
 
-            services.AddScoped<IExerciseRepository, ExerciseRepository>();
-            services.AddScoped<IExerciseService, ExerciseService>();
+            
 
             services.AddScoped<IExercisePackageRepository, ExercisePackageRepository>();
             services.AddScoped<IExercisePackageService, ExercisePackageService>();
