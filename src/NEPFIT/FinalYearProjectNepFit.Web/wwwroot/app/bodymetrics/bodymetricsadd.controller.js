@@ -25,17 +25,21 @@
                 return {
                     height: 0,
                     bodyMass: 0,
-                    chestSize: 0,
-                    armSize: 0,
-                    forearmSize: 0,
-                    wristSize: 0,
                     neckSize: 0,
-                    upperAbs: 0,
-                    lowerAbs: 0,
-                    hipSize: 0,
+                    shoulderSize: 0,
+                    chestSize: 0,
+                    foreArmSize: 0,
+                    rightBicepSize: 0,
+                    leftBicepSize: 0,
+                    upperAbsSize: 0,
+                    lowerAbsSize: 0,
                     waistSize: 0,
-                    thighSize: 0,
-                    calveSize: 0
+                    hipSize: 0,
+                    rightThighSize: 0,
+                    leftThighSize: 0,
+                    rightCalveSize: 0,
+                    leftCalveSize: 0,
+                    
                 };
             }
             vm.bodyMetrics = initialize();
