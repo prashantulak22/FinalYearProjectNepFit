@@ -13,7 +13,7 @@ namespace NepFit.Repository.Dto
         /// </summary>
         [DisplayName("ExerciseRoutineId")]
         [DataMember]
-        
+
         public System.Guid ExerciseRoutineId { get; set; }
 
         /// <summary>
@@ -40,17 +40,8 @@ namespace NepFit.Repository.Dto
         [DisplayName("Repetition")]
         [DataMember]
         [Required]
-        
-        public Int32 Repetition { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("Sequence")]
-        [DataMember]
-        [Required]
-        
-        public Int32 Sequence { get; set; }
+        public Int32 Repetition { get; set; }
 
         /// <summary>
         /// 
@@ -58,26 +49,59 @@ namespace NepFit.Repository.Dto
         [DisplayName("Duration")]
         [DataMember]
         [Required]
-        
+
         public Int32 Duration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ExerciseId")]
+        [DisplayName("ExerciseTypeId")]
         [DataMember]
         [Required]
-        
-        public System.Guid ExerciseId { get; set; }
+
+        public System.Guid ExerciseTypeId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ExercisePackageId")]
+        [DisplayName("Active")]
+        [DataMember]
+
+        public Boolean? Active { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UpdatedBy")]
+        [DataMember]
+
+        public System.Guid? UpdatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("CreatedBy")]
         [DataMember]
         [Required]
-        
-        public System.Guid ExercisePackageId { get; set; }
+
+        public System.Guid CreatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateUpdated")]
+        [DataMember]
+
+        public DateTime? DateUpdated { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateCreated")]
+        [DataMember]
+        [Required]
+
+        public DateTime DateCreated { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +115,7 @@ namespace NepFit.Repository.Dto
         /// </summary>
         [DisplayName("UpdatedBy")]
         [DataMember]
-        
+
         public String UpdatedBy { get; set; }
     }
 }
