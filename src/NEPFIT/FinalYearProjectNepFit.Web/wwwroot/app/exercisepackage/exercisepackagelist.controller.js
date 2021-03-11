@@ -24,7 +24,7 @@
                         }
                     },
                     sort: {
-                        field: "DateUpdated", dir: "asc"
+                        field: "Name", dir: "asc"
                     }
                 },
                
@@ -43,10 +43,8 @@
                         width: "35px",
                         template: '<i ng-click=" vm.showEditExercisePackage(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
                     }
-                   {
-       title: 'ExercisePackageId',
-       field: 'ExercisePackageId',
-      },{
+                   ,
+      {
        title: 'Name',
        field: 'name'
       },

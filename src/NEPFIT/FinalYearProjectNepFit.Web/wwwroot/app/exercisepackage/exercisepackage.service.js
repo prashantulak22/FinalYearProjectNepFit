@@ -78,7 +78,7 @@
        }
         function deleteExerciseType(item) {
             return $http({
-                method: 'POST',
+                method: 'DELETE',
                 url: '/api/exercisepackage/delete',
                 headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 data: item
