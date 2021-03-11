@@ -19,7 +19,7 @@
 
  
         function  getAllNutritionType() {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'GET',
                     url:'api/nutritiontype/all',
@@ -28,12 +28,11 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
         function  getAllNutritionTypeById(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/nutritiontype/getbyid',
@@ -43,12 +42,11 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
 
         function  createNutritionType(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/nutritiontype/add',
@@ -58,12 +56,11 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
        function  updateNutritionType(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/nutritiontype/update',
@@ -73,8 +70,7 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
        }
         function deleteNutritionType(item) {
             return $http({

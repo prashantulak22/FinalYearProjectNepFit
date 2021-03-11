@@ -19,7 +19,7 @@
 
  
         function  getAllNutritionPackage() {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'GET',
                     url:'api/nutritionpackage/all',
@@ -28,12 +28,11 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
         function  getAllNutritionPackageById(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/nutritionpackage/getbyid',
@@ -43,12 +42,11 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
 
         function  createNutritionPackage(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/nutritionpackage/add',
@@ -58,12 +56,11 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
        function  updateNutritionPackage(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/nutritionpackage/update',
@@ -73,11 +70,10 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
        }
 
-        function deleteExerciseType(item) {
+        function deleteNutritionPackage(item) {
             return $http({
                 method: 'POST',
                 url: '/api/nutritionpackage/delete',

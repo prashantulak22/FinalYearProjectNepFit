@@ -19,7 +19,7 @@
 
  
         function  getAllExercisePackage() {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'GET',
                     url: 'api/exercisepackage/all',
@@ -28,12 +28,12 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
+            
         }
         
         function  getAllExercisePackageById(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/exercisepackage/getbyid',
@@ -43,12 +43,12 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
+            
         }
 
         function  createExercisePackage(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url: 'api/exercisepackage/add',
@@ -58,12 +58,12 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
+            
         }
         
        function  updateExercisePackage(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/exercisepackage/update',
@@ -73,12 +73,12 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
+            
        }
-        function deleteExerciseType(item) {
+        function deleteExercisePackage(item) {
             return $http({
-                method: 'DELETE',
+                method: 'POST',
                 url: '/api/exercisepackage/delete',
                 headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 data: item
