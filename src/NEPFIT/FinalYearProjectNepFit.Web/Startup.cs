@@ -108,8 +108,8 @@ namespace FinalYearProjectNepFit.Web
             services.AddScoped<IExerciseRoutineRepository, ExerciseRoutineRepository>();
             services.AddScoped<IExerciseRoutineService, ExerciseRoutineService>();
 
-            services.AddScoped<INutritionRepository, NutritionRepository>();
-            services.AddScoped<INutritionService, NutritionService>();
+            services.AddScoped<INutritionTypeRepository, NutritionTypeRepository>();
+            services.AddScoped<INutritionTypeService, NutritionTypeService>();
 
             services.AddScoped<INutritionRoutineRepository, NutritionRoutineRepository>();
             services.AddScoped<INutritionRoutineService, NutritionRoutineService>();
