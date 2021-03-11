@@ -22,6 +22,8 @@ namespace NepFit.BL
         public int Add(ExercisePackageCreateDto inputDto)
         {
             inputDto.DateCreated = DateTime.Now;
+            inputDto.DateUpdated = DateTime.Now;
+            inputDto.UpdatedBy = inputDto.CreatedBy;
             inputDto.Active = true;
             return _exercisePackageRepository.Add(_mapper.Map<ExercisePackage>(inputDto));
         }

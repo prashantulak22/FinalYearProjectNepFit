@@ -54,12 +54,12 @@
       }
      ,{
        title: 'DateUpdated',
-       field: 'DateUpdated',
-       template: "#= kendo.toString(kendo.parseDate(DateUpdated), 'MM/dd/yyyy h:mm tt') #",
+       field: 'dateUpdated',
+       template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",
       },{
        title: 'DateCreated',
-       field: 'DateCreated',
-       template: "#= kendo.toString(kendo.parseDate(DateCreated), 'MM/dd/yyyy h:mm tt') #",
+       field: 'dateCreated',
+       template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
       },                   
                     {
                         width: "35px",
@@ -91,7 +91,8 @@
             }
             
             
-      vm.showEditExercisePackage = function (item) {
+        vm.showEditExercisePackage = function (item) {
+            console.log(item);
                 var modalInstance = $uibModal.open({
                     animation: true,
                     templateUrl: '/app/exercisepackage/editExercisePackage.html',

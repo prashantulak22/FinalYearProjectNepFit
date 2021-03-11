@@ -9,7 +9,7 @@ namespace NepFit.Repository.Entity
 
     [Serializable]
     [DataContract]
-    [Table("ExerciseType", Schema = "dbo")]
+    [Table("ExercisePackage", Schema = "dbo")]
     public partial class ExercisePackage
     {
         /// <summary>

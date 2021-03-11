@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Dapper;
 using NepFit.Repository.Entity;
 using NepFit.Repository.Repository.Interface;
@@ -18,18 +17,24 @@ namespace NepFit.Repository.Repository
 
         public int Add(ExercisePackage input)
         {
+           
+          
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO ExercisePackage  ([ExercisePackageId] ,[Name] ,[Description] ) " +
-                                "VALUES	(@ExercisePackageId ,@Name," +
-                                " ,@Description ) ", input);
+            return conn.Execute("INSERT INTO ExercisePackage ( [Name] ,[Description] " +
+                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
+                                "	VALUES" +
+                                "	( @Name ,@Description " +
+                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
 
         }
 
         public ExercisePackage Update(ExercisePackage input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            conn.Execute("UPDATE ExercisePackage SET[ExercisePackageId] = @ExercisePackageId," +
-                "[Name] = @Name,[Description] = @Description,[Active] = @Active," +
+            conn.Execute("UPDATE ExercisePackage SET" +
+                "[ExercisePackageId] = @ExercisePackageId," +
+                "[Name] = @Name,[Description] = @Description," +
+                "[Active] = @Active," +
                 "[UpdatedBy] = @UpdatedBy,[CreatedBy] = @CreatedBy,[DateUpdated] = @DateUpdated," +
                 "[DateCreated] = @DateCreated WHERE[ExercisePackageId] = @ExercisePackageId", input);
             return input;
@@ -59,7 +64,7 @@ namespace NepFit.Repository.Repository
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             conn.Execute("	UPDATE ExercisePackage SET 	" +
                          "	[Active] = 0 ,		[UpdatedBy] = @UpdatedBy ,	" +
-                         "	[DateUpdated] = @DateUpdated ,		" +
+                         "	[DateUpdated] = @DateUpdated 		" +
                          " WHERE [ExercisePackageId]=@ExercisePackageId", input);
             return true;
 

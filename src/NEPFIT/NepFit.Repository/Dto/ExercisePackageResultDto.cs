@@ -33,9 +33,11 @@ namespace NepFit.Repository.Dto
         [Required]
         [StringLength(5000)]
         public String Description { get; set; }
+        public DateTime DateUpdated { get; set; }
+        public DateTime DateCreated { get; set; }
 
-        
 
-    
+
+
     }
 }
