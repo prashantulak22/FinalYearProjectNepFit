@@ -53,11 +53,11 @@
       },
       {
        title: 'DateUpdated',
-       field: 'DateUpdated',
+       field: 'dateUpdated',
        template: "#= kendo.toString(kendo.parseDate(DateUpdated), 'MM/dd/yyyy h:mm tt') #",
       },{
        title: 'DateCreated',
-       field: 'DateCreated',
+       field: 'dateCreated',
        template: "#= kendo.toString(kendo.parseDate(DateCreated), 'MM/dd/yyyy h:mm tt') #",
       },                   
                     {
@@ -154,5 +154,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 
