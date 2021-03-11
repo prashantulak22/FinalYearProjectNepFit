@@ -76,8 +76,11 @@
         vm.showExcercisePackage = function () {
             $state.go('exercisePackage');
         }
-        vm.showNutritionPackage = function () {
+        vm.showNutritionType = function () {
             $state.go('nutritionType');
+        }
+        vm.showNutritionPackage = function () {
+            $state.go('nutritionPackage');
         }
     }
 

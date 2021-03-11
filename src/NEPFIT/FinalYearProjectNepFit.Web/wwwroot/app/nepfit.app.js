@@ -36,6 +36,12 @@
                             templateUrl: "/app/nutritionType/index.html",
                             title: "NutritionType"
                         })
+                    .state("nutritionPackage",
+                        {
+                            url: "/nutritionPackage",
+                            templateUrl: "/app/nutritionPackage/index.html",
+                            title: "NutritionPackage"
+                        })
                     .state("register",
                         {
                             url: "/register/medicaluser",
