@@ -20,7 +20,60 @@ namespace FinalYearProjectNepFit.Web.Controller
             _exercisePackageService = exercisePackageService;
         }
 
-       // [Route("api/exercise/package")]
-       // [HttpPost]
+        [Route("api/exercisepackage/all")]
+        [HttpGet]
+        public IEnumerable<ExercisePackageResultDto> GetAll()
+        {
+            return _exercisePackageService.GetAll();
+        }
+
+        [Route("api/exercisepackage/delete")]
+        [HttpPost]
+        public ActionResult<bool> Delete(ExercisePackageUpdateDto input)
+        {
+            if (TryValidateModel(input))
+            {
+                input.UpdatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                return _exercisePackageService.Delete(input);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
+
+        [Route("api/exercisepackage/add")]
+        [HttpPost]
+        public ActionResult<int> Add(ExercisePackageCreateDto input)
+        {
+
+            if (TryValidateModel(input))
+            {
+                input.CreatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                return _exercisePackageService.Add(input);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
+
+        [Route("api/exercisepackage/update")]
+        [HttpPost]
+        public ActionResult<bool> Update(ExercisePackageUpdateDto input)
+        {
+
+            if (TryValidateModel(input))
+            {
+                input.UpdatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                return _exercisePackageService.Update(input);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
+
+
     }
 }
