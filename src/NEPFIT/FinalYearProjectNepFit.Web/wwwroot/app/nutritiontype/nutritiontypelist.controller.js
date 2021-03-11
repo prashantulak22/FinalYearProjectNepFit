@@ -1,12 +1,12 @@
 
-(function (angular, $, kendo) {
+(function (angular, $, kendo, App) {
     'use strict';
 
     angular
         .module('nepFitApp')
-        .controller('exercisepackageListCtrl', exercisepackageListCtrl);
-    exercisepackageListCtrl.$inject = ['exercisePackageService', '$scope', '$uibModal','blockUI'];
-    function exercisepackageListCtrl(exercisePackageService, $scope, $uibModal, blockUI) {
+        .controller('nutritiontypeListCtrl', nutritiontypeListCtrl);
+    nutritiontypeListCtrl.$inject = ['nutritionTypeService', '$scope', '$uibModal','blockUI'];
+    function nutritiontypeListCtrl(nutritionTypeService, $scope, $uibModal, blockUI) {
         var vm = this;
         activate();
  
@@ -17,7 +17,7 @@
                     requestEnd: hideLoading,
                     transport: {
                         read: function (options) {
-                            exercisePackageService.getAllExercisePackage().then(function (result) {
+                            nutritionTypeService.getAllNutritionType().then(function (result) {
                                 options.success(result.data);
                                 vm.optionCallback = options;
                             });
@@ -27,32 +27,35 @@
                         field: "Name", dir: "asc"
                     }
                 },
-               
+                
                 sortable: true,
                 filterable: true,
                 resizable: true,
                 
                 toolbar: [
-                    { name: "addExercisePackage", text: "Add ExercisePackage", imageClass: "fa fa-map-marker", className: "k-grid-addexercisepackage", iconClass: "k-icon" }
+                    { name: "addNutritionType", text: "Add NutritionType", imageClass: "fa fa-map-marker", className: "k-grid-addnutritiontype", iconClass: "k-icon" }
                 ],
                 pageable: {
-                    pageSize: 20
+                    pageSize: 10
                 },
                 columns: [
                                    {
                         width: "35px",
-                        template: '<i ng-click=" vm.showEditExercisePackage(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
-                    }
-                   ,
-      {
+                        template: '<i ng-click=" vm.showEditNutritionType(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
+                    },
+                    {
+                   
+       title: 'NutritionTypeId',
+       field: 'NutritionTypeId',
+      },{
        title: 'Name',
        field: 'name'
       },
       {
        title: 'Description',
        field: 'description'
-      }
-     ,{
+      },
+      {
        title: 'DateUpdated',
        field: 'DateUpdated',
        template: "#= kendo.toString(kendo.parseDate(DateUpdated), 'MM/dd/yyyy h:mm tt') #",
@@ -63,18 +66,18 @@
       },                   
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.removeExercisePackageRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
+                        template: '<i ng-click=" vm.removeNutritionTypeRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
                     }
                 ] 
             };
  
         }
             
-      vm.showAddExercisePackage = function () {
+      vm.showAddNutritionType = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/app/exercisepackage/addExercisePackage.html',
-                    controller: 'exercisepackageAddCtrl as vm',
+                    templateUrl: '/app/nutritiontype/addNutritionType.html',
+                    controller: 'nutritiontypeAddCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
                     resolve: {
@@ -91,11 +94,11 @@
             }
             
             
-      vm.showEditExercisePackage = function (item) {
+      vm.showEditNutritionType = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/app/exercisepackage/editExercisePackage.html',
-                    controller: 'exercisepackageEditCtrl as vm',
+                    templateUrl: '/app/nutritiontype/editNutritionType.html',
+                    controller: 'nutritiontypeEditCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
                     resolve: {
@@ -113,11 +116,11 @@
                 });
             }
             
-            vm.removeExercisePackageRequest = function (item) {
+            vm.removeNutritionTypeRequest = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/app/exercisepackage/deleteExercisePackage.html',
-                    controller: 'exercisepackageDeleteCtrl as vm',
+                    templateUrl: '/app/nutritiontype/deleteNutritionType.html',
+                    controller: 'nutritiontypeDeleteCtrl as vm',
                     backdrop: 'static',
                     size: "md",
                     resolve: {
@@ -143,10 +146,10 @@
         }
 
         $scope.$on("kendoWidgetCreated", function (event, widget) {
-            if (widget === vm.exercisepackageList) {
-                widget.element.find(".k-grid-addexercisepackage").on("click", function (e) {
+            if (widget === vm.nutritiontypeList) {
+                widget.element.find(".k-grid-addnutritiontype").on("click", function (e) {
                     e.preventDefault();
-                    vm.showAddExercisePackage();
+                    vm.showAddNutritionType();
                 });
             }
         });
