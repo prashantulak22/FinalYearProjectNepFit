@@ -11,17 +11,21 @@ namespace NepFit.Repository.Mapper
             CreateMap<BodyMetricsCreateDto, BodyMetrics>().ReverseMap();
             CreateMap<ProgressTrackerResultDto, ProgressTracker>().ReverseMap();
             CreateMap<ProgressTrackerChartResultDto, ProgressTracker>().ReverseMap();
-            CreateMap<ExercisePackageCreateDto, ExercisePackage>().ReverseMap();
-            CreateMap<ExerciseRoutineCreateDto, ExerciseRoutine>().ReverseMap();
+            
+            
            
 
             CreateMap<ExerciseTypeCreateDto, ExerciseType>().ReverseMap();
             CreateMap<ExerciseTypeUpdateDto, ExerciseType>().ReverseMap();
             CreateMap<ExerciseTypeResultDto, ExerciseType>().ReverseMap();
 
-            CreateMap<NutritionTypeCreateDto, ExerciseType>().ReverseMap();
-            CreateMap<NutritionTypeUpdateDto, ExerciseType>().ReverseMap();
-            CreateMap<NutritionTypeResultDto, ExerciseType>().ReverseMap();
+            CreateMap<ExercisePackageCreateDto, ExercisePackage>().ReverseMap();
+            CreateMap<ExercisePackageUpdateDto, ExercisePackage>().ReverseMap();
+            CreateMap<ExercisePackageResultDto, ExercisePackage>().ReverseMap();
+
+            CreateMap<NutritionTypeCreateDto, NutritionType>().ReverseMap();
+            CreateMap<NutritionTypeUpdateDto, NutritionType>().ReverseMap();
+            CreateMap<NutritionTypeResultDto, NutritionType>().ReverseMap();
         }
     }
 }

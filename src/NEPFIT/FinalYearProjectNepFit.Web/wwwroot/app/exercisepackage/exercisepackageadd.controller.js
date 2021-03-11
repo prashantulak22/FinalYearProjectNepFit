@@ -5,7 +5,7 @@
     angular
         .module('nepFitApp')
         .controller('exercisepackageAddCtrl', exercisepackageAddCtrl);
-    exercisepackageAddCtrl.$inject = ['exercisePackageService', "$uibModalInstance", '$scope' 'blockUI'];
+    exercisepackageAddCtrl.$inject = ['exercisePackageService', "$uibModalInstance", '$scope' ,'blockUI'];
     function exercisepackageAddCtrl(exercisePackageService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
