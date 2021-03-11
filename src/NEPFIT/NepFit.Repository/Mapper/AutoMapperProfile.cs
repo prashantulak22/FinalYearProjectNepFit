@@ -26,6 +26,10 @@ namespace NepFit.Repository.Mapper
             CreateMap<NutritionTypeCreateDto, NutritionType>().ReverseMap();
             CreateMap<NutritionTypeUpdateDto, NutritionType>().ReverseMap();
             CreateMap<NutritionTypeResultDto, NutritionType>().ReverseMap();
+
+            CreateMap<NutritionPackageCreateDto, NutritionPackage>().ReverseMap();
+            CreateMap<NutritionPackageUpdateDto, NutritionPackage>().ReverseMap();
+            CreateMap<NutritionPackageResultDto, NutritionPackage>().ReverseMap();
         }
     }
 }
