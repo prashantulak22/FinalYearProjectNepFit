@@ -1,16 +1,17 @@
 
 (function (angular, app) {
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .factory('exercisePackageService', exercisePackageService);
 
-    exercisePackageService.$inject = ['$http', 'tokenService', '$q'];
+    exercisePackageService.$inject = ['$http'];
 
-    function exercisePackageService($http, tokenService, $q) {
+    function exercisePackageService($http) {
         var service = {
             getAllExercisePackage: getAllExercisePackage,
             getAllExercisePackageById: getAllExercisePackageById,
             updateExercisePackage: updateExercisePackage,
+            deleteExercisePackage: deleteExercisePackage,
             createExercisePackage: createExercisePackage,
         };
 
@@ -21,7 +22,7 @@
             return tokenService.getToken().then(function () {
                 return $http({
                     method: 'GET',
-                    url: app.exercisepackageApibaseUrl + 'api/exercisepackage/getall',
+                    url: 'api/exercisepackage/all',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 }).then(
                     function (data, status, headers, config) {
@@ -35,7 +36,7 @@
             return tokenService.getToken().then(function () {
                 return $http({
                     method: 'POST',
-                    url: app.exercisepackageApibaseUrl + 'api/exercisepackage/getbyid',
+                    url:'api/exercisepackage/getbyid',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
@@ -50,7 +51,7 @@
             return tokenService.getToken().then(function () {
                 return $http({
                     method: 'POST',
-                    url: app.exercisepackageApibaseUrl + 'api/exercisepackage/add',
+                    url: 'api/exercisepackage/add',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
@@ -65,7 +66,7 @@
             return tokenService.getToken().then(function () {
                 return $http({
                     method: 'POST',
-                    url: app.exercisepackageApibaseUrl + 'api/exercisepackage/update',
+                    url:'api/exercisepackage/update',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
@@ -74,6 +75,17 @@
                     });
             }
             );
+       }
+        function deleteExerciseType(item) {
+            return $http({
+                method: 'POST',
+                url: '/api/exercisepackage/delete',
+                headers: { 'Authorization': 'Bearer ' + app.jwtToken },
+                data: item
+            }).then(
+                function (data, status, headers, config) {
+                    return data;
+                });
         }
         
         

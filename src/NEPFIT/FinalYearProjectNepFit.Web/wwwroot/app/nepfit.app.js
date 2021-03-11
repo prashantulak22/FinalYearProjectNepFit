@@ -24,6 +24,12 @@
                             templateUrl: "/app/exerciseType/index.html",
                             title: "ExerciseType"
                         })
+                    .state("exercisePackage",
+                        {
+                            url: "/exercisePackage",
+                            templateUrl: "/app/exercisePackage/index.html",
+                            title: "ExercisePackage"
+                        })
                     .state("register",
                         {
                             url: "/register/medicaluser",

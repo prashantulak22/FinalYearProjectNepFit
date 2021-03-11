@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('exercisepackageDeleteCtrl', exercisepackageDeleteCtrl);
     exercisepackageDeleteCtrl.$inject = ['exercisePackageService',  "$uibModalInstance", '$scope', 'param'];
     function exercisepackageDeleteCtrl(exercisePackageService,  $uibModalInstance, $scope, param) {
