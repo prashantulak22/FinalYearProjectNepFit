@@ -2,11 +2,15 @@
 (
 	[NutritionRoutineId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
     [Name] VARCHAR(5000) NOT NULL, 
-    [Description ] VARCHAR(5000) NOT NULL, 
-    [HowToPrepare] VARCHAR(MAX) NOT NULL,
-    [NutritionId] UNIQUEIDENTIFIER NOT NULL,
-    CONSTRAINT [FK_NutritionRoutine] FOREIGN KEY ([NutritionId]) REFERENCES[Nutrition]([NutritionId]),
-    [NutritionPackageId] UNIQUEIDENTIFIER NOT NULL,
-    CONSTRAINT [FK_NutritionPackageIdRoutine] FOREIGN KEY ([NutritionPackageId]) REFERENCES[NutritionPackage]([NutritionPackageId]),
+    [Description] VARCHAR(5000) NOT NULL,
+    HowToPrepare VARCHAR(5000) NOT NULL,
+    Active bit,
+	UpdatedBy UNIQUEIDENTIFIER NULL,
+	CreatedBy UNIQUEIDENTIFIER NOT NULL,
+	DateUpdated DateTime NULL,
+	DateCreated DateTime NOT NULL,
+    [NutritionTypeId] UNIQUEIDENTIFIER NOT NULL,
+    CONSTRAINT [FK_NutritionType] FOREIGN KEY ([NutritionTypeId]) REFERENCES[NutritionType]([NutritionTypeId]),
+   
    
 )
