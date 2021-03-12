@@ -1,10 +1,9 @@
-using Abp.AutoMapper;
-using SalarDb.CodeGen.Entities;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-namespace SalarDb.CodeGen.DTO
+
+namespace NepFit.Repository.Dto
 {
     public class NutritionRoutineResultDto
     {
