@@ -7,6 +7,9 @@ namespace NepFit.BL.Interface
 {
     public interface IExerciseRoutineService
     {
-        int AddExerciseRoutine(ExerciseRoutineCreateDto inputDto);
+        int Add(ExerciseRoutineCreateDto input);
+        bool Update(ExerciseRoutineUpdateDto input);
+        IEnumerable<ExerciseRoutineResultDto> GetAll();
+        bool Delete(ExerciseRoutineUpdateDto id);
     }
 }
