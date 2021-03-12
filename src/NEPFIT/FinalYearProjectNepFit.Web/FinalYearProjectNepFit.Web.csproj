@@ -28,8 +28,4 @@
     <ProjectReference Include="..\NepFit.Repository\NepFit.Repository.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\app\exerciseroutine\" />
-  </ItemGroup>
-
 </Project>
