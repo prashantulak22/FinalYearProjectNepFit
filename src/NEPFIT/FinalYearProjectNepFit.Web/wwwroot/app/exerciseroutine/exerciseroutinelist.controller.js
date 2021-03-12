@@ -1,12 +1,12 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('exerciseroutineListCtrl', exerciseroutineListCtrl);
-    exerciseroutineListCtrl.$inject = ['exerciseRoutineService', '$scope', '$uibModal'];
-    function exerciseroutineListCtrl(exerciseRoutineService, $scope, $uibModal) {
+    exerciseroutineListCtrl.$inject = ['exerciseRoutineService', '$scope', '$uibModal', 'blockUI'];
+    function exerciseroutineListCtrl(exerciseRoutineService, $scope, $uibModal, blockUI) {
         var vm = this;
         activate();
  
@@ -24,14 +24,14 @@
                         }
                     },
                     sort: {
-                        field: "DateUpdated", dir: "desc"
+                        field: "Name", dir: "asc"
                     }
                 },
                 scrollable: true,
                 sortable: true,
                 filterable: true,
                 resizable: true,
-                groupable: true,
+                
                 toolbar: [
                     { name: "addExerciseRoutine", text: "Add ExerciseRoutine", imageClass: "fa fa-map-marker", className: "k-grid-addexerciseroutine", iconClass: "k-icon" }
                 ],
@@ -42,43 +42,31 @@
                                    {
                         width: "35px",
                         template: '<i ng-click=" vm.showEditExerciseRoutine(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
-                    }
+                    },
                    {
-       title: 'ExerciseRoutineId',
-       field: 'ExerciseRoutineId',
-      },{
        title: 'Name',
-       field: 'Name'
+       field: 'name'
       },
       {
        title: 'Description',
-       field: 'Description'
+       field: 'description'
       },
       {
        title: 'Repetition',
-       field: 'Repetition',
+       field: 'repetition',
       },{
        title: 'Duration',
-       field: 'Duration',
+       field: 'duration',
       },{
        title: 'ExerciseTypeId',
-       field: 'ExerciseTypeId',
-      },{
-       title: 'Active',
-       field: 'Active',
-      },{
-       title: 'UpdatedBy',
-       field: 'UpdatedBy',
-      },{
-       title: 'CreatedBy',
-       field: 'CreatedBy',
+       field: 'exerciseTypeId',
       },{
        title: 'DateUpdated',
-       field: 'DateUpdated',
+       field: 'dateUpdated',
        template: "#= kendo.toString(kendo.parseDate(DateUpdated), 'MM/dd/yyyy h:mm tt') #",
       },{
        title: 'DateCreated',
-       field: 'DateCreated',
+       field: 'dateCreated',
        template: "#= kendo.toString(kendo.parseDate(DateCreated), 'MM/dd/yyyy h:mm tt') #",
       },                   
                     {
@@ -93,7 +81,7 @@
       vm.showAddExerciseRoutine = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/add',
+                    templateUrl: '/app/exerciseroutine/addExerciseRoutine.html',
                     controller: 'exerciseroutineAddCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -114,7 +102,7 @@
       vm.showEditExerciseRoutine = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/edit',
+                    templateUrl: '/app/exerciseroutine/editExerciseRoutine.html',
                     controller: 'exerciseroutineEditCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -136,7 +124,7 @@
             vm.removeExerciseRoutineRequest = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/DeleteConfirm',
+                    templateUrl: '/app/exerciseroutine/deleteExerciseRoutine.html',
                     controller: 'exerciseroutineDeleteCtrl as vm',
                     backdrop: 'static',
                     size: "md",
@@ -155,14 +143,11 @@
             
                     
         function showLoading() {
-            App.blockUI({
-                target: '#exerciseroutineList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#exerciseroutineList');
+            blockUI.stop();
         }
 
         $scope.$on("kendoWidgetCreated", function (event, widget) {
@@ -178,5 +163,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 

@@ -1,26 +1,23 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('exerciseroutineAddCtrl', exerciseroutineAddCtrl);
-    exerciseroutineAddCtrl.$inject = ['exerciseRoutineService',  "$uibModalInstance", '$scope'];
-    function exerciseroutineAddCtrl(exerciseRoutineService,  $uibModalInstance, $scope) {
+    exerciseroutineAddCtrl.$inject = ['exerciseRoutineService', "$uibModalInstance", '$scope', 'blockUI'];
+    function exerciseroutineAddCtrl(exerciseRoutineService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add ExerciseRoutine';
         
         activate();
         function showLoading() {
-            App.blockUI({
-                target: '#exerciseroutineList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#exerciseroutineList');
+            blockUI.stop();
         }
         function activate() {
        
@@ -28,15 +25,12 @@
                 function initialize() {
             return {
               
-                    ExerciseRoutineId: "",
+                    
                     Name: "",
                     Description: "",
                     Repetition: 0,
                     Duration: 0,
-                    ExerciseTypeId: "",
-                    Active: "",
-                    UpdatedBy: "",
-                    CreatedBy: "",            
+                              
             };
             }
              vm.exerciseRoutine = initialize();
@@ -74,5 +68,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 

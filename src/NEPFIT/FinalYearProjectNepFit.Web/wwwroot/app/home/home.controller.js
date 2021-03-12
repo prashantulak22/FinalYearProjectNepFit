@@ -73,6 +73,9 @@
         vm.showExcerciseType = function () {
             $state.go('exerciseType');
         }
+        vm.showExcerciseRoutine = function () {
+            $state.go('exerciseRoutine');
+        }
         vm.showExcercisePackage = function () {
             $state.go('exercisePackage');
         }
