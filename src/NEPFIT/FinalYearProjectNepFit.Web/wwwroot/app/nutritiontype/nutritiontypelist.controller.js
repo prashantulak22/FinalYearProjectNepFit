@@ -46,11 +46,9 @@
                         width: "35px",
                         template: '<i ng-click=" vm.showEditNutritionType(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
                     },
-                    {
+                    
                    
-       title: 'NutritionTypeId',
-       field: 'NutritionTypeId',
-      },{
+      {
        title: 'Name',
        field: 'name'
       },

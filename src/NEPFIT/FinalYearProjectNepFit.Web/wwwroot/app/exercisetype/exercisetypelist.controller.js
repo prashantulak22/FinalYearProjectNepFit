@@ -30,6 +30,7 @@
                 sortable: true,
                 filterable: true,
                 resizable: true,
+                
                 toolbar: [
                     {
                         name: "addExerciseType", text: "Add ExerciseType",
