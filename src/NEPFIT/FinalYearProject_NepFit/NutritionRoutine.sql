@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[NutritionRoutine]
 (
-	[NutritionRoutineId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+	[NutritionRoutineId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT NEWID(), 
     [Name] VARCHAR(5000) NOT NULL, 
     [Description] VARCHAR(5000) NOT NULL,
     HowToPrepare VARCHAR(5000) NOT NULL,
