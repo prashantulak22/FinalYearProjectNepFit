@@ -94,19 +94,6 @@ namespace NepFit.Repository.Dto
         
         public System.Guid NutritionTypeId { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("CreatedBy")]
-        [DataMember]
-        public String CreatedBy { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("UpdatedBy")]
-        [DataMember]
         
-        public String UpdatedBy { get; set; }
     }
 }

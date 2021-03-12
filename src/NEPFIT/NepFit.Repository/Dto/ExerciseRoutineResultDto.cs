@@ -92,7 +92,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("DateUpdated")]
         [DataMember]
 
-        public DateTime? DateUpdated { get; set; }
+        public DateTime DateUpdated { get; set; }
 
         /// <summary>
         /// 
