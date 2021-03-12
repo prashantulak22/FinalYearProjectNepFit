@@ -19,7 +19,7 @@ namespace FinalYearProjectNepFit.Web.Controller
             _nutritionPackageService = nutritionPackageService;
         }
 
-        [Route("api/NutritionPackage/all")]
+        [Route("api/nutritionpackage/all")]
         [HttpGet]
         public IEnumerable<NutritionPackageResultDto> GetAll()
         {
@@ -27,7 +27,7 @@ namespace FinalYearProjectNepFit.Web.Controller
         }
 
 
-        [Route("api/NutritionPackage/delete")]
+        [Route("api/nutritionpackage/delete")]
         [HttpDelete]
         public ActionResult<bool> Delete(NutritionPackageUpdateDto input)
         {
@@ -42,7 +42,7 @@ namespace FinalYearProjectNepFit.Web.Controller
             }
         }
 
-        [Route("api/NutritionPackage/add")]
+        [Route("api/nutritionpackage/add")]
         [HttpPost]
         public ActionResult<int> Add(NutritionPackageCreateDto input)
         {
@@ -58,7 +58,7 @@ namespace FinalYearProjectNepFit.Web.Controller
             }
         }
 
-        [Route("api/NutritionPackage/update")]
+        [Route("api/nutritionpackage/update")]
         [HttpPost]
         public ActionResult<bool> Update(NutritionPackageUpdateDto input)
         {
