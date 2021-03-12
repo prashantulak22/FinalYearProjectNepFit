@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[NutritionPackage]
 (
-	[NutritionPackageId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+	[NutritionPackageId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT NEWID(), 
     Name VARCHAR(5000) NOT NULL,
 	Description VARCHAR(5000) NOT NULL,
 	Active bit,
