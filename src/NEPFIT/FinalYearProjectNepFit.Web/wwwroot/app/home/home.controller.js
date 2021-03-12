@@ -85,6 +85,9 @@
         vm.showNutritionPackage = function () {
             $state.go('nutritionPackage');
         }
+        vm.showNutritionRoutine = function () {
+            $state.go('nutritionRoutine');
+        }
     }
 
 
