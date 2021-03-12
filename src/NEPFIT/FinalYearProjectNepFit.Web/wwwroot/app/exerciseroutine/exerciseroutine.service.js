@@ -1,16 +1,17 @@
 
 (function (angular, app) {
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .factory('exerciseRoutineService', exerciseRoutineService);
 
-    exerciseRoutineService.$inject = ['$http', 'tokenService', '$q'];
+    exerciseRoutineService.$inject = ['$http'];
 
-    function exerciseRoutineService($http, tokenService, $q) {
+    function exerciseRoutineService($http) {
         var service = {
             getAllExerciseRoutine: getAllExerciseRoutine,
             getAllExerciseRoutineById: getAllExerciseRoutineById,
             updateExerciseRoutine: updateExerciseRoutine,
+            deleteExerciseRoutine: deleteExerciseRoutine,
             createExerciseRoutine: createExerciseRoutine,
         };
 
@@ -18,62 +19,70 @@
 
  
         function  getAllExerciseRoutine() {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'GET',
-                    url: app.exerciseroutineApibaseUrl + 'api/exerciseroutine/getall',
+                    url:'api/exerciseroutine/all',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
         function  getAllExerciseRoutineById(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
-                    url: app.exerciseroutineApibaseUrl + 'api/exerciseroutine/getbyid',
+                    url: 'api/exerciseroutine/getbyid',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
 
         function  createExerciseRoutine(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
-                    url: app.exerciseroutineApibaseUrl + 'api/exerciseroutine/add',
+                    url: 'api/exerciseroutine/add',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
        function  updateExerciseRoutine(item) {
-            return tokenService.getToken().then(function () {
+           
                 return $http({
                     method: 'POST',
-                    url: app.exerciseroutineApibaseUrl + 'api/exerciseroutine/update',
+                    url:'api/exerciseroutine/update',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+           
+       }
+
+        function deleteExerciseRoutine(item) {
+            return $http({
+                method: 'POST',
+                url: '/api/exerciseroutine/delete',
+                headers: { 'Authorization': 'Bearer ' + app.jwtToken },
+                data: item
+            }).then(
+                function (data, status, headers, config) {
+                    return data;
+                });
         }
         
         

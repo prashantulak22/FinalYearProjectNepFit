@@ -6,7 +6,7 @@
            {{vm.title}}
         </div>
         <a ng-click="vm.close()" class=" pull-right">
-            <i class="far fa-times-circle fa-lg"></i>
+            <i class="fa fa-times-circle fa-lg"></i>
         </a>
     </div>
     <div class="portlet-body">      
@@ -19,39 +19,20 @@
             <span class="required"> * </span>
         </label>
         <div class="col-md-6">
-            <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.exerciseRoutine.Name" />
+            <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.exerciseRoutine.name" />
             <span class="help-block"> Short Name for your ExerciseRoutine (Max [StringLength(5000)] characters </span>
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            Name
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.exerciseRoutine.Name" ></textarea>
-            <span class="help-block"> Short Name for your ExerciseRoutine (Max [StringLength(5000)] characters </span>
-        </div>
-    </div>
+    
 
-      
+ 
     <div class="form-group">
         <label class="control-label col-md-3">
             Description
             <span class="required"> * </span>
         </label>
         <div class="col-md-6">
-            <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.exerciseRoutine.Description" />
-            <span class="help-block"> Short Description for your ExerciseRoutine (Max [StringLength(5000)] characters </span>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            Description
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.exerciseRoutine.Description" ></textarea>
+            <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.exerciseRoutine.description" ></textarea>
             <span class="help-block"> Short Description for your ExerciseRoutine (Max [StringLength(5000)] characters </span>
         </div>
     </div>
