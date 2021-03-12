@@ -28,7 +28,7 @@ namespace FinalYearProjectNepFit.Web.Controller
 
 
         [Route("api/nutritionpackage/delete")]
-        [HttpDelete]
+        [HttpPost]
         public ActionResult<bool> Delete(NutritionPackageUpdateDto input)
         {
             if (TryValidateModel(input))

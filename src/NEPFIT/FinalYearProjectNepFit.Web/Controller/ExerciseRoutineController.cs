@@ -28,7 +28,7 @@ namespace FinalYearProjectNepFit.Web.Controller
 
 
         [Route("api/exerciseroutine/delete")]
-        [HttpDelete]
+        [HttpPost]
         public ActionResult<bool> Delete(ExerciseRoutineUpdateDto input)
         {
             if (TryValidateModel(input))
