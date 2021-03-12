@@ -40,14 +40,14 @@ namespace NepFit.Repository.Repository
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Query<NutritionType>(
-                "Select * From [dbo].[ExerciseType] WHERE Active = 1 order by DateCreated");
+                "Select * From [dbo].[NutritionType] WHERE Active = 1 order by DateCreated");
         }
 
         public NutritionType GetById(Guid id)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.QueryFirstOrDefault<NutritionType>(
-                "Select * From [dbo].[ExerciseType] WHERE Active = 1 AND NutritionTypeId = @NutritionTypeId", new
+                "Select * From [dbo].[NutritionType] WHERE Active = 1 AND NutritionTypeId = @NutritionTypeId", new
                 {
                     NutritionTypeId = id
                 });
