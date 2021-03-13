@@ -1,7 +1,7 @@
 ﻿
 CREATE TABLE [dbo].[ExerciseRoutine]
 (
-	[ExerciseRoutineId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+	[ExerciseRoutineId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT NEWID(),  
 	Name VARCHAR(5000) NOT NULL,
 	Description VARCHAR(5000) NOT NULL,
 	Repetition INT NOT NULL,	

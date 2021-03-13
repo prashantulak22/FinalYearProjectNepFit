@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dapper;
+using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 using NepFit.Repository.Repository.Interface;
 
@@ -17,11 +18,12 @@ namespace NepFit.Repository.Repository
 
         public int Add(ExerciseRoutine input)
         {
+            input.ExerciseTypeId= new Guid("46AB0DD8-AC6A-4147-BBD9-081F391B57C4");
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO ExerciseRoutine ( [Name] ,[Description], [Repitition], [Duration], [ExerciseTypeId]" +
+            return conn.Execute("INSERT INTO ExerciseRoutine ( [Name] ,[Description], [Repetition], [Duration], [ExerciseTypeId]" +
                                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
                                 "	VALUES" +
-                                "	( @Name ,@Description ,@Repitition, @Duration, @ExerciseTypeId  " +
+                                "	( @Name ,@Description ,@Repetition, @Duration, @ExerciseTypeId  " +
                                 ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
         }
 
@@ -38,11 +40,13 @@ namespace NepFit.Repository.Repository
             return input;
         }
 
-        public IEnumerable<ExerciseRoutine> GetAll()
+        public IEnumerable<ExerciseRoutineResultDto> GetAll()
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Query<ExerciseRoutine>(
-                "Select * From [dbo].[ExerciseRoutine] WHERE Active = 1 order by DateCreated");
+            return conn.Query<ExerciseRoutineResultDto>(
+                "Select er.*, et.Name ExerciseTypeName  From [dbo].[ExerciseRoutine] er" +
+                " INNER JOIN [dbo].[ExerciseType] et ON er.ExerciseTypeId = et.ExerciseTypeId " +
+                "  WHERE er.Active = 1 and et.Active = 1 order by er.DateCreated");
         }
 
         public ExerciseRoutine GetById(Guid id)

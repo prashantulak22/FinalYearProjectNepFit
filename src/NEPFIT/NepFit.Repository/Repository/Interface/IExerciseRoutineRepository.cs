@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 
 namespace NepFit.Repository.Repository.Interface
@@ -11,7 +12,7 @@ namespace NepFit.Repository.Repository.Interface
 
         ExerciseRoutine Update(ExerciseRoutine input);
 
-        IEnumerable<ExerciseRoutine> GetAll();
+        IEnumerable<ExerciseRoutineResultDto> GetAll();
 
         ExerciseRoutine GetById(Guid id);
 

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ProgressTracker]
 (
-	ProgressTrackerId int IDENTITY PRIMARY KEY,
+	ProgressTrackerId int IDENTITY PRIMARY KEY , 
 	Height decimal(3,2) NOT NULL,
 	BodyMass decimal(5,2) NOT NULL,
 	[NeckSize] decimal(4,2) NOT NULL,

@@ -41,8 +41,7 @@ namespace NepFit.BL
         public IEnumerable<ExerciseRoutineResultDto> GetAll()
         {
             return
-                _mapper.Map<IEnumerable<ExerciseRoutineResultDto>>(
-                _exerciseRoutineRepository.GetAll());
+                _exerciseRoutineRepository.GetAll();
         }
 
         public bool Delete(ExerciseRoutineUpdateDto input)

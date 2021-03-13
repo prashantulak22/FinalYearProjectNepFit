@@ -24,6 +24,7 @@ namespace NepFit.Repository.Dto
         [Required]
         [StringLength(5000)]
         public String Name { get; set; }
+        public String ExerciseTypeName { get; set; }
 
         /// <summary>
         /// 
