@@ -28,7 +28,7 @@
                     
                     Name: "",
                     Description: "",
-                    Repetition: 0,
+                    Repetition: 5,
                     Duration: 0,
                               
             };
