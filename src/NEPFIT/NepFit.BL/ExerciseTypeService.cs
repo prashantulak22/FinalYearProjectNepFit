@@ -4,7 +4,6 @@ using AutoMapper;
 using NepFit.BL.Interface;
 using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
-using NepFit.Repository.Repository;
 using NepFit.Repository.Repository.Interface;
 
 namespace NepFit.BL
