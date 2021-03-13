@@ -1,12 +1,12 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
         .module('tableapp')
         .controller('nutritionpackageroutineListCtrl', nutritionpackageroutineListCtrl);
-    nutritionpackageroutineListCtrl.$inject = ['nutritionPackageRoutineService', '$scope', '$uibModal'];
-    function nutritionpackageroutineListCtrl(nutritionPackageRoutineService, $scope, $uibModal) {
+    nutritionpackageroutineListCtrl.$inject = ['nutritionPackageRoutineService', '$scope', '$uibModal', 'blockUI'];
+    function nutritionpackageroutineListCtrl(nutritionPackageRoutineService, $scope, $uibModal, blockUI) {
         var vm = this;
         activate();
  
@@ -24,14 +24,14 @@
                         }
                     },
                     sort: {
-                        field: "DateUpdated", dir: "desc"
+                        field: "DateUpdated", dir: "asc"
                     }
                 },
                 scrollable: true,
                 sortable: true,
                 filterable: true,
                 resizable: true,
-                groupable: true,
+                
                 toolbar: [
                     { name: "addNutritionPackageRoutine", text: "Add NutritionPackageRoutine", imageClass: "fa fa-map-marker", className: "k-grid-addnutritionpackageroutine", iconClass: "k-icon" }
                 ],
@@ -53,22 +53,13 @@
        title: 'NutritionRoutineId',
        field: 'NutritionRoutineId',
       },{
-       title: 'Active',
-       field: 'Active',
-      },{
-       title: 'UpdatedBy',
-       field: 'UpdatedBy',
-      },{
-       title: 'CreatedBy',
-       field: 'CreatedBy',
-      },{
        title: 'DateUpdated',
-       field: 'DateUpdated',
-       template: "#= kendo.toString(kendo.parseDate(DateUpdated), 'MM/dd/yyyy h:mm tt') #",
+       field: 'dateUpdated',
+       template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",
       },{
        title: 'DateCreated',
-       field: 'DateCreated',
-       template: "#= kendo.toString(kendo.parseDate(DateCreated), 'MM/dd/yyyy h:mm tt') #",
+       field: 'dateCreated',
+       template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
       },                   
                     {
                         width: "35px",
@@ -82,7 +73,7 @@
       vm.showAddNutritionPackageRoutine = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/add',
+                    templateUrl: '/app/nutritionpackageroutine/addNutritionPackageRoutine.html',
                     controller: 'nutritionpackageroutineAddCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -103,7 +94,7 @@
       vm.showEditNutritionPackageRoutine = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/edit',
+                    templateUrl: '/app/nutritionpackageroutine/editNutritionPackageRoutine.html',
                     controller: 'nutritionpackageroutineEditCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -125,7 +116,7 @@
             vm.removeNutritionPackageRoutineRequest = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/DeleteConfirm',
+                    templateUrl: '/app/nutritionpackageroutine/deleteNutritionPackageRoutine.html',
                     controller: 'nutritionpackageroutineDeleteCtrl as vm',
                     backdrop: 'static',
                     size: "md",
@@ -144,14 +135,11 @@
             
                     
         function showLoading() {
-            App.blockUI({
-                target: '#nutritionpackageroutineList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#nutritionpackageroutineList');
+            blockUI.stop();
         }
 
         $scope.$on("kendoWidgetCreated", function (event, widget) {
@@ -167,5 +155,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 
