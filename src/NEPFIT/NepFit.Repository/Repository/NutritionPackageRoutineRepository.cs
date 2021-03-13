@@ -21,7 +21,7 @@ namespace NepFit.Repository.Repository
             return conn.Execute("INSERT INTO NutritionPackageRoutine" +
                 "([NutritionPackageId] ,[NutritionRoutineId] " +
                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )	VALUES" +
-                "	(,@NutritionPackageId ,@NutritionRoutineId ,@Active " +
+                "	(@NutritionPackageId ,@NutritionRoutineId ,@Active " +
                 ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated)", input);
         }
 
