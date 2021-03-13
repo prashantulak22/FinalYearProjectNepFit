@@ -1,0 +1,49 @@
+
+<div id="addnutritionPackageRoutine" class="portlet light " >
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="navicon icon-bell font-red"></i>
+            Add NutritionPackageRoutine
+        </div>
+        <a ng-click="vm.close()" class=" pull-right">
+            <i class="fa fa-times-circle fa-lg"></i>
+        </a>
+    </div>
+    <div class="portlet-body">      
+        <form class="form-horizontal" kendo-validator="validator" ame="addNutritionPackageRoutineCreateForm">
+
+                <div class="item form-group" ng-show="vm.validationError.length > 0">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">Please review the following field</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li ng-repeat="message in vm.validationError">
+                                        <span class="black">{{message}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             </form>
+             
+          <div class="form-actions">
+            <div class="row">
+                <div class="col-md-offset-5 col-md-12">
+                    <a ng-disabled="addNutritionPackageRoutineCreateForm.$invalid"  ng-click="vm.saveNutritionPackageRoutine()" class="btn green button-submit button-next">
+                        Save
+                        <i class="fa fa-check"></i>
+                    </a>
+
+                    <a ng-click="vm.close()" class="btn btn-primary btn-ok text-center">
+                        Close
+                        <i class="fa fa-close"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
