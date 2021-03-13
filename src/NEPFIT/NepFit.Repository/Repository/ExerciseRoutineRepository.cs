@@ -18,10 +18,10 @@ namespace NepFit.Repository.Repository
         public int Add(ExerciseRoutine input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO ExerciseRoutine ( [Name] ,[Description] " +
+            return conn.Execute("INSERT INTO ExerciseRoutine ( [Name] ,[Description], [Repitition], [Duration], [ExerciseTypeId]" +
                                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
                                 "	VALUES" +
-                                "	( @Name ,@Description " +
+                                "	( @Name ,@Description ,@Repitition, @Duration, @ExerciseTypeId  " +
                                 ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
         }
 
@@ -31,6 +31,7 @@ namespace NepFit.Repository.Repository
             conn.Execute("	UPDATE ExerciseRoutine SET 	" +
                                 "	[ExerciseRoutineId] = @ExerciseRoutineId ,		" +
                                 "[Name] = @Name ,		[Description] = @Description ,	" +
+                                "[Repitition] = @Repitition, [Duration] =@Duration , [ExerciseTypeId]=@ExerciseTypeId" +
                                 "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
                                 "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
                                 "[DateCreated] = @DateCreated 	WHERE [ExerciseRoutineId]=@ExerciseRoutineId", input);

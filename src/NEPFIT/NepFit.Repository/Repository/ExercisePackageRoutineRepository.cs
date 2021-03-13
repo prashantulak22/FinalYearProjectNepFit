@@ -15,26 +15,26 @@ namespace NepFit.Repository.Repository
             _sqlServerConnectionProvider = sqlServerConnectionProvider;
         }
 
-        public int Add(ExercisePackageRoutine input)
+        public int Add(Guid input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO ExercisePackageRoutine ( [Name] ,[Description] " +
-                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
-                                "	VALUES" +
-                                "	( @Name ,@Description " +
-                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
+            return conn.Execute("INSERT INTO ExercisePackageRoutine" +
+                "([ExercisePackageId] ,[ExerciseRoutineId] " +
+                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )	VALUES" +
+                "	(,@ExercisePackageId ,@ExerciseRoutineId ,@Active " +
+                ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated))", input);
         }
 
-        public ExercisePackageRoutine Update(ExercisePackageRoutine input)
+        public int Update(Guid input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            conn.Execute("	UPDATE ExercisePackageRoutine SET 	" +
-                                "	[ExercisePackageRoutineId] = @ExercisePackageRoutineId ,		" +
-                                "[Name] = @Name ,		[Description] = @Description ,	" +
-                                "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
-                                "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
-                                "[DateCreated] = @DateCreated 	WHERE [ExercisePackageRoutineId]=@ExercisePackageRoutineId", input);
-            return input;
+            return conn.Execute("	UPDATE ExercisePackageRoutine SET " +
+                "[ExercisePackageId] = @ExercisePackageId ," +
+                "[ExerciseRoutineId] = @ExerciseRoutineId " +
+                ",[Active] = @Active ,[UpdatedBy] = @UpdatedBy " +
+                ",[CreatedBy] = @CreatedBy ,[DateUpdated] = @DateUpdated ," +
+                "[DateCreated] = @DateCreated WHERE [NutritionPackageRoutineId]=@NutritionPackageRoutineId", input);
+            
         }
 
         public IEnumerable<ExercisePackageRoutine> GetAll()

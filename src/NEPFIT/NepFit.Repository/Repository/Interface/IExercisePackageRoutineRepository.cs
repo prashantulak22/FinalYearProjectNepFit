@@ -6,8 +6,8 @@ namespace NepFit.Repository.Repository.Interface
 {
     public interface IExercisePackageRoutineRepository
     {
-        int Add(ExercisePackageRoutine input);
-        ExercisePackageRoutine Update(ExercisePackageRoutine input);
+        int Add(Guid input);
+        int Update(Guid input);
         IEnumerable<ExercisePackageRoutine> GetAll();
         ExercisePackageRoutine GetById(Guid id);
         bool Delete(ExercisePackageRoutine input);

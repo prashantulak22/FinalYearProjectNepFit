@@ -15,26 +15,27 @@ namespace NepFit.Repository.Repository
             _sqlServerConnectionProvider = sqlServerConnectionProvider;
         }
 
-        public int Add(NutritionPackageRoutine input)
+        public int Add(Guid input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO NutritionPackageRoutine ( [Name] ,[Description] " +
-                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
-                                "	VALUES" +
-                                "	( @Name ,@Description " +
-                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
+            return conn.Execute("INSERT INTO NutritionPackageRoutine" +
+                "([NutritionPackageId] ,[NutritionRoutineId] " +
+                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )	VALUES" +
+                "	(,@NutritionPackageId ,@NutritionRoutineId ,@Active " +
+                ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated)", input);
         }
 
-        public NutritionPackageRoutine Update(NutritionPackageRoutine input)
+        public int Update(Guid input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            conn.Execute("	UPDATE NutritionPackageRoutine SET 	" +
-                                "	[NutritionPackageRoutineId] = @NutritionPackageRoutineId ,		" +
-                                "[Name] = @Name ,		[Description] = @Description ,	" +
-                                "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
-                                "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
-                                "[DateCreated] = @DateCreated 	WHERE [NutritionPackageRoutineId]=@NutritionPackageRoutineId", input);
-            return input;
+            return conn.Execute("	UPDATE NutritionPackageRoutine SET " +
+                "[NutritionPackageId] = @NutritionPackageId ," +
+                "[NutritionRoutineId] = @NutritionRoutineId " +
+                ",[Active] = @Active ,[UpdatedBy] = @UpdatedBy " +
+                ",[CreatedBy] = @CreatedBy ,[DateUpdated] = @DateUpdated ," +
+                "[DateCreated] = @DateCreated WHERE [NutritionPackageRoutineId]=@NutritionPackageRoutineId", input);
+
+           
         }
 
         public IEnumerable<NutritionPackageRoutine> GetAll()

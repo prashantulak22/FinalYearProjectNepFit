@@ -6,8 +6,8 @@ namespace NepFit.Repository.Repository.Interface
 {
     public interface INutritionPackageRoutineRepository
     {
-        int Add(NutritionPackageRoutine input);
-        NutritionPackageRoutine Update(NutritionPackageRoutine input);
+        int Add(Guid input);
+        int Update(Guid input);
         IEnumerable<NutritionPackageRoutine> GetAll();
         NutritionPackageRoutine GetById(Guid id);
         bool Delete(NutritionPackageRoutine input);
