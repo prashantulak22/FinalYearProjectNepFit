@@ -33,25 +33,25 @@
                     .state("exercisePackage",
                         {
                             url: "/exercisePackage",
-                            templateUrl: "/app/exercisePackage/index.html",
+                            templateUrl: "/app/exercisePackage/exercisePackage.html",
                             title: "ExercisePackage"
                         })
                     .state("nutritionType",
                         {
                             url: "/nutritionType",
-                            templateUrl: "/app/nutritionType/index.html",
+                            templateUrl: "/app/nutritionType/nutritionType.html",
                             title: "NutritionType"
                         })
                     .state("nutritionPackage",
                         {
                             url: "/nutritionPackage",
-                            templateUrl: "/app/nutritionPackage/index.html",
+                            templateUrl: "/app/nutritionPackage/nutritionPackage.html",
                             title: "NutritionPackage"
                         })
                     .state("nutritionRoutine",
                         {
                             url: "/nutritionRoutine",
-                            templateUrl: "/app/nutritionRoutine/index.html",
+                            templateUrl: "/app/nutritionRoutine/nutritionroutine.html",
                             title: "NutritionRoutine"
                         })
                     .state("nutritionPackageRoutine",
