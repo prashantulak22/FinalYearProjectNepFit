@@ -1,12 +1,12 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('exercisepackageroutineListCtrl', exercisepackageroutineListCtrl);
-    exercisepackageroutineListCtrl.$inject = ['exercisePackageRoutineService', '$scope', '$uibModal'];
-    function exercisepackageroutineListCtrl(exercisePackageRoutineService, $scope, $uibModal) {
+    exercisepackageroutineListCtrl.$inject = ['exercisePackageRoutineService', '$scope', '$uibModal', 'blockUI'];
+    function exercisepackageroutineListCtrl(exercisePackageRoutineService, $scope, $uibModal, blockUI) {
         var vm = this;
         activate();
  
@@ -24,14 +24,14 @@
                         }
                     },
                     sort: {
-                        field: "DateUpdated", dir: "desc"
+                        field: "DateUpdated", dir: "asc"
                     }
                 },
                 scrollable: true,
                 sortable: true,
                 filterable: true,
                 resizable: true,
-                groupable: true,
+               
                 toolbar: [
                     { name: "addExercisePackageRoutine", text: "Add ExercisePackageRoutine", imageClass: "fa fa-map-marker", className: "k-grid-addexercisepackageroutine", iconClass: "k-icon" }
                 ],
@@ -45,30 +45,21 @@
                     }
                    {
        title: 'ExercisePackageRoutineId',
-       field: 'ExercisePackageRoutineId',
+       field: 'exercisePackageRoutineId',
       },{
        title: 'ExercisePackageId',
-       field: 'ExercisePackageId',
+       field: 'exercisePackageId',
       },{
        title: 'ExerciseRoutineId',
-       field: 'ExerciseRoutineId',
-      },{
-       title: 'Active',
-       field: 'Active',
-      },{
-       title: 'UpdatedBy',
-       field: 'UpdatedBy',
-      },{
-       title: 'CreatedBy',
-       field: 'CreatedBy',
+       field: 'exerciseRoutineId',
       },{
        title: 'DateUpdated',
-       field: 'DateUpdated',
-       template: "#= kendo.toString(kendo.parseDate(DateUpdated), 'MM/dd/yyyy h:mm tt') #",
+       field: 'dateUpdated',
+       template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",
       },{
        title: 'DateCreated',
-       field: 'DateCreated',
-       template: "#= kendo.toString(kendo.parseDate(DateCreated), 'MM/dd/yyyy h:mm tt') #",
+       field: 'dateCreated',
+       template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
       },                   
                     {
                         width: "35px",
@@ -82,7 +73,7 @@
       vm.showAddExercisePackageRoutine = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/add',
+                    templateUrl: '/app/exercisepackageroutine/addExercisePackageRoutine.html',
                     controller: 'exercisepackageroutineAddCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -103,7 +94,7 @@
       vm.showEditExercisePackageRoutine = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/edit',
+                    templateUrl: '/app/exercisepackageroutine/editExercisePackageRoutine.html',
                     controller: 'exercisepackageroutineEditCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -125,7 +116,7 @@
             vm.removeExercisePackageRoutineRequest = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/DeleteConfirm',
+                    templateUrl: '/app/exercisepackageroutine/deleteExercisePackageRoutine.html',
                     controller: 'exercisepackageroutineDeleteCtrl as vm',
                     backdrop: 'static',
                     size: "md",
@@ -144,14 +135,11 @@
             
                     
         function showLoading() {
-            App.blockUI({
-                target: '#exercisepackageroutineList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#exercisepackageroutineList');
+            blockUI.stop();
         }
 
         $scope.$on("kendoWidgetCreated", function (event, widget) {
@@ -167,5 +155,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 
