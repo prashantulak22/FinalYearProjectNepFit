@@ -100,7 +100,8 @@ namespace FinalYearProjectNepFit.Web
             services.AddScoped<IProgressTrackerRepository, ProgressTrackerRepository>();
             services.AddScoped<IProgressTrackerService, ProgressTrackerService>();
 
-            
+            services.AddScoped<IExerciseTypeService, ExerciseTypeService>();
+            services.AddScoped<IExerciseTypeRepository, ExerciseTypeRepository>();
 
             services.AddScoped<IExercisePackageRepository, ExercisePackageRepository>();
             services.AddScoped<IExercisePackageService, ExercisePackageService>();
@@ -108,15 +109,20 @@ namespace FinalYearProjectNepFit.Web
             services.AddScoped<IExerciseRoutineRepository, ExerciseRoutineRepository>();
             services.AddScoped<IExerciseRoutineService, ExerciseRoutineService>();
 
+            services.AddScoped<IExercisePackageRoutineRepository, ExercisePackageRoutineRepository>();
+            services.AddScoped<IExercisePackageRoutineService, ExercisePackageRoutineService>();
+
             services.AddScoped<INutritionTypeRepository, NutritionTypeRepository>();
             services.AddScoped<INutritionTypeService, NutritionTypeService>();
 
-           
-            services.AddScoped<IExerciseTypeService, ExerciseTypeService>();
-            services.AddScoped<IExerciseTypeRepository, ExerciseTypeRepository>();
-
             services.AddScoped<INutritionPackageService, NutritionPackageService>();
             services.AddScoped<INutritionPackageRepository, NutritionPackageRepository>();
+
+            services.AddScoped<INutritionRoutineService, NutritionRoutineService>();
+            services.AddScoped<INutritionRoutineRepository, NutritionRoutineRepository>();
+
+            services.AddScoped<INutritionPackageRoutineService, NutritionPackageRoutineService>();
+            services.AddScoped<INutritionPackageRoutineRepository, NutritionPackageRoutineRepository>();
 
 
 
