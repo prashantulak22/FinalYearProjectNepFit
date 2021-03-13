@@ -39,7 +39,8 @@
                     name: "",
                     description: "",
                     repetition: 5,
-                    duration: 1
+                    duration: 1,
+                    exerciseTypeId: "",
 
                 };
             }
