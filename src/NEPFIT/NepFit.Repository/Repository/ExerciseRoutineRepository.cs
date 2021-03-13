@@ -18,7 +18,6 @@ namespace NepFit.Repository.Repository
 
         public int Add(ExerciseRoutine input)
         {
-            input.ExerciseTypeId= new Guid("46AB0DD8-AC6A-4147-BBD9-081F391B57C4");
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Execute("INSERT INTO ExerciseRoutine ( [Name] ,[Description], [Repetition], [Duration], [ExerciseTypeId]" +
                                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +

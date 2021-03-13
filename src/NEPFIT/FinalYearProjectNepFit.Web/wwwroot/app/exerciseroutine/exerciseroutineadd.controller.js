@@ -5,12 +5,12 @@
     angular
         .module('nepFitApp')
         .controller('exerciseroutineAddCtrl', exerciseroutineAddCtrl);
-    exerciseroutineAddCtrl.$inject = ['exerciseRoutineService', "$uibModalInstance", '$scope', 'blockUI'];
-    function exerciseroutineAddCtrl(exerciseRoutineService, $uibModalInstance, $scope, blockUI) {
+    exerciseroutineAddCtrl.$inject = ['exerciseRoutineService', "$uibModalInstance", '$scope', 'blockUI', 'exerciseTypeService'];
+    function exerciseroutineAddCtrl(exerciseRoutineService, $uibModalInstance, $scope, blockUI, exerciseTypeService) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add ExerciseRoutine';
-        
+
         activate();
         function showLoading() {
             blockUI.start();
@@ -20,51 +20,61 @@
             blockUI.stop();
         }
         function activate() {
-       
-        
-                function initialize() {
-            return {
-              
-                    
-                    Name: "",
-                    Description: "",
-                    Repetition: 5,
-                    Duration: 0,
-                              
-            };
+            exerciseTypeService.getAllExerciseType()
+                .then(function (result) {
+                    vm.exerciseTypeIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "exerciseTypeId",
+                        valuePrimitive: true,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+
+                });
+
+            function initialize() {
+                return {
+
+                    name: "",
+                    description: "",
+                    repetition: 5,
+                    duration: 1
+
+                };
             }
-             vm.exerciseRoutine = initialize();
-     vm.validationError = [];
-     
-             function validateForm() {
+            vm.exerciseRoutine = initialize();
             vm.validationError = [];
-                  if (vm.validationError.length > 0) return false;
+
+            function validateForm() {
+                vm.validationError = [];
+                if (vm.validationError.length > 0) return false;
                 if ($scope.validator.validate()) return true;
                 return false;
-        }
-        
-                vm.saveExerciseRoutine = function (option) {
-            if (!validateForm()) return;
-           showLoading();
-            exerciseRoutineService.createExerciseRoutine(vm.exerciseRoutine)
-                .then(function () {
-                    hideLoading();
-                      vm.close();
-                }, function errorCallback(response) {
-                    hideLoading();
+            }
+
+            vm.saveExerciseRoutine = function (option) {
+                if (!validateForm()) return;
+                showLoading();
+                exerciseRoutineService.createExerciseRoutine(vm.exerciseRoutine)
+                    .then(function () {
+                        hideLoading();
+                        vm.close();
+                    }, function errorCallback(response) {
+                        hideLoading();
                     });
+            }
+
+            vm.close = function () {
+                $uibModalInstance.close();
+            };
+
+
         }
-        
-                vm.close = function () {
-            $uibModalInstance.close();
-        };
-        
-        
-        }
-             
- 
-        }
-        
+
+
+    }
+
 
 
 
