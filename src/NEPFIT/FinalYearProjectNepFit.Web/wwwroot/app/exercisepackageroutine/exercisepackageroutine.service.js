@@ -1,7 +1,7 @@
 
 (function (angular, app) {
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .factory('exercisePackageRoutineService', exercisePackageRoutineService);
 
     exercisePackageRoutineService.$inject = ['$http'];

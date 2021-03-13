@@ -3,13 +3,13 @@
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('nutritionpackageroutineListCtrl', nutritionpackageroutineListCtrl);
     nutritionpackageroutineListCtrl.$inject = ['nutritionPackageRoutineService', '$scope', '$uibModal', 'blockUI'];
     function nutritionpackageroutineListCtrl(nutritionPackageRoutineService, $scope, $uibModal, blockUI) {
         var vm = this;
         activate();
- 
+
         function activate() {
             vm.mainGridOptions = {
                 dataSource: {
@@ -31,7 +31,7 @@
                 sortable: true,
                 filterable: true,
                 resizable: true,
-                
+
                 toolbar: [
                     { name: "addNutritionPackageRoutine", text: "Add NutritionPackageRoutine", imageClass: "fa fa-map-marker", className: "k-grid-addnutritionpackageroutine", iconClass: "k-icon" }
                 ],
@@ -39,101 +39,101 @@
                     pageSize: 20
                 },
                 columns: [
-                                   {
+                    {
                         width: "35px",
                         template: '<i ng-click=" vm.showEditNutritionPackageRoutine(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
-                    }
-                   {
-       title: 'NutritionPackageRoutineId',
-       field: 'NutritionPackageRoutineId',
-      },{
-       title: 'NutritionPackageId',
-       field: 'NutritionPackageId',
-      },{
-       title: 'NutritionRoutineId',
-       field: 'NutritionRoutineId',
-      },{
-       title: 'DateUpdated',
-       field: 'dateUpdated',
-       template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",
-      },{
-       title: 'DateCreated',
-       field: 'dateCreated',
-       template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
-      },                   
+                    },
+                    {
+                        title: 'NutritionPackageRoutineId',
+                        field: 'NutritionPackageRoutineId',
+                    }, {
+                        title: 'NutritionPackageId',
+                        field: 'NutritionPackageId',
+                    }, {
+                        title: 'NutritionRoutineId',
+                        field: 'NutritionRoutineId',
+                    }, {
+                        title: 'DateUpdated',
+                        field: 'dateUpdated',
+                        template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",
+                    }, {
+                        title: 'DateCreated',
+                        field: 'dateCreated',
+                        template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
+                    },
                     {
                         width: "35px",
                         template: '<i ng-click=" vm.removeNutritionPackageRoutineRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
                     }
-                ] 
+                ]
             };
- 
+
         }
-            
-      vm.showAddNutritionPackageRoutine = function () {
-                var modalInstance = $uibModal.open({
-                    animation: true,
-                    templateUrl: '/app/nutritionpackageroutine/addNutritionPackageRoutine.html',
-                    controller: 'nutritionpackageroutineAddCtrl as vm',
-                    backdrop: 'static',
-                    size: "lg",
-                    resolve: {
-                        param: function () {
-                            return {
-                            };
-                        }
+
+        vm.showAddNutritionPackageRoutine = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: '/app/nutritionpackageroutine/addNutritionPackageRoutine.html',
+                controller: 'nutritionpackageroutineAddCtrl as vm',
+                backdrop: 'static',
+                size: "lg",
+                resolve: {
+                    param: function () {
+                        return {
+                        };
                     }
-                });
-                modalInstance.result.then(function () {
-                    showLoading();
-                    vm.mainGridOptions.dataSource.transport.read(vm.optionCallback);
-                });
-            }
-            
-            
-      vm.showEditNutritionPackageRoutine = function (item) {
-                var modalInstance = $uibModal.open({
-                    animation: true,
-                    templateUrl: '/app/nutritionpackageroutine/editNutritionPackageRoutine.html',
-                    controller: 'nutritionpackageroutineEditCtrl as vm',
-                    backdrop: 'static',
-                    size: "lg",
-                    resolve: {
-                        param: function () {
-                            return {
-                                'item': item,
-                                'isNew': false,
-                            };
-                        }
+                }
+            });
+            modalInstance.result.then(function () {
+                showLoading();
+                vm.mainGridOptions.dataSource.transport.read(vm.optionCallback);
+            });
+        }
+
+
+        vm.showEditNutritionPackageRoutine = function (item) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: '/app/nutritionpackageroutine/editNutritionPackageRoutine.html',
+                controller: 'nutritionpackageroutineEditCtrl as vm',
+                backdrop: 'static',
+                size: "lg",
+                resolve: {
+                    param: function () {
+                        return {
+                            'item': item,
+                            'isNew': false,
+                        };
                     }
-                });
-                modalInstance.result.then(function () {
-                    showLoading();
-                    vm.mainGridOptions.dataSource.transport.read(vm.optionCallback);
-                });
-            }
-            
-            vm.removeNutritionPackageRoutineRequest = function (item) {
-                var modalInstance = $uibModal.open({
-                    animation: true,
-                    templateUrl: '/app/nutritionpackageroutine/deleteNutritionPackageRoutine.html',
-                    controller: 'nutritionpackageroutineDeleteCtrl as vm',
-                    backdrop: 'static',
-                    size: "md",
-                    resolve: {
-                        param: function () {
-                            return {
-                                'item': item
-                            };
-                        }
+                }
+            });
+            modalInstance.result.then(function () {
+                showLoading();
+                vm.mainGridOptions.dataSource.transport.read(vm.optionCallback);
+            });
+        }
+
+        vm.removeNutritionPackageRoutineRequest = function (item) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: '/app/nutritionpackageroutine/deleteNutritionPackageRoutine.html',
+                controller: 'nutritionpackageroutineDeleteCtrl as vm',
+                backdrop: 'static',
+                size: "md",
+                resolve: {
+                    param: function () {
+                        return {
+                            'item': item
+                        };
                     }
-                });
-                modalInstance.result.then(function () {
-                    vm.mainGridOptions.dataSource.transport.read(vm.optionCallback);
-                });
-            }
-            
-                    
+                }
+            });
+            modalInstance.result.then(function () {
+                vm.mainGridOptions.dataSource.transport.read(vm.optionCallback);
+            });
+        }
+
+
         function showLoading() {
             blockUI.start();
         }
@@ -151,7 +151,7 @@
             }
         });
 
-        }
+    }
 
 
 

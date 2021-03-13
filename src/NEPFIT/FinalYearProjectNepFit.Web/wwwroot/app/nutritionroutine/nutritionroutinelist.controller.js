@@ -161,5 +161,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 

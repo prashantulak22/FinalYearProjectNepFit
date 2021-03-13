@@ -15,7 +15,7 @@ namespace NepFit.Repository.Repository
             _sqlServerConnectionProvider = sqlServerConnectionProvider;
         }
 
-        public int Add(Guid input)
+        public int Add(ExercisePackageRoutine input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Execute("INSERT INTO ExercisePackageRoutine" +
@@ -25,7 +25,7 @@ namespace NepFit.Repository.Repository
                 ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated))", input);
         }
 
-        public int Update(Guid input)
+        public int Update(ExercisePackageRoutine input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Execute("	UPDATE ExercisePackageRoutine SET " +
