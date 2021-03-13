@@ -88,6 +88,12 @@
         vm.showNutritionRoutine = function () {
             $state.go('nutritionRoutine');
         }
+        vm.showNutritionPackageRoutine = function () {
+            $state.go('nutritionPackageRoutine');
+        }
+        vm.showExercisePackageRoutine = function () {
+            $state.go('exercisePackageRoutine');
+        }
     }
 
 

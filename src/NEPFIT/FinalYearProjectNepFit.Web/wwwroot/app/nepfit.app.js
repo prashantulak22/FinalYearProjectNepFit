@@ -54,12 +54,25 @@
                             templateUrl: "/app/nutritionRoutine/index.html",
                             title: "NutritionRoutine"
                         })
+                    .state("nutritionPackageRoutine",
+                        {
+                            url: "/nutritionPackageRoutine",
+                            templateUrl: "/app/nutritionPackageRoutine/nutritionpackageroutine.html",
+                            title: "NutritionPackageRoutine"
+                        })
+                    .state("exercisePackageRoutine",
+                        {
+                            url: "/exercisePackageRoutine",
+                            templateUrl: "/app/exercisePackageRoutine/exercisepackageroutine.html",
+                            title: "ExercisePackageRoutine"
+                        })
                     .state("register",
                         {
                             url: "/register/medicaluser",
                             templateUrl: "/app/medicaluser/register.html",
                             title: "Register"
                         });
+
 
                 $urlRouterProvider.otherwise(function ($injector, $location) {
                     var $state = $injector.get('$state');
