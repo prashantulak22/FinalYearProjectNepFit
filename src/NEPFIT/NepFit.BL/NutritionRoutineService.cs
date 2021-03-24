@@ -40,8 +40,8 @@ namespace NepFit.BL
         public IEnumerable<NutritionRoutineResultDto> GetAll()
         {
             return
-                _mapper.Map<IEnumerable<NutritionRoutineResultDto>>(
-                _NutritionRoutineRepository.GetAll());
+                
+                _NutritionRoutineRepository.GetAll();
         }
 
         public bool Delete(NutritionRoutineUpdateDto input)

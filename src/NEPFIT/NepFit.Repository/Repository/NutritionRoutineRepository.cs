@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dapper;
+using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 using NepFit.Repository.Repository.Interface;
 
@@ -38,11 +39,13 @@ namespace NepFit.Repository.Repository
             return input;
         }
 
-        public IEnumerable<NutritionRoutine> GetAll()
+        public IEnumerable<NutritionRoutineResultDto> GetAll()
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Query<NutritionRoutine>(
-                "Select * From [dbo].[NutritionRoutine] WHERE Active = 1 order by DateCreated");
+            return conn.Query<NutritionRoutineResultDto>(
+                "Select nr.*, nt.Name NutritionTypeName From [dbo].[NutritionRoutine] nr" +
+                " INNER JOIN [dbo].[NutritionType] nt ON nr.NutritionTypeId = nt.NutritionTypeId " +
+                " WHERE nr.Active = 1  and nt.Active = 1 order by nr.DateCreated");
         }
 
         public NutritionRoutine GetById(Guid id)

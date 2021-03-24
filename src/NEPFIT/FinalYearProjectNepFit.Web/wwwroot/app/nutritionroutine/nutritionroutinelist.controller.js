@@ -64,8 +64,8 @@
        field: 'dateCreated',
        template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
       },{
-       title: 'NutritionTypeId',
-       field: 'NutritionTypeId',
+          title: 'nutritionTypeName',
+       field: 'nutritionTypeName',
       },                   
                     {
                         width: "35px",

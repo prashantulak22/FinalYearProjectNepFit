@@ -12,60 +12,73 @@
     <div class="portlet-body">      
         <form class="form-horizontal" kendo-validator="validator" ame="addNutritionRoutineCreateForm">
 
-      
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            Name
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.name" />
-            <span class="help-block"> Short Name for your NutritionRoutine (Max [StringLength(5000)] characters </span>
-        </div>
-    </div>
-   
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    Nutrition Type
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <select kendo-drop-down-list class="required form-control"
+                            k-options="vm.nutritionTypeIdDropdownOptions"
+                            ng-model="vm.nutritionRoutine.nutritionTypeId"></select>
+                    <span class="help-block">  Nutrition Type</span>
+                </div>
+            </div>
 
-     
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            Description
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.description" ></textarea>
-            <span class="help-block"> Short Description for your NutritionRoutine (Max [StringLength(5000)] characters </span>
-        </div>
-    </div>
 
-      
-    
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            HowToPrepare
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="HowToPrepare" placeholder="HowToPrepare" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.howToPrepare" ></textarea>
-            <span class="help-block"> Short HowToPrepare for your NutritionRoutine (Max [StringLength(5000)] characters </span>
-        </div>
-    </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    Name
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.name" />
+                    <span class="help-block"> Short Name for your NutritionRoutine (Max [StringLength(5000)] characters </span>
+                </div>
+            </div>
 
-                <div class="item form-group" ng-show="vm.validationError.length > 0">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">Please review the following field</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li ng-repeat="message in vm.validationError">
-                                        <span class="black">{{message}}</span>
-                                    </li>
-                                </ul>
-                            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    Description
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.description"></textarea>
+                    <span class="help-block"> Short Description for your NutritionRoutine (Max [StringLength(5000)] characters </span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    HowToPrepare
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="HowToPrepare" placeholder="HowToPrepare" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.howToPrepare"></textarea>
+                    <span class="help-block"> Short HowToPrepare for your NutritionRoutine (Max [StringLength(5000)] characters </span>
+                </div>
+            </div>
+
+            <div class="item form-group" ng-show="vm.validationError.length > 0">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Please review the following field</div>
+                        <div class="panel-body">
+                            <ul>
+                                <li ng-repeat="message in vm.validationError">
+                                    <span class="black">{{message}}</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
 
-             </form>
+        </form>
              
           <div class="form-actions">
             <div class="row">
