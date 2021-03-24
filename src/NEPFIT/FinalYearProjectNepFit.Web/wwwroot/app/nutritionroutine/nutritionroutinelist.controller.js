@@ -79,7 +79,7 @@
       vm.showAddNutritionRoutine = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/app/nutritionroutine/addNutritionType.html',
+                    templateUrl: '/app/nutritionroutine/addNutritionRoutine.html',
                     controller: 'nutritionroutineAddCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -100,7 +100,7 @@
       vm.showEditNutritionRoutine = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/app/nutritionroutine/editNutritionType.html',
+                    templateUrl: '/app/nutritionroutine/editNutritionRoutine.html',
                     controller: 'nutritionroutineEditCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -122,7 +122,7 @@
             vm.removeNutritionRoutineRequest = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/app/nutritionroutine/deleteNutritionType.html',
+                    templateUrl: '/app/nutritionroutine/deleteNutritionRoutine.html',
                     controller: 'nutritionroutineDeleteCtrl as vm',
                     backdrop: 'static',
                     size: "md",

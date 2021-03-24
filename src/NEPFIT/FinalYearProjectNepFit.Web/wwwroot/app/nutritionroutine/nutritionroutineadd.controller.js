@@ -26,11 +26,11 @@
             return {
               
                    
-                    Name: "",
-                    Description: "",
-                    HowToPrepare: "",
+                    name: "",
+                    description: "",
+                    howToPrepare: "",
     
-                    NutritionTypeId: "",            
+                    nutritionTypeId: "",            
             };
             }
              vm.nutritionRoutine = initialize();
