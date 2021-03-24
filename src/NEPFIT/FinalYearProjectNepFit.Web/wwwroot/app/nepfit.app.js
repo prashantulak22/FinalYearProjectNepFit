@@ -21,49 +21,49 @@
                     .state("exerciseType",
                         {
                             url: "/exerciseType",
-                            templateUrl: "/app/exerciseType/index.html",
+                            templateUrl: "/app/exercisetype/index.html",
                             title: "ExerciseType"
                         })
                     .state("exerciseRoutine",
                         {
                             url: "/exerciseRoutine",
-                            templateUrl: "/app/exerciseRoutine/exerciseroutine.html",
+                            templateUrl: "/app/exerciseroutine/exerciseRoutine.html",
                             title: "ExerciseType"
                         })
                     .state("exercisePackage",
                         {
                             url: "/exercisePackage",
-                            templateUrl: "/app/exercisePackage/exercisePackage.html",
+                            templateUrl: "/app/exercisepackage/exercisePackage.html",
                             title: "ExercisePackage"
                         })
                     .state("nutritionType",
                         {
                             url: "/nutritionType",
-                            templateUrl: "/app/nutritionType/nutritionType.html",
+                            templateUrl: "/app/nutritiontype/nutritionType.html",
                             title: "NutritionType"
                         })
                     .state("nutritionPackage",
                         {
                             url: "/nutritionPackage",
-                            templateUrl: "/app/nutritionPackage/nutritionPackage.html",
+                            templateUrl: "/app/nutritionpackage/nutritionPackage.html",
                             title: "NutritionPackage"
                         })
                     .state("nutritionRoutine",
                         {
                             url: "/nutritionRoutine",
-                            templateUrl: "/app/nutritionRoutine/nutritionroutine.html",
+                            templateUrl: "/app/nutritionroutine/nutritionRoutine.html",
                             title: "NutritionRoutine"
                         })
                     .state("nutritionPackageRoutine",
                         {
                             url: "/nutritionPackageRoutine",
-                            templateUrl: "/app/nutritionPackageRoutine/nutritionpackageroutine.html",
+                            templateUrl: "/app/nutritionpackageroutine/nutritionPackageRoutine.html",
                             title: "NutritionPackageRoutine"
                         })
                     .state("exercisePackageRoutine",
                         {
                             url: "/exercisePackageRoutine",
-                            templateUrl: "/app/exercisePackageRoutine/exercisepackageroutine.html",
+                            templateUrl: "/app/exercisepackageroutine/exercisePackageRoutine.html",
                             title: "ExercisePackageRoutine"
                         })
                     .state("register",

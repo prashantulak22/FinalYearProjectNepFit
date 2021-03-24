@@ -32,7 +32,7 @@ namespace NepFit.Repository.Repository
             conn.Execute("	UPDATE ExerciseRoutine SET 	" +
                                 "	[ExerciseRoutineId] = @ExerciseRoutineId ,		" +
                                 "[Name] = @Name ,		[Description] = @Description ,	" +
-                                "[Repitition] = @Repitition, [Duration] =@Duration , [ExerciseTypeId]=@ExerciseTypeId" +
+                                "[Repetition] = @Repetition, [Duration] =@Duration , [ExerciseTypeId]=@ExerciseTypeId" +
                                 "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
                                 "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
                                 "[DateCreated] = @DateCreated 	WHERE [ExerciseRoutineId]=@ExerciseRoutineId", input);

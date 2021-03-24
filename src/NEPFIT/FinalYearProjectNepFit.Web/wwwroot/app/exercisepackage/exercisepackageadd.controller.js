@@ -27,7 +27,7 @@
               
                     
                     name: "",
-                    description: "",
+                    description: ""
              
                                
             };
