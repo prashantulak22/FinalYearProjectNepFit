@@ -63,7 +63,7 @@
             
                 return $http({
                     method: 'POST',
-                    url: app.nutritionpackageroutineApibaseUrl + 'api/nutritionpackageroutine/update',
+                    url:  'api/nutritionpackageroutine/update',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
