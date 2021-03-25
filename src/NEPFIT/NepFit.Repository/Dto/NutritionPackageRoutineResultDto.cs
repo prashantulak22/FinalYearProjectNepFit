@@ -33,6 +33,9 @@ namespace NepFit.Repository.Dto
         
         public System.Guid NutritionRoutineId { get; set; }
 
+        public String NutritionPackageName { get; set; }
+        public String NutritionRoutineName { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

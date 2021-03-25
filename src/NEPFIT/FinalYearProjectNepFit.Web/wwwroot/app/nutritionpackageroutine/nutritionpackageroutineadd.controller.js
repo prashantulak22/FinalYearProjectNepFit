@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('nutritionpackageroutineAddCtrl', nutritionpackageroutineAddCtrl);
-    nutritionpackageroutineAddCtrl.$inject = ['nutritionPackageRoutineService', "$uibModalInstance", '$scope', 'blockUI'];
-    function nutritionpackageroutineAddCtrl(nutritionPackageRoutineService, $uibModalInstance, $scope, blockUI) {
+    nutritionpackageroutineAddCtrl.$inject = ['nutritionPackageRoutineService', "$uibModalInstance", '$scope', 'blockUI', 'nutritionPackageService', 'nutritionRoutineService'];
+    function nutritionpackageroutineAddCtrl(nutritionPackageRoutineService, $uibModalInstance, $scope, blockUI, nutritionPackageService, nutritionRoutineService) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add NutritionPackageRoutine';
@@ -20,14 +20,41 @@
             blockUI.stop();
         }
         function activate() {
+
+            nutritionPackageService.getAllNutritionPackage()
+                .then(function (result) {
+                    vm.nutritionPackageIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionPackageId",
+                        valuePrimitive: true,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+
+                });
+
+            nutritionRoutineService.getAllNutritionRoutine()
+                .then(function (result) {
+                    vm.nutritionRoutineIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionRoutineId",
+                        valuePrimitive: true,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+
+                });
+
        
         
                 function initialize() {
             return {
               
-                    NutritionPackageRoutineId: "",
-                    NutritionPackageId: "",
-                    NutritionRoutineId: "",
+                    nutritionPackageRoutineId: "",
+                    nutritionPackageId: "",
+                    nutritionRoutineId: "",
                                 
             };
             }
