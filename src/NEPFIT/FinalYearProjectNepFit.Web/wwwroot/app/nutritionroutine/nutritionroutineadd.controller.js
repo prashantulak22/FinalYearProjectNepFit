@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('nutritionroutineAddCtrl', nutritionroutineAddCtrl);
-    nutritionroutineAddCtrl.$inject = ['nutritionRoutineService', "$uibModalInstance", '$scope', 'blockUI'];
-    function nutritionroutineAddCtrl(nutritionRoutineService, $uibModalInstance, $scope, blockUI) {
+    nutritionroutineAddCtrl.$inject = ['nutritionRoutineService', "$uibModalInstance", '$scope', 'blockUI','nutritionTypeService'];
+    function nutritionroutineAddCtrl(nutritionRoutineService, $uibModalInstance, $scope, blockUI, nutritionTypeService) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add NutritionRoutine';
@@ -20,6 +20,17 @@
             blockUI.stop();
         }
         function activate() {
+            nutritionTypeService.getAllNutritionType()
+                .then(function (result) {
+                    vm.nutritionTypeIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionTypeId",
+                        valuePrimitive: true,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+                });
        
         
                 function initialize() {
@@ -29,7 +40,6 @@
                     name: "",
                     description: "",
                     howToPrepare: "",
-    
                     nutritionTypeId: "",            
             };
             }

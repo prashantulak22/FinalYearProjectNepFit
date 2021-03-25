@@ -47,11 +47,11 @@
                         title: 'ExercisePackageRoutineId',
                         field: 'exercisePackageRoutineId',
                     }, {
-                        title: 'ExercisePackageId',
-                        field: 'exercisePackageId',
+                        title: 'ExercisePackageName',
+                        field: 'exercisePackageName',
                     }, {
-                        title: 'ExerciseRoutineId',
-                        field: 'exerciseRoutineId',
+                        title: 'ExerciseRoutineName',
+                        field: 'exerciseRoutineName',
                     }, {
                         title: 'DateUpdated',
                         field: 'dateUpdated',

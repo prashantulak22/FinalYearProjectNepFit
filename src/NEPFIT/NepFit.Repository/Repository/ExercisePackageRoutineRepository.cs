@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 using NepFit.Repository.Repository.Interface;
 using System;
@@ -37,11 +38,14 @@ namespace NepFit.Repository.Repository
             
         }
 
-        public IEnumerable<ExercisePackageRoutine> GetAll()
+        public IEnumerable<ExercisePackageRoutineResultDto> GetAll()
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Query<ExercisePackageRoutine>(
-                "Select * From [dbo].[ExercisePackageRoutine] WHERE Active = 1 order by DateCreated");
+            return conn.Query<ExercisePackageRoutineResultDto>(
+                "Select epr.*, et.Name ExerciseTypeName, er.Name ExerciseRoutineName From [dbo].[ExercisePackageRoutine] epr" +
+                "INNER JOIN [dbo].[ExerciseType] et ON epr.ExerciseTypeId = et.ExerciseTypeId"+
+                "INNER JOIN [dbo].[ExerciseRoutine] er ON epr.ExerciseRoutineId = er.ExerciseRoutineId"+
+                "WHERE er.Active = 1 and et.Active = 1 and epr.Active = 1 order by epr.DateCreated");
         }
 
         public ExercisePackageRoutine GetById(Guid id)

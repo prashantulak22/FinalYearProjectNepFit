@@ -35,6 +35,10 @@ namespace NepFit.Repository.Dto
 
         public System.Guid ExerciseRoutineId { get; set; }
 
+        public String ExerciseTypeName { get; set; }
+
+        public String ExerciseRoutineName { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

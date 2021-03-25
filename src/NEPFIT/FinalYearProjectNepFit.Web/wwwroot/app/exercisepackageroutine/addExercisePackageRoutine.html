@@ -12,23 +12,27 @@
     <div class="portlet-body">
         <div class="form-group">
             <label class="control-label col-md-3">
-                exerciseRoutineId
+                Exercise Type
                 <span class="required"> * </span>
             </label>
             <div class="col-md-6">
-                <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.exercisePackageRoutine.exerciseRoutineId" />
-                <span class="help-block"> Short Name for your ExerciseRoutine (Max [StringLength(5000)] characters </span>
+                <select kendo-drop-down-list class="required form-control"
+                        k-options="vm.exerciseTypeIdDropdownOptions"
+                        ng-model="vm.exercisePackageRoutine.exerciseTypeId"></select>
+                <span class="help-block">  Exercise Type</span>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-3">
-                exercisePackageId
+                Exercise Routine
                 <span class="required"> * </span>
             </label>
             <div class="col-md-6">
-                <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.exercisePackageRoutine.exercisePackageId" />
-                <span class="help-block"> Short Name for your ExerciseRoutine (Max [StringLength(5000)] characters </span>
+                <select kendo-drop-down-list class="required form-control"
+                        k-options="vm.exerciseRoutineIdDropdownOptions"
+                        ng-model="vm.exercisePackageRoutine.exerciseRoutineId"></select>
+                <span class="help-block">  Exercise Routine</span>
             </div>
         </div>
 
