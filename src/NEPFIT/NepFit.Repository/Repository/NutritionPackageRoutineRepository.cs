@@ -42,10 +42,10 @@ namespace NepFit.Repository.Repository
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Query<NutritionPackageRoutineResultDto>(
-                "Select npr.*, np.Name NutritionPackageName, nr.Name NutritionRoutineName From [dbo].[NutritionPackageRoutine] " +
-                "INNER JOIN [dbo].[NutirtionPackage] np ON npr.NutritionPackageId = np.NutritionPackageId"+
-                "INNER JOIN [dbo].[NutritionRoutine] nr on npr.NutritionRoutineId = nr.NutritionRoutineId "+
-                "WHERE nr.Active = 1 and np.Active = 1 and npr.Active = 1 order by npr.DateCreated");
+                "Select npr.*, np.Name NutritionPackageName, nr.Name NutritionRoutineName From [dbo].[NutritionPackageRoutine] npr " +
+                " INNER JOIN [dbo].[NutritionPackage] np ON npr.NutritionPackageId = np.NutritionPackageId "+
+                " INNER JOIN [dbo].[NutritionRoutine] nr on npr.NutritionRoutineId = nr.NutritionRoutineId "+
+                " WHERE nr.Active = 1 and np.Active = 1 and npr.Active = 1 order by npr.DateCreated");
         }
 
         public NutritionPackageRoutine GetById(Guid id)

@@ -45,13 +45,13 @@
                     },
                     {
                         title: 'NutritionPackageRoutineId',
-                        field: 'NutritionPackageRoutineId',
+                        field: 'nutritionPackageRoutineId',
                     }, {
                         title: 'NutritionPackageId',
-                        field: 'NutritionPackageId',
+                        field: 'nutritionPackageId',
                     }, {
                         title: 'NutritionRoutineId',
-                        field: 'NutritionRoutineId',
+                        field: 'nutritionRoutineId',
                     }, {
                         title: 'DateUpdated',
                         field: 'dateUpdated',

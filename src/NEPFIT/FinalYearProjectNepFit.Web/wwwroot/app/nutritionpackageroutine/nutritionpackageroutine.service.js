@@ -22,7 +22,7 @@
             
                 return $http({
                     method: 'GET',
-                    url: 'api/nutritionpackageroutine/getall',
+                    url: 'api/nutritionpackageroutine/all',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 }).then(
                     function (data, status, headers, config) {
