@@ -23,7 +23,7 @@ namespace NepFit.Repository.Repository
                 "([ExercisePackageId] ,[ExerciseRoutineId] " +
                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )	VALUES" +
                 "	(@ExercisePackageId ,@ExerciseRoutineId ,@Active " +
-                ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated))", input);
+                ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated)", input);
         }
 
         public int Update(ExercisePackageRoutine input)
@@ -42,10 +42,10 @@ namespace NepFit.Repository.Repository
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Query<ExercisePackageRoutineResultDto>(
-                "Select epr.*, et.Name ExerciseTypeName, er.Name ExerciseRoutineName From [dbo].[ExercisePackageRoutine] epr" +
-                "INNER JOIN [dbo].[ExerciseType] et ON epr.ExerciseTypeId = et.ExerciseTypeId"+
-                "INNER JOIN [dbo].[ExerciseRoutine] er ON epr.ExerciseRoutineId = er.ExerciseRoutineId"+
-                "WHERE er.Active = 1 and et.Active = 1 and epr.Active = 1 order by epr.DateCreated");
+                "Select epr.*, ep.Name ExercisePackageName, er.Name ExerciseRoutineName From [dbo].[ExercisePackageRoutine] epr" +
+                " INNER JOIN [dbo].[ExercisePackage] ep ON epr.ExercisePackageId = ep.ExercisePackageId "+
+                " INNER JOIN [dbo].[ExerciseRoutine] er ON epr.ExerciseRoutineId = er.ExerciseRoutineId "+
+                " WHERE er.Active = 1 and ep.Active = 1 and epr.Active = 1 order by epr.DateCreated ");
         }
 
         public ExercisePackageRoutine GetById(Guid id)

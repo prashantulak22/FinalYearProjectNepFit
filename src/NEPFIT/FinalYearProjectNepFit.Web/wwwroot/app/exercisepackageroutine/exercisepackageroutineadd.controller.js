@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('exercisepackageroutineAddCtrl', exercisepackageroutineAddCtrl);
-    exercisepackageroutineAddCtrl.$inject = ['exercisePackageRoutineService', "$uibModalInstance", '$scope', 'blockUI', 'exerciseTypeService', 'exerciseRoutineService'];
-    function exercisepackageroutineAddCtrl(exercisePackageRoutineService, $uibModalInstance, $scope, blockUI, exerciseTypeService, exerciseRoutineService) {
+    exercisepackageroutineAddCtrl.$inject = ['exercisePackageRoutineService', "$uibModalInstance", '$scope', 'blockUI', 'exercisePackageService', 'exerciseRoutineService'];
+    function exercisepackageroutineAddCtrl(exercisePackageRoutineService, $uibModalInstance, $scope, blockUI, exercisePackageService, exerciseRoutineService) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add ExercisePackageRoutine';
@@ -20,11 +20,11 @@
             blockUI.stop();
         }
         function activate() {
-            exerciseTypeService.getAllExerciseType()
+            exercisePackageService.getAllExercisePackage()
                 .then(function (result) {
-                    vm.exerciseTypeIdDropdownOptions = {
+                    vm.exercisePackageIdDropdownOptions = {
                         dataTextField: "name",
-                        dataValueField: "exerciseTypeId",
+                        dataValueField: "exercisePackageId",
                         valuePrimitive: true,
                         dataSource: {
                             data: result.data
@@ -50,9 +50,9 @@
                 function initialize() {
             return {
               
-                    ExercisePackageRoutineId: "",
-                    ExercisePackageId: "",
-                    ExerciseRoutineId: "",
+                    exercisePackageRoutineId: "",
+                    exercisePackageId: "",
+                    exerciseRoutineId: "",
                                 
             };
             }
