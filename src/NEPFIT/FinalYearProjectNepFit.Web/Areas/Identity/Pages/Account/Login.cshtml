@@ -30,7 +30,7 @@
                     <div class="form-row">
                         <div class="col-md-7">
 
-                            <button type="submit" class="btn btn-primary btn1 mt-3 mb-5">Log in</button>
+                            <button type="submit" class=" btn1 mt-3 mb-5">Log in</button>
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@
                             <p>
                                 @foreach (var provider in Model.ExternalLogins)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    <button type="submit" class="btn1 btn-primary " name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
                                 }
                             </p>
                         </div>
