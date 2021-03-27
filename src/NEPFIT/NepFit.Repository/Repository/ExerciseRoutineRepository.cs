@@ -33,7 +33,7 @@ namespace NepFit.Repository.Repository
                                 "	[ExerciseRoutineId] = @ExerciseRoutineId ,		" +
                                 "[Name] = @Name ,		[Description] = @Description ,	" +
                                 "[Repetition] = @Repetition, [Duration] =@Duration , [ExerciseTypeId]=@ExerciseTypeId" +
-                                "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
+                                "	,[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
                                 "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
                                 "[DateCreated] = @DateCreated 	WHERE [ExerciseRoutineId]=@ExerciseRoutineId", input);
             return input;
