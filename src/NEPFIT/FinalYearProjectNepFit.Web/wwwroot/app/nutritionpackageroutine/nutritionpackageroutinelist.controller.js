@@ -44,14 +44,14 @@
                         template: '<i ng-click=" vm.showEditNutritionPackageRoutine(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
                     },
                     {
-                        title: 'NutritionPackageRoutineId',
-                        field: 'nutritionPackageRoutineId',
+                        title: 'NutritionPackageName',
+                        field: 'nutritionPackageName',
                     }, {
-                        title: 'NutritionPackageId',
-                        field: 'nutritionPackageId',
+                        title: 'NutritionRoutineName',
+                        field: 'nutritionRoutineName',
                     }, {
-                        title: 'NutritionRoutineId',
-                        field: 'nutritionRoutineId',
+                        title: 'NutritionTypeName',
+                        field: 'nutritionTypeName',
                     }, {
                         title: 'DateUpdated',
                         field: 'dateUpdated',
