@@ -43,7 +43,7 @@
                     <span class="required"> * </span>
                 </label>
                 <div class="col-md-6">
-                    <input type="date" class="required form-control" value="10/10/2011" ng-model="vm.nepFitUser.dateOfBirth">
+                    <input type="date" class="required form-control" placeholder="MM/dd/yyyy"  ng-model="vm.nepFitUser.dateOfBirth">
 
 
                    
@@ -59,15 +59,15 @@
                 </label>
                 <div class="col-md-6">
                     <label>
-                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="Male" />
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="M" />
                         MALE
                     </label>
                     <label style="padding-left:20px;">
-                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="Female" />
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="F" />
                         FEMALE
                     </label>
                     <label style="padding-left:20px;">
-                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="Others" />
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="O" />
                         OTHERS
                     </label>
 
@@ -83,11 +83,11 @@
                 </label>
                 <div class="col-md-6">
                     <label>
-                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.isAdmin" value="Admin" />
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.isAdmin" ng-value="true" />
                         Admin
                     </label>
                     <label style="padding-left:20px;">
-                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.isAdmin" value="NotAdmin" />
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.isAdmin" ng-value="false" />
                         NotAdmin
                     </label>
                     
