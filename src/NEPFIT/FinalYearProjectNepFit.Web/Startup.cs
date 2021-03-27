@@ -125,6 +125,19 @@ namespace FinalYearProjectNepFit.Web
             services.AddScoped<INutritionPackageRoutineRepository, NutritionPackageRoutineRepository>();
 
 
+            services.AddScoped<IExerciseNutritionPackageService, ExerciseNutritionPackageService>();
+            services.AddScoped<IExerciseNutritionPackageRepository, ExerciseNutritionPackageRepository>();
+
+
+            services.AddScoped<INepFitUserService, NepFitUserService>();
+            services.AddScoped<INepFitUserRepository, NepFitUserRepository>();
+
+
+
+            services.AddScoped<IUserExerciseNutritionService, UserExerciseNutritionService>();
+            services.AddScoped<IUserExerciseNutritionRepository, UserExerciseNutritionRepository>();
+
+
 
 
             services.AddSwaggerGen();
