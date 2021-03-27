@@ -18,22 +18,22 @@ namespace NepFit.Repository.Repository
         public int Add(UserExerciseNutrition input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO UserExerciseNutrition ( [Name] ,[Description] " +
-                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
+            return conn.Execute("INSERT INTO UserExerciseNutrition ( [Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] " +
+                                ", [UserId] ,[ExerciseNutritionPackageId]  )" +
                                 "	VALUES" +
-                                "	( @Name ,@Description " +
-                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
+                                "	( @Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated  " +
+                                ",@UserId ,@ExerciseNutritionPackageId )", input);
         }
 
         public UserExerciseNutrition Update(UserExerciseNutrition input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             conn.Execute("	UPDATE UserExerciseNutrition SET 	" +
-                                "	[UserExerciseNutritionId] = @UserExerciseNutritionId ,		" +
-                                "[Name] = @Name ,		[Description] = @Description ,	" +
+                                "	[UserExerciseNutritionId] = @UserExerciseNutritionId ,		" +                       
                                 "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
                                 "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
-                                "[DateCreated] = @DateCreated 	WHERE [UserExerciseNutritionId]=@UserExerciseNutritionId", input);
+                                "[DateCreated] = @DateCreated ," +
+                                "[UserId] = @UserId,      [ExerciseNutritionPackageId] = @ExerciseNutritionPackageId,  +	WHERE [UserExerciseNutritionId]=@UserExerciseNutritionId", input);
             return input;
         }
 

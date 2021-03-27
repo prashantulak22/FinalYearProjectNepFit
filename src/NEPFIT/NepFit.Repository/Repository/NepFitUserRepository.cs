@@ -18,22 +18,19 @@ namespace NepFit.Repository.Repository
         public int Add(NepFitUser input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO NepFitUser ( [Name] ,[Description] " +
-                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
-                                "	VALUES" +
-                                "	( @Name ,@Description " +
-                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
+            return conn.Execute("INSERT INTO NepFitUser([UserId] ,[FirstName] ,[LastName] ," +
+                         "[DateOfBirth] ,[Gender] ,[MobileNumber] )VALUES	" +
+                        "(@UserId ,@FirstName ,@LastName ," +
+                        "@DateOfBirth ,@Gender ,@MobileNumber", input);
         }
 
         public NepFitUser Update(NepFitUser input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            conn.Execute("	UPDATE NepFitUser SET 	" +
-                                "	[NepFitUserId] = @NepFitUserId ,		" +
-                                "[Name] = @Name ,		[Description] = @Description ,	" +
-                                "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
-                                "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
-                                "[DateCreated] = @DateCreated 	WHERE [NepFitUserId]=@NepFitUserId", input);
+            conn.Execute("	UPDATE NepFitUser SET [UserId] = @UserId " +
+                ",[FirstName] = @FirstName ,[LastName] = @LastName" +
+                " ,[DateOfBirth] = @DateOfBirth ,[Gender] = @Gender " +
+                ",[MobileNumber] = @MobileNumber WHERE [UserId]=@UserId", input);
             return input;
         }
 

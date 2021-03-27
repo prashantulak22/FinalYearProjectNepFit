@@ -18,19 +18,18 @@ namespace NepFit.Repository.Repository
         public int Add(ExerciseNutritionPackage input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO ExerciseNutritionPackage ( [Name] ,[Description] " +
+            return conn.Execute("INSERT INTO ExerciseNutritionPackage ( [ExercisePackageId] ,[NutritionPackageId] " +
                                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
                                 "	VALUES" +
-                                "	( @Name ,@Description " +
+                                "	( @ExercisePackageId ,@NutritionPackageId " +
                                 ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
         }
 
         public ExerciseNutritionPackage Update(ExerciseNutritionPackage input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            conn.Execute("	UPDATE ExerciseNutritionPackage SET 	" +
-                                "	[ExerciseNutritionPackageId] = @ExerciseNutritionPackageId ,		" +
-                                "[Name] = @Name ,		[Description] = @Description ,	" +
+            conn.Execute("	UPDATE ExerciseNutritionPackage SET 	" +                               
+                                "[ExercisePackageId] = @ExercisePackageId ,		[NutritionPackageId] = @NutritionPackageId ,	" +
                                 "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
                                 "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
                                 "[DateCreated] = @DateCreated 	WHERE [ExerciseNutritionPackageId] = @ExerciseNutritionPackageId", input);
