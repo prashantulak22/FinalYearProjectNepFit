@@ -4,7 +4,7 @@ using NepFit.Repository.Entity;
 
 namespace NepFit.Repository.Repository.Interface
 {
-    public class IExerciseNutritionPackageRepository
+    public interface IExerciseNutritionPackageRepository
     {
         int Add(ExerciseNutritionPackage input);
         ExerciseNutritionPackage Update(ExerciseNutritionPackage input);

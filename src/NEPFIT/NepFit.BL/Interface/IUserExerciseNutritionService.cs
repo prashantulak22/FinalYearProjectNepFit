@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using NepFit.Repository.Dto;
 
 namespace NepFit.BL.Interface
 {
-    class IUserExerciseNutritionService
+    public interface IUserExerciseNutritionService
     {
+        int Add(UserExerciseNutritionCreateDto input);
+        bool Update(UserExerciseNutritionUpdateDto input);
+        IEnumerable<UserExerciseNutritionResultDto> GetAll();
+        bool Delete(UserExerciseNutritionUpdateDto id);
     }
 }

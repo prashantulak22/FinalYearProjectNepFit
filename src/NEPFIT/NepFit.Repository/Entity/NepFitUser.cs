@@ -93,7 +93,7 @@ namespace NepFit.Repository.Entity
         [Required]
         
         public  Int64 MobileNumber { get; set; }
-
+        public DateTime DateUpdated { get; set; }
     }
 
 }

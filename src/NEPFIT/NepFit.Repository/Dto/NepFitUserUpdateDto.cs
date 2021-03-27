@@ -102,6 +102,6 @@ namespace NepFit.Repository.Dto
         [Required]
 
         public DateTime DateCreated { get; set; }
-
+        public Guid NepFitUserId { get; set; }
     }
 }

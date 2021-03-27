@@ -65,6 +65,6 @@ namespace NepFit.Repository.Dto
         [Required]
         
         public System.Guid ExerciseNutritionPackageId { get; set; }
-
+        public Guid UserExerciseNutritionId { get; set; }
     }
 }
