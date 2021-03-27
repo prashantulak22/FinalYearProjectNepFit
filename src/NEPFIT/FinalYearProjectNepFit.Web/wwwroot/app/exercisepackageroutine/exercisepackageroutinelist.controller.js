@@ -41,7 +41,7 @@
                 columns: [
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.showEditExercisePackageRoutine(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
+                        template: '<i ng-click=" vm.showEditExercisePackageRoutine(dataItem)" class=" fa fa-pencil handCursor"></i>'
                     },
                     {
                         title: 'ExercisePackageRoutineId',
@@ -63,7 +63,7 @@
                     },
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.removeExercisePackageRoutineRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
+                        template: '<i ng-click=" vm.removeExercisePackageRoutineRequest(dataItem)" class="fa fa-trash handCursor"></i>'
                     }
                 ]
             };

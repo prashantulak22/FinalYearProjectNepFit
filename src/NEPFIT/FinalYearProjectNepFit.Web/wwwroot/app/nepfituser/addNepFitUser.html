@@ -20,7 +20,7 @@
                 </label>
                 <div class="col-md-6">
                     <input type="text" maxlength="[StringLength(50)]" class="form-control" name="FirstName" placeholder="FirstName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.firstName" />
-                    <span class="help-block">Enter Your First Name</span>
+                    
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 </label>
                 <div class="col-md-6">
                     <input type="text" maxlength="[StringLength(50)]" class="form-control" name="LastName" placeholder="LastName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.lastName" />
-                    <span class="help-block"> Enter Your Last Name </span>
+                    
                 </div>
             </div>
 
@@ -46,7 +46,7 @@
                     <input type="date" class="required form-control" value="10/10/2011" ng-model="vm.nepFitUser.dateOfBirth">
 
 
-                    <span class="help-block">Choose Your Date of Birth </span>
+                   
                 </div>
             </div>
 
@@ -58,9 +58,21 @@
                     <span class="required"> * </span>
                 </label>
                 <div class="col-md-6">
-                    <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.genderDropdownOptions" ng-model="vm.nepFitUser.gender"></select>
+                    <label>
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="Male" />
+                        MALE
+                    </label>
+                    <label style="padding-left:20px;">
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="Female" />
+                        FEMALE
+                    </label>
+                    <label style="padding-left:20px;">
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="Others" />
+                        OTHERS
+                    </label>
 
-                    <span class="help-block"> Choose Your Gender </span>
+
+
                 </div>
             </div>
 
@@ -70,9 +82,18 @@
                     <span class="required"> * </span>
                 </label>
                 <div class="col-md-6">
-                    <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.isAdminDropdownOptions" ng-model="vm.nepFitUser.isAdmin"></select>
-
+                    <label>
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.isAdmin" value="Admin" />
+                        Admin
+                    </label>
+                    <label style="padding-left:20px;">
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.isAdmin" value="NotAdmin" />
+                        NotAdmin
+                    </label>
                     
+
+
+
                 </div>
             </div>
 

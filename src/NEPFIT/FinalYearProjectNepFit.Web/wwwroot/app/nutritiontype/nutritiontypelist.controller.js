@@ -44,7 +44,7 @@
                 columns: [
                                    {
                         width: "35px",
-                        template: '<i ng-click=" vm.showEditNutritionType(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
+                        template: '<i ng-click=" vm.showEditNutritionType(dataItem)" class=" fa fa-pencil handCursor"></i>'
                     },
                     
                    
@@ -67,7 +67,7 @@
       },                   
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.removeNutritionTypeRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
+                        template: '<i ng-click=" vm.removeNutritionTypeRequest(dataItem)" class="fa fa-trash handCursor"></i>'
                     }
                 ] 
             };

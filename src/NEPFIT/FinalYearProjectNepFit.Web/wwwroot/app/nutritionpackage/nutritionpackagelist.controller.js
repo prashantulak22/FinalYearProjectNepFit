@@ -42,7 +42,7 @@
                 columns: [
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.showEditNutritionPackage(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
+                        template: '<i ng-click=" vm.showEditNutritionPackage(dataItem)" class=" fa fa-pencil handCursor"></i>'
                     },
                     {
                         title: 'Name',
@@ -63,7 +63,7 @@
                     },
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.removeNutritionPackageRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
+                        template: '<i ng-click=" vm.removeNutritionPackageRequest(dataItem)" class="fa fa-trash handCursor"></i>'
                     }
                 ]
             };

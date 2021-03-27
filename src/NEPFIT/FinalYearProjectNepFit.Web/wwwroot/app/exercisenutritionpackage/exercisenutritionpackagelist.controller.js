@@ -41,7 +41,7 @@
                 columns: [
                                    {
                         width: "35px",
-                        template: '<i ng-click=" vm.showEditExerciseNutritionPackage(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
+                        template: '<i ng-click=" vm.showEditExerciseNutritionPackage(dataItem)" class=" fa fa-pencil handCursor"></i>'
                     },
                    {
        title: 'ExercisePackageName',
@@ -60,7 +60,7 @@
       },                   
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.removeExerciseNutritionPackageRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
+                        template: '<i ng-click=" vm.removeExerciseNutritionPackageRequest(dataItem)" class="fa fa-trash handCursor"></i>'
                     }
                 ] 
             };

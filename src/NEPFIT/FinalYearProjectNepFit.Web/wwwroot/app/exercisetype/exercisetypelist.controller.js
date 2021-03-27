@@ -44,7 +44,7 @@
                 columns: [
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.showEditExerciseType(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
+                        template: '<i ng-click=" vm.showEditExerciseType(dataItem)" class=" fa fa-pencil handCursor"></i>'
                     },
                     {
                         title: 'Name',
@@ -65,7 +65,7 @@
                     },
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.removeExerciseTypeRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
+                        template: '<i ng-click=" vm.removeExerciseTypeRequest(dataItem)" class="fa fa-trash handCursor"></i>'
                     }
                 ]
             };

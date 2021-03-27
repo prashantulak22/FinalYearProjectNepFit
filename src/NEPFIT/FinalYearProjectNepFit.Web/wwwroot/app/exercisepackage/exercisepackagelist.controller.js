@@ -41,7 +41,7 @@
                 columns: [
                                    {
                         width: "35px",
-                        template: '<i ng-click=" vm.showEditExercisePackage(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
+                        template: '<i ng-click=" vm.showEditExercisePackage(dataItem)" class=" fa fa-pencil handCursor"></i>'
                     }
                    ,
       {
@@ -63,7 +63,7 @@
       },                   
                     {
                         width: "35px",
-                        template: '<i ng-click=" vm.removeExercisePackageRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
+                        template: '<i ng-click=" vm.removeExercisePackageRequest(dataItem)" class="fa fa-trash handCursor"></i>'
                     }
                 ] 
             };
