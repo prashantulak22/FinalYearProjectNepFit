@@ -26,7 +26,12 @@ namespace NepFit.Repository.Entity
                         String lastName,
                         DateTime dateOfBirth,
                         String gender,
-                        Int64 mobileNumber)
+                        Boolean isAdmin,
+                        System.Guid createdBy,
+                        DateTime dateCreated,
+                        Boolean? active= null,
+                        System.Guid? updatedBy= null,
+                        DateTime? dateUpdated= null)
     {
         var @objectToReturn = new NepFitUser
         {
@@ -36,7 +41,12 @@ namespace NepFit.Repository.Entity
             LastName = lastName,
             DateOfBirth = dateOfBirth,
             Gender = gender,
-            MobileNumber = mobileNumber
+            IsAdmin = isAdmin,
+            Active = active,
+            UpdatedBy = updatedBy,
+            CreatedBy = createdBy,
+            DateUpdated = dateUpdated,
+            DateCreated = dateCreated
         };
 
         return @objectToReturn;
@@ -46,7 +56,9 @@ namespace NepFit.Repository.Entity
         /// 
         /// </summary>
         [DisplayName("UserId")]
-        [DataMember]        
+        [DataMember]
+        
+        [Key, Column(Order = 0)]
         public  System.Guid UserId { get; set; }
 
         /// <summary>
@@ -88,12 +100,54 @@ namespace NepFit.Repository.Entity
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("MobileNumber")]
+        [DisplayName("IsAdmin")]
         [DataMember]
         [Required]
         
-        public  Int64 MobileNumber { get; set; }
-        public DateTime DateUpdated { get; set; }
+        public  Boolean IsAdmin { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("Active")]
+        [DataMember]
+        
+        public  Boolean? Active { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UpdatedBy")]
+        [DataMember]
+        
+        public  System.Guid? UpdatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("CreatedBy")]
+        [DataMember]
+        [Required]
+        
+        public  System.Guid CreatedBy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateUpdated")]
+        [DataMember]
+        
+        public  DateTime? DateUpdated { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("DateCreated")]
+        [DataMember]
+        [Required]
+        
+        public  DateTime DateCreated { get; set; }
+
     }
 
 }
