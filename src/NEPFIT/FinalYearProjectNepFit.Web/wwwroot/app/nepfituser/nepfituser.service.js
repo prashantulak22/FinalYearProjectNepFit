@@ -32,7 +32,7 @@
         }
         
         function  getAllNepFitUserById(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
                     url:'api/nepfituser/getbyid',
@@ -42,8 +42,7 @@
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
 
         function  createNepFitUser(item) {

@@ -59,7 +59,7 @@ namespace NepFit.Repository.Dto
         [DataMember]
         [Required]
 
-        public Boolean? IsAdmin { get; set; }
+        public Boolean IsAdmin { get; set; }
 
         /// <summary>
         /// 
