@@ -8,7 +8,6 @@
 
                 //Don't use abstract state (and remove app. from url), because it doesn't work with htm5Mode
                 //Use the HTML5 History API
-                $locationProvider.html5Mode(true);
                 blockUIConfig.autoBlock = false;
 
                 $stateProvider
