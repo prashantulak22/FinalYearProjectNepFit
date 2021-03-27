@@ -10,31 +10,31 @@ namespace FinalYearProjectNepFit.Web.Controller
 {
     [ApiController]
     [Authorize]
-    public class NepFitUserController : ControllerBase
+    public class ExerciseNutritionPackageController : ControllerBase
     {
-        private readonly INepFitUserService _nepFitUserService;
+        private readonly IExerciseNutritionPackageService _exerciseNutritionPackageService;
 
-        public NepFitUserController(INepFitUserService nepFitUserService)
+        public ExerciseNutritionPackageController(IExerciseNutritionPackageService ExerciseNutritionPackageService)
         {
-            _nepFitUserService = nepFitUserService;
+            _exerciseNutritionPackageService = ExerciseNutritionPackageService;
         }
 
-        [Route("api/nepFitUser/all")]
+        [Route("api/exerciseNutritionPackage/all")]
         [HttpGet]
-        public IEnumerable<NepFitUserResultDto> GetAll()
+        public IEnumerable<ExerciseNutritionPackageResultDto> GetAll()
         {
-            return _nepFitUserService.GetAll();
+            return _exerciseNutritionPackageService.GetAll();
         }
 
 
-        [Route("api/nepFitUser/delete")]
+        [Route("api/exerciseNutritionPackage/delete")]
         [HttpPost]
-        public ActionResult<bool> Delete(NepFitUserUpdateDto input)
+        public ActionResult<bool> Delete(ExerciseNutritionPackageUpdateDto input)
         {
             if (TryValidateModel(input))
             {
                 input.UpdatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                return _nepFitUserService.Delete(input);
+                return _exerciseNutritionPackageService.Delete(input);
             }
             else
             {
@@ -42,15 +42,15 @@ namespace FinalYearProjectNepFit.Web.Controller
             }
         }
 
-        [Route("api/nepFitUser/add")]
+        [Route("api/exerciseNutritionPackage/add")]
         [HttpPost]
-        public ActionResult<int> Add(NepFitUserCreateDto input)
+        public ActionResult<int> Add(ExerciseNutritionPackageCreateDto input)
         {
 
             if (TryValidateModel(input))
             {
                 input.CreatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                return _nepFitUserService.Add(input);
+                return _exerciseNutritionPackageService.Add(input);
             }
             else
             {
@@ -58,15 +58,15 @@ namespace FinalYearProjectNepFit.Web.Controller
             }
         }
 
-        [Route("api/nepFitUser/update")]
+        [Route("api/exerciseNutritionPackage/update")]
         [HttpPost]
-        public ActionResult<bool> Update(NepFitUserUpdateDto input)
+        public ActionResult<bool> Update(ExerciseNutritionPackageUpdateDto input)
         {
 
             if (TryValidateModel(input))
             {
                 input.UpdatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                return _nepFitUserService.Update(input);
+                return _exerciseNutritionPackageService.Update(input);
             }
             else
             {
