@@ -20,7 +20,7 @@
                 </label>
                 <div class="col-md-6">
                     <input type="text" maxlength="[StringLength(50)]" class="form-control" name="FirstName" placeholder="FirstName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.firstName" />
-                    <span class="help-block"> Short FirstName for your NepFitUser (Max [StringLength(50)] characters </span>
+                    <span class="help-block">Enter Your First Name</span>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 </label>
                 <div class="col-md-6">
                     <input type="text" maxlength="[StringLength(50)]" class="form-control" name="LastName" placeholder="LastName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.lastName" />
-                    <span class="help-block"> Short LastName for your NepFitUser (Max [StringLength(50)] characters </span>
+                    <span class="help-block"> Enter Your Last Name </span>
                 </div>
             </div>
 
@@ -46,7 +46,7 @@
                     <input type="date" class="required form-control" value="10/10/2011" ng-model="vm.nepFitUser.dateOfBirth">
 
 
-                    <span class="help-block"> Short Gender for your NepFitUser (Max [StringLength(1)] characters </span>
+                    <span class="help-block">Choose Your Date of Birth </span>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                 <div class="col-md-6">
                     <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.genderDropdownOptions" ng-model="vm.nepFitUser.gender"></select>
 
-                    <span class="help-block"> Short Gender for your NepFitUser (Max [StringLength(1)] characters </span>
+                    <span class="help-block"> Choose Your Gender </span>
                 </div>
             </div>
 
@@ -70,9 +70,9 @@
                     <span class="required"> * </span>
                 </label>
                 <div class="col-md-6">
-                    <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.isAdmin-DropdownOptions" ng-model="vm.nepFitUser.isAdmin"></select>
+                    <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.isAdminDropdownOptions" ng-model="vm.nepFitUser.isAdmin"></select>
 
-                    <span class="help-block"> Short Gender for your NepFitUser (Max [StringLength(1)] characters </span>
+                    
                 </div>
             </div>
 
