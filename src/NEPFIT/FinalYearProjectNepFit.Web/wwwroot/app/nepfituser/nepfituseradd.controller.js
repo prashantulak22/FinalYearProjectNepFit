@@ -29,7 +29,7 @@
                     firstName: "",
                     lastName: "",
                     gender: "",
-                    mobileNumber: 0,            
+                               
             };
             }
              vm.nepFitUser = initialize();

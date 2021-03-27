@@ -59,10 +59,7 @@
                         title: 'Gender',
                         field: 'gender'
                         },
-                        {
-                        title: 'MobileNumber',
-                        field: 'mobileNumber',
-                        }, 
+                                              
                         {
                         title: 'DateUpdated',
                         field: 'dateUpdated',
