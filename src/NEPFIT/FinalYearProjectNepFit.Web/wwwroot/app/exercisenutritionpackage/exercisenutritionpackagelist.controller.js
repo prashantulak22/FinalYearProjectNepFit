@@ -44,11 +44,11 @@
                         template: '<i ng-click=" vm.showEditExerciseNutritionPackage(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
                     },
                    {
-       title: 'ExercisePackageId',
-       field: 'exercisePackageId',
+       title: 'ExercisePackageName',
+       field: 'exercisePackageName',
       },{
-       title: 'NutritionPackageId',
-       field: 'nutritionPackageId',
+       title: 'NutritionPackageName',
+       field: 'nutritionPackageName',
       },{
        title: 'DateUpdated',
        field: 'dateUpdated',

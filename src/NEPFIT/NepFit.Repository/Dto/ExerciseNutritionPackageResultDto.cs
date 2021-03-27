@@ -76,6 +76,9 @@ namespace NepFit.Repository.Dto
         
         public DateTime DateCreated { get; set; }
 
-   
+        public String ExercisePackageName { get; set; }
+        public String NutritionPackageName { get; set; }
+
+
     }
 }
