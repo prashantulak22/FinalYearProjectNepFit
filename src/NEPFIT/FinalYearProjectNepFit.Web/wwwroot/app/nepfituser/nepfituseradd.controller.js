@@ -1,26 +1,23 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('nepfituserAddCtrl', nepfituserAddCtrl);
-    nepfituserAddCtrl.$inject = ['nepFitUserService',  "$uibModalInstance", '$scope'];
-    function nepfituserAddCtrl(nepFitUserService,  $uibModalInstance, $scope) {
+    nepfituserAddCtrl.$inject = ['nepFitUserService', "$uibModalInstance", '$scope', 'blockUI'];
+    function nepfituserAddCtrl(nepFitUserService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add NepFitUser';
         
         activate();
         function showLoading() {
-            App.blockUI({
-                target: '#nepfituserList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#nepfituserList');
+            blockUI.stop();
         }
         function activate() {
        
@@ -28,11 +25,11 @@
                 function initialize() {
             return {
               
-                    UserId: "",
-                    FirstName: "",
-                    LastName: "",
-                    Gender: "",
-                    MobileNumber: 0,            
+                    
+                    firstName: "",
+                    lastName: "",
+                    gender: "",
+                    mobileNumber: 0,            
             };
             }
              vm.nepFitUser = initialize();
@@ -70,5 +67,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 

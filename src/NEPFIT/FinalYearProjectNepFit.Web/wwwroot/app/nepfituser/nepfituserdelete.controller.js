@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('nepfituserDeleteCtrl', nepfituserDeleteCtrl);
     nepfituserDeleteCtrl.$inject = ['nepFitUserService',  "$uibModalInstance", '$scope', 'param'];
     function nepfituserDeleteCtrl(nepFitUserService,  $uibModalInstance, $scope, param) {

@@ -1,12 +1,12 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('nepfituserListCtrl', nepfituserListCtrl);
-    nepfituserListCtrl.$inject = ['nepFitUserService', '$scope', '$uibModal'];
-    function nepfituserListCtrl(nepFitUserService, $scope, $uibModal) {
+    nepfituserListCtrl.$inject = ['nepFitUserService', '$scope', '$uibModal', 'blockUI'];
+    function nepfituserListCtrl(nepFitUserService, $scope, $uibModal, blockUI) {
         var vm = this;
         activate();
  
@@ -24,14 +24,14 @@
                         }
                     },
                     sort: {
-                        field: "DateUpdated", dir: "desc"
+                        field: "DateUpdated", dir: "asc"
                     }
                 },
                 scrollable: true,
                 sortable: true,
                 filterable: true,
                 resizable: true,
-                groupable: true,
+               
                 toolbar: [
                     { name: "addNepFitUser", text: "Add NepFitUser", imageClass: "fa fa-map-marker", className: "k-grid-addnepfituser", iconClass: "k-icon" }
                 ],
@@ -42,30 +42,36 @@
                                    {
                         width: "35px",
                         template: '<i ng-click=" vm.showEditNepFitUser(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
-                    }
-                   {
-       title: 'UserId',
-       field: 'UserId',
-      },{
-       title: 'FirstName',
-       field: 'FirstName'
-      },
-      {
-       title: 'LastName',
-       field: 'LastName'
-      },
-      {
-       title: 'DateOfBirth',
-       field: 'DateOfBirth',
-       template: "#= kendo.toString(kendo.parseDate(DateOfBirth), 'MM/dd/yyyy h:mm tt') #",
-      },{
-       title: 'Gender',
-       field: 'Gender'
-      },
-      {
-       title: 'MobileNumber',
-       field: 'MobileNumber',
-      },                   
+                    },
+                                    {
+                        title: 'FirstName',
+                        field: 'firstName'
+                        },
+                        {
+                        title: 'LastName',
+                        field: 'lastName'
+                        },
+                        {
+                        title: 'DateOfBirth',
+                        field: 'dateOfBirth',
+                        template: "#= kendo.toString(kendo.parseDate(dateOfBirth), 'MM/dd/yyyy h:mm tt') #",
+                        },{
+                        title: 'Gender',
+                        field: 'gender'
+                        },
+                        {
+                        title: 'MobileNumber',
+                        field: 'mobileNumber',
+                        }, 
+                        {
+                        title: 'DateUpdated',
+                        field: 'dateUpdated',
+                        template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",
+                    }, {
+                        title: 'DateCreated',
+                        field: 'dateCreated',
+                        template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
+                    },
                     {
                         width: "35px",
                         template: '<i ng-click=" vm.removeNepFitUserRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
@@ -78,7 +84,7 @@
       vm.showAddNepFitUser = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/add',
+                    templateUrl: '/app/nepfituser/addNepFitUser.html',
                     controller: 'nepfituserAddCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -99,7 +105,7 @@
       vm.showEditNepFitUser = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/edit',
+                    templateUrl: '/app/nepfituser/editNepFitUser.html',
                     controller: 'nepfituserEditCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -121,7 +127,7 @@
             vm.removeNepFitUserRequest = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/DeleteConfirm',
+                    templateUrl: '/app/nepfituser/deleteNepFitUser.html',
                     controller: 'nepfituserDeleteCtrl as vm',
                     backdrop: 'static',
                     size: "md",
@@ -140,14 +146,11 @@
             
                     
         function showLoading() {
-            App.blockUI({
-                target: '#nepfituserList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#nepfituserList');
+            blockUI.stop();
         }
 
         $scope.$on("kendoWidgetCreated", function (event, widget) {
@@ -163,5 +166,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 

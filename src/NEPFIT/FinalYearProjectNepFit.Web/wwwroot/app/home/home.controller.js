@@ -97,6 +97,9 @@
         vm.showExerciseNutritionPackage = function () {
             $state.go('exerciseNutritionPackage');
         }
+        vm.showNepFitUser = function () {
+            $state.go('nepFitUser');
+        }
     }
 
 
