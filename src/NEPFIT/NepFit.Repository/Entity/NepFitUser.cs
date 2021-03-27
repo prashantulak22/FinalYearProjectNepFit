@@ -9,6 +9,7 @@ namespace NepFit.Repository.Entity
 
     [Serializable]
     [DataContract]
+    [Table("NepFitUser", Schema="dbo")]
     public partial class NepFitUser
     {
      /// <summary>
@@ -23,7 +24,7 @@ namespace NepFit.Repository.Entity
         public static  NepFitUser Create(
                         String firstName,
                         String lastName,
-                        Int32 dateOfBirth,
+                        DateTime dateOfBirth,
                         String gender,
                         Int64 mobileNumber)
     {
@@ -45,9 +46,7 @@ namespace NepFit.Repository.Entity
         /// 
         /// </summary>
         [DisplayName("UserId")]
-        [DataMember]
-        
-        [Key, Column(Order = 0)]
+        [DataMember]        
         public  System.Guid UserId { get; set; }
 
         /// <summary>
@@ -75,7 +74,7 @@ namespace NepFit.Repository.Entity
         [DataMember]
         [Required]
         
-        public  Int32 DateOfBirth { get; set; }
+        public  DateTime DateOfBirth { get; set; }
 
         /// <summary>
         /// 
