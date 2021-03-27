@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
-
 namespace NepFit.Repository.Entity
 {
 
@@ -25,6 +24,7 @@ namespace NepFit.Repository.Entity
         public static  UserExerciseNutrition Create(
                         System.Guid createdBy,
                         DateTime dateCreated,
+                        System.Guid userId,
                         System.Guid exerciseNutritionPackageId,
                         Boolean? active= null,
                         System.Guid? updatedBy= null,
@@ -33,17 +33,27 @@ namespace NepFit.Repository.Entity
         var @objectToReturn = new UserExerciseNutrition
         {
           
+            UserExerciseNutritionId = Guid.NewGuid(),
             Active = active,
             UpdatedBy = updatedBy,
             CreatedBy = createdBy,
             DateUpdated = dateUpdated,
             DateCreated = dateCreated,
-            UserId = Guid.NewGuid(),
+            UserId = userId,
             ExerciseNutritionPackageId = exerciseNutritionPackageId
         };
 
         return @objectToReturn;
     }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UserExerciseNutritionId")]
+        [DataMember]
+        
+        [Key, Column(Order = 0)]
+        public  System.Guid UserExerciseNutritionId { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +101,9 @@ namespace NepFit.Repository.Entity
         /// 
         /// </summary>
         [DisplayName("UserId")]
-        [DataMember]        
+        [DataMember]
+        [Required]
+        
         public  System.Guid UserId { get; set; }
 
         /// <summary>

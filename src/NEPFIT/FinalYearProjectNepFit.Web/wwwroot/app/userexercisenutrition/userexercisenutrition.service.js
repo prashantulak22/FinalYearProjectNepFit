@@ -1,79 +1,88 @@
 
 (function (angular, app) {
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .factory('userExerciseNutritionService', userExerciseNutritionService);
 
-    userExerciseNutritionService.$inject = ['$http', 'tokenService', '$q'];
+    userExerciseNutritionService.$inject = ['$http'];
 
-    function userExerciseNutritionService($http, tokenService, $q) {
+    function userExerciseNutritionService($http) {
         var service = {
             getAllUserExerciseNutrition: getAllUserExerciseNutrition,
             getAllUserExerciseNutritionById: getAllUserExerciseNutritionById,
             updateUserExerciseNutrition: updateUserExerciseNutrition,
             createUserExerciseNutrition: createUserExerciseNutrition,
+            deleteUserExerciseNutrition: deleteUserExerciseNutrition,
         };
 
         return service;
 
  
         function  getAllUserExerciseNutrition() {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'GET',
-                    url: app.userexercisenutritionApibaseUrl + 'api/userexercisenutrition/getall',
+                    url: 'api/userexercisenutrition/all',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
         function  getAllUserExerciseNutritionById(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
-                    url: app.userexercisenutritionApibaseUrl + 'api/userexercisenutrition/getbyid',
+                    url: 'api/userexercisenutrition/getbyid',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
 
         function  createUserExerciseNutrition(item) {
-            return tokenService.getToken().then(function () {
+           
                 return $http({
                     method: 'POST',
-                    url: app.userexercisenutritionApibaseUrl + 'api/userexercisenutrition/add',
+                    url: 'api/userexercisenutrition/add',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
        function  updateUserExerciseNutrition(item) {
-            return tokenService.getToken().then(function () {
+           
                 return $http({
                     method: 'POST',
-                    url: app.userexercisenutritionApibaseUrl + 'api/userexercisenutrition/update',
+                    url: 'api/userexercisenutrition/update',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
+       }
+
+        function deleteUserExerciseNutrition(item) {
+            return $http({
+                method: 'POST',
+                url: '/api/userexercisenutrition/delete',
+                headers: { 'Authorization': 'Bearer ' + app.jwtToken },
+                data: item
+            }).then(
+                function (data, status, headers, config) {
+                    return data;
+                });
         }
         
         

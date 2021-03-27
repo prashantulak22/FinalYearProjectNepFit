@@ -7,6 +7,13 @@ namespace NepFit.Repository.Dto
 {
     public class UserExerciseNutritionUpdateDto  
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UserExerciseNutritionId")]
+        [DataMember]
+
+        public System.Guid UserExerciseNutritionId { get; set; }
 
         /// <summary>
         /// 
@@ -65,6 +72,6 @@ namespace NepFit.Repository.Dto
         [Required]
         
         public System.Guid ExerciseNutritionPackageId { get; set; }
-        public Guid UserExerciseNutritionId { get; set; }
+        
     }
 }

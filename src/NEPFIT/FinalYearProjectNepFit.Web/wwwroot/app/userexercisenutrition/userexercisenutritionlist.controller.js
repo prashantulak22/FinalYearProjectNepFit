@@ -1,12 +1,12 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('userexercisenutritionListCtrl', userexercisenutritionListCtrl);
-    userexercisenutritionListCtrl.$inject = ['userExerciseNutritionService', '$scope', '$uibModal'];
-    function userexercisenutritionListCtrl(userExerciseNutritionService, $scope, $uibModal) {
+    userexercisenutritionListCtrl.$inject = ['userExerciseNutritionService', '$scope', '$uibModal', 'blockUI'];
+    function userexercisenutritionListCtrl(userExerciseNutritionService, $scope, $uibModal, blockUI) {
         var vm = this;
         activate();
  
@@ -24,14 +24,14 @@
                         }
                     },
                     sort: {
-                        field: "DateUpdated", dir: "desc"
+                        field: "DateUpdated", dir: "asc"
                     }
                 },
                 scrollable: true,
                 sortable: true,
                 filterable: true,
                 resizable: true,
-                groupable: true,
+                
                 toolbar: [
                     { name: "addUserExerciseNutrition", text: "Add UserExerciseNutrition", imageClass: "fa fa-map-marker", className: "k-grid-adduserexercisenutrition", iconClass: "k-icon" }
                 ],
@@ -42,31 +42,26 @@
                                    {
                         width: "35px",
                         template: '<i ng-click=" vm.showEditUserExerciseNutrition(dataItem)" class=" glyphicon glyphicon-pencil handCursor"></i>'
-                    }
+                    },
+                   
                    {
-       title: 'Active',
-       field: 'Active',
-      },{
-       title: 'UpdatedBy',
-       field: 'UpdatedBy',
-      },{
-       title: 'CreatedBy',
-       field: 'CreatedBy',
-      },{
-       title: 'DateUpdated',
-       field: 'DateUpdated',
-       template: "#= kendo.toString(kendo.parseDate(DateUpdated), 'MM/dd/yyyy h:mm tt') #",
-      },{
-       title: 'DateCreated',
-       field: 'DateCreated',
-       template: "#= kendo.toString(kendo.parseDate(DateCreated), 'MM/dd/yyyy h:mm tt') #",
-      },{
-       title: 'UserId',
-       field: 'UserId',
-      },{
-       title: 'ExerciseNutritionPackageId',
-       field: 'ExerciseNutritionPackageId',
-      },                   
+                   title: 'UserExerciseNutritionId',
+                   field: 'userExerciseNutritionId',
+                  },{
+                   title: 'DateUpdated',
+                   field: 'dateUpdated',
+                   template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",
+                  },{
+                   title: 'DateCreated',
+                   field: 'dateCreated',
+                   template: "#= kendo.toString(kendo.parseDate(dateCreated), 'MM/dd/yyyy h:mm tt') #",
+                  },{
+                   title: 'UserId',
+                   field: 'userId',
+                  },{
+                   title: 'ExerciseNutritionPackageId',
+                   field: 'exerciseNutritionPackageId',
+                  },                   
                     {
                         width: "35px",
                         template: '<i ng-click=" vm.removeUserExerciseNutritionRequest(dataItem)" class="glyphicon glyphicon-trash handCursor"></i>'
@@ -79,7 +74,7 @@
       vm.showAddUserExerciseNutrition = function () {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/add',
+                    templateUrl: '/app/userexercisenutrition/addUserExerciseNutrition.html',
                     controller: 'userexercisenutritionAddCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -100,7 +95,7 @@
       vm.showEditUserExerciseNutrition = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/edit',
+                    templateUrl: '/app/userexercisenutrition/editUserExerciseNutrition.html',
                     controller: 'userexercisenutritionEditCtrl as vm',
                     backdrop: 'static',
                     size: "lg",
@@ -122,7 +117,7 @@
             vm.removeUserExerciseNutritionRequest = function (item) {
                 var modalInstance = $uibModal.open({
                     animation: true,
-                    templateUrl: '/tableapp/tableapp/DeleteConfirm',
+                    templateUrl: '/app/userexercisenutrition/deleteUserExerciseNutrition.html',
                     controller: 'userexercisenutritionDeleteCtrl as vm',
                     backdrop: 'static',
                     size: "md",
@@ -141,14 +136,11 @@
             
                     
         function showLoading() {
-            App.blockUI({
-                target: '#userexercisenutritionList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#userexercisenutritionList');
+            blockUI.stop();
         }
 
         $scope.$on("kendoWidgetCreated", function (event, widget) {
@@ -164,5 +156,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 

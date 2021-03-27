@@ -7,6 +7,7 @@ namespace NepFit.Repository.Dto
 {
     public class UserExerciseNutritionCreateDto 
     {
+        
 
         /// <summary>
         /// 
