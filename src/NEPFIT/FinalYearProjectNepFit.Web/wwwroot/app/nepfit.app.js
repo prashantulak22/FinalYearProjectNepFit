@@ -88,8 +88,8 @@
                         })
                     .state("register",
                         {
-                            url: "/register/medicaluser",
-                            templateUrl: "/app/medicaluser/register.html",
+                            url: "/register/postregister",
+                            templateUrl: "/app/nepfituser/postRegister.html",
                             title: "Register"
                         });
 

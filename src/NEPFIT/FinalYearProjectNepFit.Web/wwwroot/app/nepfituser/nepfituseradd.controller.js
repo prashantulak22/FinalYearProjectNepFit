@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('nepfituserAddCtrl', nepfituserAddCtrl);
-    nepfituserAddCtrl.$inject = ['nepFitUserService', "$uibModalInstance", '$scope', 'blockUI'];
-    function nepfituserAddCtrl(nepFitUserService, $uibModalInstance, $scope, blockUI) {
+    nepfituserAddCtrl.$inject = ['nepFitUserService', '$scope', 'blockUI','exerciseNutritionPackageService'];
+    function nepfituserAddCtrl(nepFitUserService, $scope, blockUI, exerciseNutritionPackageService) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add NepFitUser';
@@ -20,17 +20,29 @@
             blockUI.stop();
         }
         function activate() {
+            exerciseNutritionPackageService.getAllExerciseNutritionPackage()
+                .then(function (result) {
+                    vm.exerciseTypeIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "exerciseTypeId",
+                        valuePrimitive: true,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+
+                });
        
         
                 function initialize() {
             return {
               
                     
-                    firstName: "",
-                    lastName: "",
+                    firstName: "aadd",
+                    lastName: "aadd",
                     dateOfBirth: "",
-                gender: "",
-                    isAdmin: "",
+                gender: "M",
+                    isAdmin: false,
 
                                
             };
