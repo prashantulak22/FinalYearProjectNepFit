@@ -1,9 +1,9 @@
 
-<div id="addnutritionPackageRoutine" class="portlet light " >
+<div id="addexerciseNutritionPackage" class="portlet light " >
     <div class="portlet-title">
         <div class="caption">
             <i class="navicon icon-bell font-red"></i>
-            Add NutritionPackageRoutine
+            Add ExerciseNutritionPackage
         </div>
         <a ng-click="vm.close()" class=" pull-right">
             <i class="fa fa-times-circle fa-lg"></i>
@@ -18,24 +18,24 @@
             <div class="col-md-6">
                 <select kendo-drop-down-list class="required form-control"
                         k-options="vm.nutritionPackageIdDropdownOptions"
-                        ng-model="vm.nutritionPackageRoutine.nutritionPackageId"></select>
+                        ng-model="vm.exerciseNutritionPackage.nutritionPackageId"></select>
                 <span class="help-block">  Nutrition Package</span>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-3">
-                Nutrition Routine
+                Exercise Package
                 <span class="required"> * </span>
             </label>
             <div class="col-md-6">
                 <select kendo-drop-down-list class="required form-control"
-                        k-options="vm.nutritionRoutineIdDropdownOptions"
-                        ng-model="vm.nutritionPackageRoutine.nutritionRoutineId"></select>
-                <span class="help-block">  Nutrition Routine</span>
+                        k-options="vm.nutritionPackageIdDropdownOptions"
+                        ng-model="vm.exerciseNutritionPackage.nutritionPackageId"></select>
+                <span class="help-block">  Exercise Package</span>
             </div>
         </div>
-        <form class="form-horizontal" kendo-validator="validator" ame="addNutritionPackageRoutineCreateForm">
+        <form class="form-horizontal" kendo-validator="validator" ame="addExerciseNutritionPackageCreateForm">
 
             <div class="item form-group" ng-show="vm.validationError.length > 0">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -57,7 +57,7 @@
         <div class="form-actions">
             <div class="row">
                 <div class="col-md-offset-5 col-md-12">
-                    <a ng-disabled="addNutritionPackageRoutineCreateForm.$invalid" ng-click="vm.saveNutritionPackageRoutine()" class="btn green button-submit button-next">
+                    <a ng-disabled="addExerciseNutritionPackageCreateForm.$invalid" ng-click="vm.saveExerciseNutritionPackage()" class="btn green button-submit button-next">
                         Save
                         <i class="fa fa-check"></i>
                     </a>

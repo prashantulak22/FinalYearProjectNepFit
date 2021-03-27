@@ -1,39 +1,35 @@
 
-(function (angular, $, kendo, App) {
+(function (angular, $, kendo) {
     'use strict';
 
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .controller('exercisenutritionpackageAddCtrl', exercisenutritionpackageAddCtrl);
-    exercisenutritionpackageAddCtrl.$inject = ['exerciseNutritionPackageService',  "$uibModalInstance", '$scope'];
-    function exercisenutritionpackageAddCtrl(exerciseNutritionPackageService,  $uibModalInstance, $scope) {
+    exercisenutritionpackageAddCtrl.$inject = ['exerciseNutritionPackageService', "$uibModalInstance", '$scope', 'blockUI'];
+    function exercisenutritionpackageAddCtrl(exerciseNutritionPackageService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add ExerciseNutritionPackage';
         
         activate();
         function showLoading() {
-            App.blockUI({
-                target: '#exercisenutritionpackageList',
-                boxed: true,
-                message: 'Loading...'
-            });
+            blockUI.start();
         }
+
         function hideLoading() {
-            App.unblockUI('#exercisenutritionpackageList');
+            blockUI.stop();
         }
+
         function activate() {
        
         
                 function initialize() {
             return {
               
-                    ExerciseNutritionPackageId: "",
-                    ExercisePackageId: "",
-                    NutritionPackageId: "",
-                    Active: "",
-                    UpdatedBy: "",
-                    CreatedBy: "",            
+                    exerciseNutritionPackageId: "",
+                    exercisePackageId: "",
+                    nutritionPackageId: "",
+                                
             };
             }
              vm.exerciseNutritionPackage = initialize();
@@ -71,5 +67,5 @@
 
 
 
-})(angular, $, kendo, App);
+})(angular, $, kendo);
 

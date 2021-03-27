@@ -6,7 +6,7 @@
 
     nutritionPackageRoutineService.$inject = ['$http'];
 
-    function nutritionPackageRoutineService($http, tokenService, $q) {
+    function nutritionPackageRoutineService($http) {
         var service = {
             getAllNutritionPackageRoutine: getAllNutritionPackageRoutine,
             getAllNutritionPackageRoutineById: getAllNutritionPackageRoutineById,

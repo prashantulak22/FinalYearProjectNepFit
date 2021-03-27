@@ -94,6 +94,9 @@
         vm.showExercisePackageRoutine = function () {
             $state.go('exercisePackageRoutine');
         }
+        vm.showExerciseNutritionPackage = function () {
+            $state.go('exerciseNutritionPackage');
+        }
     }
 
 

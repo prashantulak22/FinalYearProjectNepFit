@@ -1,80 +1,90 @@
 
 (function (angular, app) {
     angular
-        .module('tableapp')
+        .module('nepFitApp')
         .factory('exerciseNutritionPackageService', exerciseNutritionPackageService);
 
-    exerciseNutritionPackageService.$inject = ['$http', 'tokenService', '$q'];
+    exerciseNutritionPackageService.$inject = ['$http'];
 
-    function exerciseNutritionPackageService($http, tokenService, $q) {
+    function exerciseNutritionPackageService($http) {
         var service = {
             getAllExerciseNutritionPackage: getAllExerciseNutritionPackage,
             getAllExerciseNutritionPackageById: getAllExerciseNutritionPackageById,
             updateExerciseNutritionPackage: updateExerciseNutritionPackage,
             createExerciseNutritionPackage: createExerciseNutritionPackage,
+            deleteExerciseNutritionPackage: deleteExerciseNutritionPackage,
         };
 
         return service;
 
  
         function  getAllExerciseNutritionPackage() {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'GET',
-                    url: app.exercisenutritionpackageApibaseUrl + 'api/exercisenutritionpackage/getall',
+                    url:'api/exercisenutritionpackage/all',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+           
         }
         
         function  getAllExerciseNutritionPackageById(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
-                    url: app.exercisenutritionpackageApibaseUrl + 'api/exercisenutritionpackage/getbyid',
+                    url:'api/exercisenutritionpackage/getbyid',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+           
         }
 
         function  createExerciseNutritionPackage(item) {
-            return tokenService.getToken().then(function () {
+            
                 return $http({
                     method: 'POST',
-                    url: app.exercisenutritionpackageApibaseUrl + 'api/exercisenutritionpackage/add',
+                    url:'api/exercisenutritionpackage/add',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+            
         }
         
        function  updateExerciseNutritionPackage(item) {
-            return tokenService.getToken().then(function () {
+           
                 return $http({
                     method: 'POST',
-                    url: app.exercisenutritionpackageApibaseUrl + 'api/exercisenutritionpackage/update',
+                    url: 'api/exercisenutritionpackage/update',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
                     function (data, status, headers, config) {
                         return data;
                     });
-            }
-            );
+           
+       }
+        function deleteExerciseNutritionPackage(item) {
+            return $http({
+                method: 'POST',
+                url: '/api/exercisenutritionpackage/delete',
+                headers: { 'Authorization': 'Bearer ' + app.jwtToken },
+                data: item
+            }).then(
+                function (data, status, headers, config) {
+                    return data;
+                });
         }
+
+
         
         
     }
