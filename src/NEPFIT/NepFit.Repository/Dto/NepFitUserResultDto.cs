@@ -52,14 +52,17 @@ namespace NepFit.Repository.Dto
         [StringLength(1)]
         public String Gender { get; set; }
 
+       
+
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("MobileNumber")]
+        [DisplayName("IsAdmin")]
         [DataMember]
         [Required]
-        
-        public Int64 MobileNumber { get; set; }
+
+        public Boolean? IsAdmin { get; set; }
+
 
         /// <summary>
         /// 

@@ -55,11 +55,11 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("MobileNumber")]
+        [DisplayName("IsAdmin")]
         [DataMember]
         [Required]
-        
-        public Int64 MobileNumber { get; set; }
+
+        public Boolean? IsAdmin { get; set; }
 
         /// <summary>
         /// 
