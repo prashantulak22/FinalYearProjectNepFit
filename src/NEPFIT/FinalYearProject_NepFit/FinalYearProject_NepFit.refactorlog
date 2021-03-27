@@ -196,4 +196,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="NutritionTypeId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="c9f3536e-551e-4eae-bbd5-82bfa79a40fe" ChangeDateTime="03/27/2021 06:39:01">
+    <Property Name="ElementName" Value="[dbo].[ExerciseNutritionPackage].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExerciseNutritionPackage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExerciseNutritionPackageId" />
+  </Operation>
 </Operations>
