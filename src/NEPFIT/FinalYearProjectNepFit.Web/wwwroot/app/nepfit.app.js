@@ -66,6 +66,27 @@
                             templateUrl: "/app/exercisepackageroutine/exercisePackageRoutine.html",
                             title: "ExercisePackageRoutine"
                         })
+
+                    .state("exerciseNutritionPackage",
+                        {
+                            url: "/exerciseNutritionPackage",
+                            templateUrl: "/app/exercisenutritionpackage/exercisenutritionpackage.html",
+                            title: "ExerciseNutritionPackage"
+                        })
+
+                    .state("nepFitUser",
+                        {
+                            url: "/nepFitUser",
+                            templateUrl: "/app/nepfituser/nepfituser.html",
+                            title: "NepFitUser"
+                        })
+
+                    .state("userExerciseNutrition",
+                        {
+                            url: "/userExerciseNutrition",
+                            templateUrl: "/app/userexercisenutrition/userexercisenutrition.html",
+                            title: "UserExerciseNutrition"
+                        })
                     .state("register",
                         {
                             url: "/register/medicaluser",
