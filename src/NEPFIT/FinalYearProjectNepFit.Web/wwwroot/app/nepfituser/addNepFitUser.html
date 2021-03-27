@@ -12,65 +12,94 @@
     <div class="portlet-body">      
         <form class="form-horizontal" kendo-validator="validator" ame="addNepFitUserCreateForm">
 
-      
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            FirstName
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <input type="text" maxlength="[StringLength(50)]" class="form-control" name="FirstName" placeholder="FirstName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.firstName" />
-            <span class="help-block"> Short FirstName for your NepFitUser (Max [StringLength(50)] characters </span>
-        </div>
-    </div>
-    
 
-      
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            LastName
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <input type="text" maxlength="[StringLength(50)]" class="form-control" name="LastName" placeholder="LastName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.lastName" />
-            <span class="help-block"> Short LastName for your NepFitUser (Max [StringLength(50)] characters </span>
-        </div>
-    </div>
-    
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    FirstName
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="text" maxlength="[StringLength(50)]" class="form-control" name="FirstName" placeholder="FirstName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.firstName" />
+                    <span class="help-block"> Short FirstName for your NepFitUser (Max [StringLength(50)] characters </span>
+                </div>
+            </div>
 
-      
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            Gender
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.genderDropdownOptions" ng-model="vm.nepFitUser.gender"></select>
-           
-            <span class="help-block"> Short Gender for your NepFitUser (Max [StringLength(1)] characters </span>
-        </div>
-    </div>
-    
 
-         
-     
 
-                <div class="item form-group" ng-show="vm.validationError.length > 0">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">Please review the following field</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li ng-repeat="message in vm.validationError">
-                                        <span class="black">{{message}}</span>
-                                    </li>
-                                </ul>
-                            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    LastName
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="text" maxlength="[StringLength(50)]" class="form-control" name="LastName" placeholder="LastName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.lastName" />
+                    <span class="help-block"> Short LastName for your NepFitUser (Max [StringLength(50)] characters </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    Date Of Birth
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <input type="date" class="required form-control" value="10/10/2011" ng-model="vm.nepFitUser.dateOfBirth">
+
+
+                    <span class="help-block"> Short Gender for your NepFitUser (Max [StringLength(1)] characters </span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    Gender
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.genderDropdownOptions" ng-model="vm.nepFitUser.gender"></select>
+
+                    <span class="help-block"> Short Gender for your NepFitUser (Max [StringLength(1)] characters </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    IsAdmin
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <select kendo-drop-down-list class="required form-control" placeholder="Gender" k-options="vm.isAdmin-DropdownOptions" ng-model="vm.nepFitUser.isAdmin"></select>
+
+                    <span class="help-block"> Short Gender for your NepFitUser (Max [StringLength(1)] characters </span>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="item form-group" ng-show="vm.validationError.length > 0">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Please review the following field</div>
+                        <div class="panel-body">
+                            <ul>
+                                <li ng-repeat="message in vm.validationError">
+                                    <span class="black">{{message}}</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
 
-             </form>
+        </form>
              
           <div class="form-actions">
             <div class="row">

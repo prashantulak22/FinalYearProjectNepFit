@@ -28,7 +28,10 @@
                     
                     firstName: "",
                     lastName: "",
-                    gender: "",
+                    dateOfBirth: "",
+                gender: "",
+                    isAdmin: "",
+
                                
             };
             }

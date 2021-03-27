@@ -57,7 +57,10 @@
                         template: "#= kendo.toString(kendo.parseDate(dateOfBirth), 'MM/dd/yyyy h:mm tt') #",
                         },{
                         title: 'Gender',
-                        field: 'gender'
+                        field: 'gender',
+                    }, {
+                    title: 'IsAdmin',
+                    field: 'isAdmin',
                         },
                                               
                         {
