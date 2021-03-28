@@ -44,6 +44,11 @@ namespace NepFit.BL
                 _exerciseRoutineRepository.GetAll();
         }
 
+        public IEnumerable<ExerciseRoutineResultDto> GetByUserId(Guid id)
+        {
+            return
+                _exerciseRoutineRepository.GetByUserId(id);
+        }
         public bool Delete(ExerciseRoutineUpdateDto input)
         {
             var deleteObj = _mapper.Map<ExerciseRoutine>(input);

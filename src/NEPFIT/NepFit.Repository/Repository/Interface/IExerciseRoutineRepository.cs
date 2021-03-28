@@ -17,7 +17,7 @@ namespace NepFit.Repository.Repository.Interface
         ExerciseRoutine GetById(Guid id);
 
         bool Delete(ExerciseRoutine id);
-
+        IEnumerable<ExerciseRoutineResultDto> GetByUserId(Guid id);
 
     }
 }

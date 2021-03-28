@@ -41,6 +41,7 @@
                     repetition: 5,
                     duration: 1,
                     exerciseTypeId: "",
+                    gender: "M",
 
                 };
             }

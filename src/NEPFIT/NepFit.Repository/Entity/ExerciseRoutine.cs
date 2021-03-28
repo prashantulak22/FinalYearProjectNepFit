@@ -70,6 +70,12 @@ namespace NepFit.Repository.Entity
         [StringLength(5000)]
         public String Name { get; set; }
 
+        [DisplayName("Gender")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public String Gender { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

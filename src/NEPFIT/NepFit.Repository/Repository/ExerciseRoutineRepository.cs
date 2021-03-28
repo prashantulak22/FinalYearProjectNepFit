@@ -20,10 +20,10 @@ namespace NepFit.Repository.Repository
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Execute("INSERT INTO ExerciseRoutine ( [Name] ,[Description], [Repetition], [Duration], [ExerciseTypeId]" +
-                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
+                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated], [Gender] )" +
                                 "	VALUES" +
                                 "	( @Name ,@Description ,@Repetition, @Duration, @ExerciseTypeId  " +
-                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
+                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated , @Gender)", input);
         }
 
         public ExerciseRoutine Update(ExerciseRoutine input)
@@ -31,6 +31,7 @@ namespace NepFit.Repository.Repository
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             conn.Execute("	UPDATE ExerciseRoutine SET 	" +
                                 "	[ExerciseRoutineId] = @ExerciseRoutineId ,		" +
+                                "	[Gender] = @Gender ,		" +
                                 "[Name] = @Name ,		[Description] = @Description ,	" +
                                 "[Repetition] = @Repetition, [Duration] =@Duration , [ExerciseTypeId]=@ExerciseTypeId" +
                                 "	,[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
@@ -46,6 +47,24 @@ namespace NepFit.Repository.Repository
                 "Select er.*, et.Name ExerciseTypeName  From [dbo].[ExerciseRoutine] er" +
                 " INNER JOIN [dbo].[ExerciseType] et ON er.ExerciseTypeId = et.ExerciseTypeId " +
                 "  WHERE er.Active = 1 and et.Active = 1 order by er.DateCreated");
+        }
+
+        public IEnumerable<ExerciseRoutineResultDto> GetByUserId(Guid id)
+        {
+
+            var conn = _sqlServerConnectionProvider.GetDbConnection();
+            return conn.Query<ExerciseRoutineResultDto>(
+                "Select et.Name ExerciseTypeName, ep.Name ExercisePackageName, er.* from NepFitUser nfu" +
+                " INNER JOIN ExerciseNutritionPackage enp on nfu.ExerciseNutritionPackageId = enp.ExerciseNutritionPackageId " +
+                "INNER JOIN ExercisePackageRoutine epr on enp.ExercisePackageId = epr.ExercisePackageId " +
+                "INNER JOIN ExercisePackage ep on epr.ExercisePackageId = ep.ExercisePackageId " +
+                "INNER JOIN ExerciseRoutine er on epr.ExerciseRoutineId = er.ExerciseRoutineId and nfu.Gender = er.Gender " +
+                "INNER JOIN ExerciseType et on er.ExerciseTypeId = et.ExerciseTypeId " +
+                "where nfu.Active =1 and nfu.UserId =@UserId" +
+                " and enp.Active =1 and epr.Active =1  and er.Active =1  and et.Active =1 ", new
+                {
+                    UserId = id
+                });
         }
 
         public ExerciseRoutine GetById(Guid id)

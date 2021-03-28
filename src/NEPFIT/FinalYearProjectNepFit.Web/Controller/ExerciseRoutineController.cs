@@ -27,6 +27,13 @@ namespace FinalYearProjectNepFit.Web.Controller
         }
 
 
+        [Route("api/exerciseroutine/user")]
+        [HttpGet]
+        public IEnumerable<ExerciseRoutineResultDto> GetByUserId()
+        {
+            return _exerciseRoutineService.GetByUserId(new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+        }
+
         [Route("api/exerciseroutine/delete")]
         [HttpPost]
         public ActionResult<bool> Delete(ExerciseRoutineUpdateDto input)

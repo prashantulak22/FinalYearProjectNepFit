@@ -8,6 +8,7 @@
 
     function exerciseRoutineService($http) {
         var service = {
+            getExerciseRoutineByUser: getExerciseRoutineByUser,
             getAllExerciseRoutine: getAllExerciseRoutine,
             getAllExerciseRoutineById: getAllExerciseRoutineById,
             updateExerciseRoutine: updateExerciseRoutine,
@@ -17,7 +18,19 @@
 
         return service;
 
- 
+        function getExerciseRoutineByUser() {
+
+            return $http({
+                method: 'GET',
+                url: 'api/exerciseroutine/user',
+                headers: { 'Authorization': 'Bearer ' + app.jwtToken },
+            }).then(
+                function (data, status, headers, config) {
+                    return data;
+                });
+
+        }
+
         function  getAllExerciseRoutine() {
             
                 return $http({
