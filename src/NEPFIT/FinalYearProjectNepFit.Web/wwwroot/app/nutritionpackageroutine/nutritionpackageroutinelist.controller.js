@@ -36,7 +36,8 @@
                     { name: "addNutritionPackageRoutine", text: "Add NutritionPackageRoutine", imageClass: "fa fa-map-marker", className: "k-grid-addnutritionpackageroutine", iconClass: "k-icon" }
                 ],
                 pageable: {
-                    pageSize: 20
+                    pageSize: 20,
+                    refresh: true
                 },
                 columns: [
                     {
@@ -49,10 +50,8 @@
                     }, {
                         title: 'NutritionRoutineName',
                         field: 'nutritionRoutineName',
-                    }, {
-                        title: 'NutritionTypeName',
-                        field: 'nutritionTypeName',
-                    }, {
+                    },
+                    {
                         title: 'DateUpdated',
                         field: 'dateUpdated',
                         template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",

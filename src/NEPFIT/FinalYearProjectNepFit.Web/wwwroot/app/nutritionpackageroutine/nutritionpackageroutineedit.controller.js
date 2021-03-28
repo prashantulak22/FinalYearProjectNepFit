@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('nutritionpackageroutineEditCtrl', nutritionpackageroutineEditCtrl);
-    nutritionpackageroutineEditCtrl.$inject = ['nutritionPackageRoutineService', "$uibModalInstance", '$scope', 'param', 'blockUI'];
-    function nutritionpackageroutineEditCtrl(nutritionPackageRoutineService, $uibModalInstance, $scope, param, blockUI) {
+    nutritionpackageroutineEditCtrl.$inject = ['nutritionPackageRoutineService', "$uibModalInstance", '$scope', 'param', 'blockUI', 'nutritionPackageService', 'nutritionRoutineService'];
+    function nutritionpackageroutineEditCtrl(nutritionPackageRoutineService, $uibModalInstance, $scope, param, blockUI, nutritionPackageService, nutritionRoutineService) {
         var vm = this;
                 vm.isNew = false;
         vm.title = ' Edit NutritionPackageRoutine';
@@ -19,8 +19,35 @@
             blockUI.stop();
         }
         function activate() {
-       
-             vm.nutritionPackageRoutine = param.item;
+            vm.nutritionPackageRoutine = param.item
+            nutritionPackageService.getAllNutritionPackage()
+                .then(function (result) {
+                    vm.nutritionPackageIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionPackageId",
+                        valuePrimitive: true,
+                        value: vm.nutritionPackageRoutine.nutritionPackageId,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+
+                });
+
+            vm.nutritionPackageRoutine = param.item
+            nutritionRoutineService.getAllNutritionRoutine()
+                .then(function (result) {
+                    vm.nutritionRoutineIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionRoutineId",
+                        valuePrimitive: true,
+                        value: vm.nutritionPackageRoutine.nutritionRoutineId,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+
+                });
           vm.validationError = [];
      
              function validateForm() {
