@@ -36,7 +36,8 @@
                     { name: "addNutritionRoutine", text: "Add NutritionRoutine", imageClass: "fa fa-map-marker", className: "k-grid-addnutritionroutine", iconClass: "k-icon" }
                 ],
                 pageable: {
-                    pageSize: 20
+                    pageSize: 20,
+                    refresh: true
                 },
                 columns: [
                                    {

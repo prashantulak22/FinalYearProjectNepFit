@@ -36,7 +36,8 @@
                     { name: "addExercisePackage", text: "Add ExercisePackage", imageClass: "fa fa-map-marker", className: "k-grid-addexercisepackage", iconClass: "k-icon" }
                 ],
                 pageable: {
-                    pageSize: 20
+                    pageSize: 20,
+                    refresh: true
                 },
                 columns: [
                                    {

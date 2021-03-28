@@ -36,7 +36,8 @@
                     { name: "addExerciseRoutine", text: "Add ExerciseRoutine", imageClass: "fa fa-map-marker", className: "k-grid-addexerciseroutine", iconClass: "k-icon" }
                 ],
                 pageable: {
-                    pageSize: 20
+                    pageSize: 20,
+                    refresh: true
                 },
                 columns: [
                     {

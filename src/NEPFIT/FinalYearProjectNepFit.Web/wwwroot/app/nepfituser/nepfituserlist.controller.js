@@ -36,7 +36,8 @@
                     { name: "addNepFitUser", text: "Add NepFitUser", imageClass: "fa fa-map-marker", className: "k-grid-addnepfituser", iconClass: "k-icon" }
                 ],
                 pageable: {
-                    pageSize: 20
+                    pageSize: 20,
+                    refresh: true
                 },
                 columns: [
                                    {

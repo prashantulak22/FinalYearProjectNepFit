@@ -36,7 +36,8 @@
                     { name: "addNutritionPackage", text: "Add NutritionPackage", imageClass: "fa fa-map-marker", className: "k-grid-addnutritionpackage", iconClass: "k-icon" }
                 ],
                 pageable: {
-                    pageSize: 20
+                    pageSize: 20,
+                    refresh: true
 
                 },
                 columns: [
