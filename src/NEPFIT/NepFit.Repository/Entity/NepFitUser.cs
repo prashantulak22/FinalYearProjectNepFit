@@ -26,9 +26,11 @@ namespace NepFit.Repository.Entity
                         String lastName,
                         DateTime dateOfBirth,
                         String gender,
+                        String experienceLevel,
                         Boolean isAdmin,
                         System.Guid createdBy,
                         DateTime dateCreated,
+                        System.Guid exerciseNutritionPackageId,
                         Boolean? active= null,
                         System.Guid? updatedBy= null,
                         DateTime? dateUpdated= null)
@@ -41,12 +43,14 @@ namespace NepFit.Repository.Entity
             LastName = lastName,
             DateOfBirth = dateOfBirth,
             Gender = gender,
+            ExperienceLevel = experienceLevel,
             IsAdmin = isAdmin,
             Active = active,
             UpdatedBy = updatedBy,
             CreatedBy = createdBy,
             DateUpdated = dateUpdated,
-            DateCreated = dateCreated
+            DateCreated = dateCreated,
+            ExerciseNutritionPackageId = exerciseNutritionPackageId
         };
 
         return @objectToReturn;
@@ -100,6 +104,15 @@ namespace NepFit.Repository.Entity
         /// <summary>
         /// 
         /// </summary>
+        [DisplayName("ExperienceLevel")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public  String ExperienceLevel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [DisplayName("IsAdmin")]
         [DataMember]
         [Required]
@@ -147,6 +160,15 @@ namespace NepFit.Repository.Entity
         [Required]
         
         public  DateTime DateCreated { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("ExerciseNutritionPackageId")]
+        [DataMember]
+        [Required]
+        
+        public  System.Guid ExerciseNutritionPackageId { get; set; }
 
     }
 

@@ -80,12 +80,7 @@
                             title: "NepFitUser"
                         })
 
-                    .state("userExerciseNutrition",
-                        {
-                            url: "/userExerciseNutrition",
-                            templateUrl: "/app/userexercisenutrition/userexercisenutrition.html",
-                            title: "UserExerciseNutrition"
-                        })
+                    
                     .state("register",
                         {
                             url: "/register/postregister",
