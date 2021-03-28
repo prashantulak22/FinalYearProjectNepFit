@@ -8,4 +8,8 @@
 	CreatedBy UNIQUEIDENTIFIER NOT NULL,
 	DateUpdated DateTime NULL,
 	DateCreated DateTime NOT NULL
+	CONSTRAINT [FK_NutritionPackageRoutine_NutritionPackageId] FOREIGN KEY ([NutritionPackageId]) REFERENCES[NutritionPackage](NutritionPackageId),
+    CONSTRAINT [FK_NutritionPackageRoutine_NutritionRoutineId] FOREIGN KEY ([NutritionRoutineId]) REFERENCES[NutritionRoutine](NutritionRoutineId),
+
+
 )

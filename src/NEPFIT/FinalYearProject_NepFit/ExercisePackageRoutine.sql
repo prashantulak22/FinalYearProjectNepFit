@@ -7,7 +7,9 @@
 	UpdatedBy UNIQUEIDENTIFIER NULL,
 	CreatedBy UNIQUEIDENTIFIER NOT NULL,
 	DateUpdated DateTime NULL,
-	DateCreated DateTime NOT NULL
+	DateCreated DateTime NOT NULL,
+	CONSTRAINT [FK_ExercisePackageRoutine_ExercisePackageId] FOREIGN KEY (ExercisePackageId) REFERENCES[NutritionPackage](NutritionPackageId),
+    CONSTRAINT [FK_ExercisePackageRoutine_ExerciseRoutineId] FOREIGN KEY (ExerciseRoutineId) REFERENCES[NutritionRoutine](NutritionRoutineId),
 )
 
 
