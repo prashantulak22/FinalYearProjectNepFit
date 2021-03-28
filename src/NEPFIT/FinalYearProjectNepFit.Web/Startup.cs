@@ -134,9 +134,7 @@ namespace FinalYearProjectNepFit.Web
 
 
 
-            services.AddScoped<IUserExerciseNutritionService, UserExerciseNutritionService>();
-            services.AddScoped<IUserExerciseNutritionRepository, UserExerciseNutritionRepository>();
-
+          
 
 
 
