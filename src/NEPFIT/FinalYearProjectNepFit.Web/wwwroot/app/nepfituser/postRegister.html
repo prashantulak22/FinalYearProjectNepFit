@@ -9,11 +9,11 @@
                     <input type="text" placeholder="First Name" ng-model="vm.nepFitUser.firstName" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Last Name" ng-model="vm.nepFitUser.lastName"required>
+                    <input type="text" placeholder="Last Name" ng-model="vm.nepFitUser.lastName" required>
                 </div>
                 <div class="date">
                     <span class="details">Date Of Birth</span>
-                    <input type="date" name="dob" id="dob"  ng-model="vm.nepFitUser.dateOfBirth">
+                    <input type="date" name="dob" id="dob" ng-model="vm.nepFitUser.dateOfBirth">
                 </div>
                 <div class="gender">
                     <span class="details">Gender</span>
@@ -22,6 +22,15 @@
                         <option value="F">Female</option>
                     </select>
                 </div>
+                <div class="experiencelevel">
+                    <span class="details">Experience Level</span>
+                    <select name="experienceLevel" id="experienceLevel" ng-model="vm.nepFitUser.experienceLevel">
+                        <option value="0">Beginner</option>
+                        <option value="1">Intermediate</option>
+                        <option value="2">Advanced</option>
+                    </select>
+                </div>
+
                 <div class="programme">
                     <span class="details">Choose a programme</span>
                     <select name="programme" id="programme" ng-model="vm.nepFitUser.exercisePackageName">

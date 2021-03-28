@@ -59,10 +59,18 @@
                         },{
                         title: 'Gender',
                         field: 'gender',
-                    }, {
+                    },
+
+                    {
+                        title: 'ExperienceLevel',
+                        field: 'experienceLevel',
+                    },{
                     title: 'IsAdmin',
                     field: 'isAdmin',
-                        },
+                    }, {
+                        title: 'Package',
+                        field: 'isAdmin',
+                    },
                                               
                         {
                         title: 'DateUpdated',

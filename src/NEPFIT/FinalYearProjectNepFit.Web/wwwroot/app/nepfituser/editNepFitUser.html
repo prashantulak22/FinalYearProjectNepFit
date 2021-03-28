@@ -74,6 +74,28 @@
 
             <div class="form-group">
                 <label class="control-label col-md-3">
+                    Experience Level
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <label>
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.experienceLevel" value="0" />
+                        Beginner
+                    </label>
+                    <label style="padding-left:20px;">
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.experienceLevel" value="1" />
+                        Intermediate
+                    </label>
+                    <label style="padding-left:20px;">
+                        <input type="radio" class="required form-control" ng-model="vm.nepFitUser.experienceLevel" value="2" />
+                        Advanced
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-3">
                     IsAdmin
                     <span class="required"> * </span>
                 </label>
@@ -107,7 +129,7 @@
                 </div>
             </div>
 
-           
+
         </form>
           
           <div class="form-actions">
