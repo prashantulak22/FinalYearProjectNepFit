@@ -34,7 +34,7 @@ namespace NepFit.Repository.Repository
                 "[ExerciseRoutineId] = @ExerciseRoutineId " +
                 ",[Active] = @Active ,[UpdatedBy] = @UpdatedBy " +
                 ",[CreatedBy] = @CreatedBy ,[DateUpdated] = @DateUpdated ," +
-                "[DateCreated] = @DateCreated WHERE [NutritionPackageRoutineId]=@NutritionPackageRoutineId", input);
+                "[DateCreated] = @DateCreated WHERE [ExercisePackageRoutineId]=@ExercisePackageRoutineId", input);
             
         }
 

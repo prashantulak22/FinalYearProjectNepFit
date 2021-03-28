@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('exercisepackageroutineEditCtrl', exercisepackageroutineEditCtrl);
-    exercisepackageroutineEditCtrl.$inject = ['exercisePackageRoutineService', "$uibModalInstance", '$scope', 'param', 'blockUI'];
-    function exercisepackageroutineEditCtrl(exercisePackageRoutineService, $uibModalInstance, $scope, param, blockUI) {
+    exercisepackageroutineEditCtrl.$inject = ['exercisePackageRoutineService', "$uibModalInstance", '$scope', 'param', 'blockUI', 'exercisePackageService', 'exerciseRoutineService'];
+    function exercisepackageroutineEditCtrl(exercisePackageRoutineService, $uibModalInstance, $scope, param, blockUI, exercisePackageService, exerciseRoutineService) {
         var vm = this;
                 vm.isNew = false;
         vm.title = ' Edit ExercisePackageRoutine';
@@ -19,9 +19,36 @@
             blockUI.stop();
         }
         function activate() {
-       
-             vm.exercisePackageRoutine = param.item;
-          vm.validationError = [];
+            vm.exercisePackageRoutine = param.item;
+            exercisePackageService.getAllExercisePackage()
+                .then(function (result) {
+                    vm.exercisePackageIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "exercisePackageId",
+                        valuePrimitive: true,
+                        value: vm.exercisePackageRoutine.exercisePackageId,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+                    vm.exercisePackageRoutine = param.item;
+
+                });
+            vm.exercisePackageRoutine = param.item;
+            exerciseRoutineService.getAllExerciseRoutine()
+                .then(function (result) {
+                    vm.exerciseRoutineIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "exerciseRoutineId",
+                        value: vm.exercisePackageRoutine.exerciseRoutineId,
+                        valuePrimitive: true,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+                    vm.exercisePackageRoutine = param.item;
+                });
+             vm.validationError = [];
      
              function validateForm() {
             vm.validationError = [];

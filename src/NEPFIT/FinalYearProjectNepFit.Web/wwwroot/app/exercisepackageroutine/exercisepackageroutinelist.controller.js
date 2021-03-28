@@ -43,11 +43,8 @@
                     {
                         width: "35px",
                         template: '<i ng-click=" vm.showEditExercisePackageRoutine(dataItem)" class=" fa fa-pencil handCursor"></i>'
-                    },
-                    {
-                        title: 'ExercisePackageRoutineId',
-                        field: 'exercisePackageRoutineId',
-                    }, {
+                    }
+                    , {
                         title: 'ExercisePackageName',
                         field: 'exercisePackageName',
                     }, {
