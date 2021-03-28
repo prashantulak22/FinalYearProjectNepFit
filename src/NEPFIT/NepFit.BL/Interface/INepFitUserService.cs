@@ -10,6 +10,6 @@ namespace NepFit.BL.Interface
         bool Update(NepFitUserUpdateDto input);
         IEnumerable<NepFitUserResultDto> GetAll();
         bool Delete(NepFitUserUpdateDto id);
-
+        NepFitUserResultDto GetByUserId(Guid guid);
     }
 }

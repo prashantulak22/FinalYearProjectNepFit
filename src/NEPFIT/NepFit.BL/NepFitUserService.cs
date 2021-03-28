@@ -51,5 +51,12 @@ namespace NepFit.BL
             deleteObj.DateUpdated = DateTime.Now;
             return _nepFitUserRepository.Delete(deleteObj);
         }
+
+        public NepFitUserResultDto GetByUserId(Guid id)
+        {
+            return
+                _mapper.Map<NepFitUserResultDto>(
+                    _nepFitUserRepository.GetByUserId(id));
+        }
     }
 }

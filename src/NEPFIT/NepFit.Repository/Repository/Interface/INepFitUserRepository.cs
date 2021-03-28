@@ -12,6 +12,6 @@ namespace NepFit.Repository.Repository.Interface
         IEnumerable<NepFitUserResultDto> GetAll();
         NepFitUser GetById(Guid id);
         bool Delete(NepFitUser input);
-        
+        NepFitUser GetByUserId(Guid id);
     }
 }

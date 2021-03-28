@@ -26,6 +26,12 @@ namespace FinalYearProjectNepFit.Web.Controller
             return _nepFitUserService.GetAll();
         }
 
+        [Route("api/nepFitUser")]
+        [HttpGet]
+        public  NepFitUserResultDto GetLoggedInUser()
+        {
+            return _nepFitUserService.GetByUserId(new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+        }
 
         [Route("api/nepFitUser/delete")]
         [HttpPost]

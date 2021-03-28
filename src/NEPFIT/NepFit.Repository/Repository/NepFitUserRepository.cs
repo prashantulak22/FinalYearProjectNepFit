@@ -67,5 +67,15 @@ namespace NepFit.Repository.Repository
                          " WHERE [UserId]=@UserId", input);
             return true;
         }
+
+        public NepFitUser GetByUserId(Guid id)
+        {
+            var conn = _sqlServerConnectionProvider.GetDbConnection();
+            return conn.QueryFirstOrDefault<NepFitUser>(
+                "Select * From [dbo].[NepFitUser] WHERE Active = 1 AND UserId = @UserId", new
+                {
+                    UserId = id
+                });
+        }
     }
 }

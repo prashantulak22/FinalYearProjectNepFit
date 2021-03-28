@@ -62,7 +62,6 @@
     <Build Include="BodyMetrics.sql" />
     <Build Include="ProgressTracker.sql" />
     <Build Include="ExerciseRoutine.sql" />
-    <Build Include="UserExerciseNutrition.sql" />
     <Build Include="NutritionPackage.sql" />
     <Build Include="NutritionRoutine.sql" />
     <Build Include="ExerciseType.sql" />
