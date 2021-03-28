@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('nepfituserAddCtrl', nepfituserAddCtrl);
-    nepfituserAddCtrl.$inject = ['nepFitUserService',  '$scope', 'blockUI','exerciseNutritionPackageService'];
-    function nepfituserAddCtrl(nepFitUserService,  $scope, blockUI, exerciseNutritionPackageService) {
+    nepfituserAddCtrl.$inject = ['nepFitUserService', '$scope', 'blockUI', 'exerciseNutritionPackageService','$state'];
+    function nepfituserAddCtrl(nepFitUserService, $scope, blockUI, exerciseNutritionPackageService, $state) {
         var vm = this;
         vm.isNew = true;
         vm.title = ' Add NepFitUser';
@@ -64,7 +64,7 @@
             nepFitUserService.createNepFitUser(vm.nepFitUser)
                 .then(function () {
                     hideLoading();
-                      vm.close();
+                    $state.go("home");
                 }, function errorCallback(response) {
                     hideLoading();
                     });
