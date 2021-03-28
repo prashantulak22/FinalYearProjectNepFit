@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 
 namespace NepFit.Repository.Repository.Interface
@@ -8,7 +9,7 @@ namespace NepFit.Repository.Repository.Interface
     {
         int Add(NepFitUser input);
         NepFitUser Update(NepFitUser input);
-        IEnumerable<NepFitUser> GetAll();
+        IEnumerable<NepFitUserResultDto> GetAll();
         NepFitUser GetById(Guid id);
         bool Delete(NepFitUser input);
         

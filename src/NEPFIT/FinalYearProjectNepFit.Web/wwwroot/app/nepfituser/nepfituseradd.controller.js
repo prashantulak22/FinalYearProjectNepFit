@@ -22,9 +22,9 @@
         function activate() {
             exerciseNutritionPackageService.getAllExerciseNutritionPackage()
                 .then(function (result) {
-                    vm.exerciseTypeIdDropdownOptions = {
-                        dataTextField: "name",
-                        dataValueField: "exerciseTypeId",
+                    vm.nutritionPackageIdDropdownOptions = {
+                        dataTextField: "nutritionPackageName",
+                        dataValueField: "exerciseNutritionPackageId",
                         valuePrimitive: true,
                         dataSource: {
                             data: result.data
@@ -42,7 +42,8 @@
                     lastName: "",
                     dateOfBirth: "",
                 gender: "M",
-                    isAdmin: false,
+                isAdmin: false,
+                exerciseNutritionPackageId:"",
 
                                
             };

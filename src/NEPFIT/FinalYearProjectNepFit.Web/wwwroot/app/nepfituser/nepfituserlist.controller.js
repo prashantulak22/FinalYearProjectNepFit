@@ -69,7 +69,7 @@
                     field: 'isAdmin',
                     }, {
                         title: 'Package',
-                        field: 'isAdmin',
+                        field: 'nutritionPackageName',
                     },
                                               
                         {

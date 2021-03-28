@@ -121,6 +121,9 @@ namespace NepFit.Repository.Dto
         
         public System.Guid ExerciseNutritionPackageId { get; set; }
 
-       
+
+        public String NutritionPackageName { get; set; }
+
+
     }
 }

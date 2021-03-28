@@ -41,8 +41,8 @@ namespace NepFit.BL
         public IEnumerable<NepFitUserResultDto> GetAll()
         {
             return
-                _mapper.Map<IEnumerable<NepFitUserResultDto>>(
-                _nepFitUserRepository.GetAll());
+              
+                _nepFitUserRepository.GetAll();
         }
 
         public bool Delete(NepFitUserUpdateDto input)

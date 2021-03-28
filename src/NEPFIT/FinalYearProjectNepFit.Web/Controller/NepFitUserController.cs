@@ -50,6 +50,7 @@ namespace FinalYearProjectNepFit.Web.Controller
             if (TryValidateModel(input))
             {
                 input.CreatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                
                 return _nepFitUserService.Add(input);
             }
             else

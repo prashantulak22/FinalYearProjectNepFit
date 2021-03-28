@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dapper;
+using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 using NepFit.Repository.Repository.Interface;
 
@@ -18,10 +19,10 @@ namespace NepFit.Repository.Repository
         public int Add(NepFitUser input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO NepFitUser( [FirstName] " +
+            return conn.Execute("INSERT INTO NepFitUser( [UserId],[FirstName] " +
                 ",[LastName] ,[DateOfBirth] ,[Gender] ,[ExperienceLevel], [IsAdmin] ,[Active] " +
-                ",[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated, [ExerciseNutritionPackageId]] )VALUES	" +
-                "( @FirstName ,@LastName ,@DateOfBirth ,@Gender, @ExperienceLevel ,@IsAdmin ,@Active " +
+                ",[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated], [ExerciseNutritionPackageId] )VALUES	" +
+                "( @CreatedBy, @FirstName ,@LastName ,@DateOfBirth ,@Gender, @ExperienceLevel ,@IsAdmin ,@Active " +
                 ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated, @ExerciseNutritionPackageId )", input);
         }
 
@@ -36,11 +37,14 @@ namespace NepFit.Repository.Repository
             return input;
         }
 
-        public IEnumerable<NepFitUser> GetAll()
+        public IEnumerable<NepFitUserResultDto> GetAll()
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Query<NepFitUser>(
-                "Select * From [dbo].[NepFitUser] WHERE Active = 1 order by DateCreated");
+            return conn.Query<NepFitUserResultDto>(
+                "Select nfu.*,  np.Name NutritionPackageName From [dbo].[NepFitUser] nfu" +
+                " JOIN [dbo].[ExerciseNutritionPackage] enp ON nfu.ExerciseNutritionPackageId = enp.ExerciseNutritionPackageId" +
+                " JOIN [dbo].[NutritionPackage] np ON enp.NutritionPackageId = np.NutritionPackageId" +
+                " WHERE nfu.Active = 1 AND enp.Active = 1 order by nfu.DateCreated");
         }
 
         public NepFitUser GetById(Guid id)
