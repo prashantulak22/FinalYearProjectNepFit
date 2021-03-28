@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('nutritionroutineEditCtrl', nutritionroutineEditCtrl);
-    nutritionroutineEditCtrl.$inject = ['nutritionRoutineService', "$uibModalInstance", '$scope', 'param', 'blockUI'];
-    function nutritionroutineEditCtrl(nutritionRoutineService, $uibModalInstance, $scope, param, blockUI) {
+    nutritionroutineEditCtrl.$inject = ['nutritionRoutineService', "$uibModalInstance", '$scope', 'param', 'blockUI', 'nutritionTypeService'];
+    function nutritionroutineEditCtrl(nutritionRoutineService, $uibModalInstance, $scope, param, blockUI, nutritionTypeService) {
         var vm = this;
                 vm.isNew = false;
         vm.title = ' Edit NutritionRoutine';
@@ -21,6 +21,24 @@
         }
 
         function activate() {
+            vm.nutritionRoutine = param.item;
+            nutritionTypeService.getAllNutritionType()
+                .then(function (result) {
+                    vm.nutritionTypeIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionTypeId",
+                        valuePrimitive: true,
+                        value: vm.nutritionRoutine.nutritionTypeId,
+                        dataSource: {
+
+                            data: result.data
+
+                        }
+
+                    }
+                    vm.nutritionRoutine = param.item;
+
+                });
        
              vm.nutritionRoutine = param.item;
           vm.validationError = [];

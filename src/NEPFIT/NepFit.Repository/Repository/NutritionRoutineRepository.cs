@@ -32,8 +32,8 @@ namespace NepFit.Repository.Repository
             conn.Execute("	UPDATE NutritionRoutine SET 	" +
                                 "	[NutritionRoutineId] = @NutritionRoutineId ,		" +
                                 "[Name] = @Name ,		[Description] = @Description ,	" +
-                                "[HowToPepare] = @HowToPrepare, [NutritionTypeId] = @NutritionTypeId" +
-                                "	[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
+                                "[HowToPrepare] = @HowToPrepare, [NutritionTypeId] = @NutritionTypeId" +
+                                "	,[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
                                 "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
                                 "[DateCreated] = @DateCreated 	WHERE [NutritionRoutineId]=@NutritionRoutineId", input);
             return input;
