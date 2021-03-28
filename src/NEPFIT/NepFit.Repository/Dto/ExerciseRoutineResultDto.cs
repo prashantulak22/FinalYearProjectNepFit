@@ -56,6 +56,15 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
+        [DisplayName("Gender")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public String Gender { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [DisplayName("ExerciseTypeId")]
         [DataMember]
         [Required]
