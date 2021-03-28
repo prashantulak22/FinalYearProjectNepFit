@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.container {
+  height: 85vh;
+  max-width: 450px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  box-shadow: 8px 11px 7px 2px grey;
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.container form .user-details {
+  display: block;
+}
+
+.container form .button {
+  display: block;
+}
+
+.container form .user-details .input-box {
+  display: block;
+  width: 85%;
+  margin-bottom: 25px;
+}
+
+.container form .user-details .date {
+  display: block;
+  width: 85%;
+  margin-bottom: 25px;
+}
+
+.container form .user-details .gender {
+  display: block;
+  width: 85%;
+  margin-bottom: 25px;
+}
+
+.container form .user-details .programme {
+  display: block;
+  width: 85%;
+  margin-bottom: 25px;
+}
+
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline-color: rgb(20, 223, 238);
+  padding: 20px;
+}
+
+.user-details .date input {
+  height: 45px;
+  width: 100%;
+  outline-color: rgb(20, 223, 238);
+  margin-top: 10px;
+}
+
+.user-details .gender select {
+  height: 45px;
+  width: 100%;
+  outline-color: rgb(20, 223, 238);
+  margin-top: 10px;
+}
+
+.user-details .programme select {
+  height: 45px;
+  width: 100%;
+  outline-color: rgb(20, 223, 238);
+  margin-top: 10px;
+}
+
+.user-details .input-box .details {
+  display: block;
+  font-weight: 500;
+}
+
+.btn1 {
+  border-radius: 0px;
+  padding: 10px 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn1:hover {
+  background: #111112;
+  border-color: transparent;
+  color: #ffffff;
+}
