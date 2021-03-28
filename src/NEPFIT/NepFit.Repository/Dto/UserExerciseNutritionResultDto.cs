@@ -20,7 +20,7 @@ namespace NepFit.Repository.Dto
         /// </summary>
         [DisplayName("Active")]
         [DataMember]
-        
+
         public Boolean? Active { get; set; }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace NepFit.Repository.Dto
         /// </summary>
         [DisplayName("UpdatedBy")]
         [DataMember]
-        
+
         public System.Guid? UpdatedBy { get; set; }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("CreatedBy")]
         [DataMember]
         [Required]
-        
+
         public System.Guid CreatedBy { get; set; }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace NepFit.Repository.Dto
         /// </summary>
         [DisplayName("DateUpdated")]
         [DataMember]
-        
+
         public DateTime? DateUpdated { get; set; }
 
         /// <summary>
@@ -54,14 +54,14 @@ namespace NepFit.Repository.Dto
         [DisplayName("DateCreated")]
         [DataMember]
         [Required]
-        
+
         public DateTime DateCreated { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [DisplayName("UserId")]
-        [DataMember]        
+        [DataMember]
         public System.Guid UserId { get; set; }
 
         /// <summary>
@@ -70,8 +70,13 @@ namespace NepFit.Repository.Dto
         [DisplayName("ExerciseNutritionPackageId")]
         [DataMember]
         [Required]
-        
+
         public System.Guid ExerciseNutritionPackageId { get; set; }
+
+        public String NepFitUserName {get; set;}
+
+        public String ExercisePackageName { get; set; }
+
 
        
     }

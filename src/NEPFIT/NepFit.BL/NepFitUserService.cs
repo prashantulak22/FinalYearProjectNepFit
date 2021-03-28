@@ -31,7 +31,7 @@ namespace NepFit.BL
 
         public bool Update(NepFitUserUpdateDto input)
         {
-            var original = _nepFitUserRepository.GetById(input.NepFitUserId);
+            var original = _nepFitUserRepository.GetById(input.UserId);
             original.DateUpdated = DateTime.Now;
             _mapper.Map(input, original);
             _nepFitUserRepository.Update(original);

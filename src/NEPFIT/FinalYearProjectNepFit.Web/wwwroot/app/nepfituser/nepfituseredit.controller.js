@@ -5,8 +5,10 @@
     angular
         .module('nepFitApp')
         .controller('nepfituserEditCtrl', nepfituserEditCtrl);
-    nepfituserEditCtrl.$inject = ['nepFitUserService', "$uibModalInstance", '$scope', 'param', 'blockUI'];
-    function nepfituserEditCtrl(nepFitUserService, $uibModalInstance, $scope, param, blockUI) {
+
+
+    nepfituserEditCtrl.$inject = ['nepFitUserService', "$uibModalInstance", '$scope', 'param', 'blockUI', 'exerciseNutritionPackageService'];
+    function nepfituserEditCtrl(nepFitUserService, $uibModalInstance, $scope, param, blockUI, exerciseNutritionPackageService) {
         var vm = this;
                 vm.isNew = false;
         vm.title = ' Edit NepFitUser';
@@ -19,8 +21,23 @@
             blockUI.stop();
         }
         function activate() {
+            vm.nepFitUser = param.item;
+            exerciseNutritionPackageService.getAllExerciseNutritionPackage()
+                .then(function (result) {
+                    vm.exerciseTypeIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "exerciseTypeId",
+                        valuePrimitive: true,
+                        value: vm.nepFitUser.exerciseTypeId,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+                    vm.nepFitUser = param.item;
+
+                });
        
-             vm.nepFitUser = param.item;
+             
           vm.validationError = [];
      
              function validateForm() {
@@ -30,9 +47,10 @@
                 return false;
         }
         
-  vm.saveNepFitUser = function (option) {
+    vm.saveNepFitUser = function (option) {
             if (!validateForm()) return;
-           showLoading();
+        showLoading();
+        hideLoading();
             nepFitUserService.updateNepFitUser(vm.nepFitUser)
                 .then(function () {
                     hideLoading();

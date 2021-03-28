@@ -48,7 +48,7 @@ namespace NepFit.Repository.Repository
 
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.QueryFirstOrDefault<NepFitUser>(
-                "Select * From [dbo].[NepFitUser] WHERE Active = 1 AND NepFitUserId = @NepFitUserId", new
+                "Select * From [dbo].[NepFitUser] WHERE Active = 1 AND UserId = @NepFitUserId", new
                 {
                     NepFitUserId = id
                 });
@@ -60,7 +60,7 @@ namespace NepFit.Repository.Repository
             conn.Execute("	UPDATE NepFitUser SET 	" +
                          "	[Active] = 0 ,		[UpdatedBy] = @UpdatedBy ,	" +
                          "	[DateUpdated] = @DateUpdated		" +
-                         " WHERE [NepFitUserId]=@NepFitUserId", input);
+                         " WHERE [UserId]=@UserId", input);
             return true;
         }
     }
