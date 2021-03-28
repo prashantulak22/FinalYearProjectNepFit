@@ -52,7 +52,7 @@ namespace NepFit.Repository.Repository
 
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.QueryFirstOrDefault<ExerciseNutritionPackage>(
-                "Select * From [dbo].[ExerciseNutritionPackage] WHERE Active = 1 ANDExerciseNutritionPackageId = @ExerciseNutritionPackageId", new
+                "Select * From [dbo].[ExerciseNutritionPackage] WHERE Active = 1 AND ExerciseNutritionPackageId = @ExerciseNutritionPackageId", new
                 {
                    ExerciseNutritionPackageId = id
                 });

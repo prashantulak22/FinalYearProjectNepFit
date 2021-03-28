@@ -35,19 +35,19 @@
                 });
 
 
-            function activate() {
-                nutritionPackageService.getAllNutritionPackage()
-                    .then(function (result) {
-                        vm.nutritionPackageIdDropdownOptions = {
-                            dataTextField: "name",
-                            dataValueField: "nutritionPackageId",
-                            valuePrimitive: true,
-                            dataSource: {
-                                data: result.data
-                            }
+            
+            nutritionPackageService.getAllNutritionPackage()
+                .then(function (result) {
+                    vm.nutritionPackageIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionPackageId",
+                        valuePrimitive: true,
+                        dataSource: {
+                            data: result.data
                         }
+                    }
 
-                    });
+                });
 
                 function initialize() {
                     return {
@@ -91,7 +91,7 @@
 
         }
 
-    }
+    
 
 })(angular, $, kendo);
 

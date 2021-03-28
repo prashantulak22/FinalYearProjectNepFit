@@ -5,8 +5,8 @@
     angular
         .module('nepFitApp')
         .controller('exercisenutritionpackageEditCtrl', exercisenutritionpackageEditCtrl);
-    exercisenutritionpackageEditCtrl.$inject = ['exerciseNutritionPackageService', "$uibModalInstance", '$scope', 'param', 'blockUI'];
-    function exercisenutritionpackageEditCtrl(exerciseNutritionPackageService, $uibModalInstance, $scope, param, blockUI ) {
+    exercisenutritionpackageEditCtrl.$inject = ['exerciseNutritionPackageService', "$uibModalInstance", '$scope', 'param', 'blockUI', 'exercisePackageService', 'nutritionPackageService'];
+    function exercisenutritionpackageEditCtrl(exerciseNutritionPackageService, $uibModalInstance, $scope, param, blockUI, exercisePackageService, nutritionPackageService ) {
         var vm = this;
                 vm.isNew = false;
         vm.title = ' Edit ExerciseNutritionPackage';
@@ -19,8 +19,39 @@
             blockUI.stop();
         }
         function activate() {
+            vm.exerciseNutritionPackage = param.item;
+            exercisePackageService.getAllExercisePackage()
+                .then(function (result) {
+                    vm.exercisePackageIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "exercisePackageId",
+                        valuePrimitive: true,
+                        value: vm.exerciseNutritionPackage.exercisePackageId,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+                    vm.exerciseNutritionPackage = param.item;
+
+                });
+
+            vm.exerciseNutritionPackage = param.item;
+            nutritionPackageService.getAllNutritionPackage()
+                .then(function (result) {
+                    vm.nutritionPackageIdDropdownOptions = {
+                        dataTextField: "name",
+                        dataValueField: "nutritionPackageId",
+                        valuePrimitive: true,
+                        value: vm.exerciseNutritionPackage.nutritionPackageId,
+                        dataSource: {
+                            data: result.data
+                        }
+                    }
+                    vm.exerciseNutritionPackage = param.item;
+
+                });
        
-             vm.exerciseNutritionPackage = param.item;
+             
           vm.validationError = [];
      
              function validateForm() {
