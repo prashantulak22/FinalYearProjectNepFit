@@ -33,7 +33,7 @@
         }
 
 
-        function getAllNutritionRoutine() {
+        function getNutritionRoutineByUser() {
 
             return $http({
                 method: 'GET',
