@@ -43,7 +43,12 @@ namespace NepFit.BL
                 
                 _NutritionRoutineRepository.GetAll();
         }
+        public IEnumerable<NutritionRoutineResultDto> GetByUserId(Guid id)
+        {
+            return
 
+                _NutritionRoutineRepository.GetByUserId(id);
+        }
         public bool Delete(NutritionRoutineUpdateDto input)
         {
             var deleteObj = _mapper.Map<NutritionRoutine>(input);

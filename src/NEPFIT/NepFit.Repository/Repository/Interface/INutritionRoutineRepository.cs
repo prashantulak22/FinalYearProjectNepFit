@@ -12,5 +12,7 @@ namespace NepFit.Repository.Repository.Interface
         IEnumerable<NutritionRoutineResultDto> GetAll();
         NutritionRoutine GetById(Guid id);
         bool Delete(NutritionRoutine input);
+
+        IEnumerable<NutritionRoutineResultDto> GetByUserId(Guid id);
     }
 }

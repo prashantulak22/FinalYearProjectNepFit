@@ -10,5 +10,7 @@ namespace NepFit.BL.Interface
         bool Update(NutritionRoutineUpdateDto input);
         IEnumerable<NutritionRoutineResultDto> GetAll();
         bool Delete(NutritionRoutineUpdateDto id);
+
+        IEnumerable<NutritionRoutineResultDto> GetByUserId(Guid id);
     }
 }

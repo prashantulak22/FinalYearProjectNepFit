@@ -48,6 +48,25 @@ namespace NepFit.Repository.Repository
                 " WHERE nr.Active = 1  and nt.Active = 1 order by nr.DateCreated");
         }
 
+
+        public IEnumerable<NutritionRoutineResultDto> GetByUserId(Guid id)
+        {
+            var conn = _sqlServerConnectionProvider.GetDbConnection();
+            return conn.Query<NutritionRoutineResultDto>(
+                "Select nt.Name NutritionTypeName, np.Name NutritionPackageName, nr.* from NepFitUser nfu" +
+                "INNER JOIN ExerciseNutritionPackage enp on nfu.ExerciseNutritionPackageId  = enp.ExerciseNutritionPackageId " +
+                "INNER JOIN NutritionPackageRoutine npr on enp.NutritionPackageId = npr.NutritionPackageId" +
+                "INNER JOIN NutritionPackage np on npr.NutritionPackageId = np.NutritionPackageId" +
+                "INNER JOIN NutritionRoutine nr on npr.NutritionRoutineId = nr.NutritionRoutineId" +
+                "INNER JOIN NutritionType nt on nr.NutritionTypeId = nt.NutritionTypeId" +
+                "where nfu.Active = 1 and nfu.UserId = @UserId" +
+                "and enp.Active = 1 and npr.Active=1 and nr.Active=1 and nt.Active=1", new
+                {
+                    UserId = id
+                });
+        }
+
+
         public NutritionRoutine GetById(Guid id)
         {
 

@@ -27,6 +27,16 @@ namespace FinalYearProjectNepFit.Web.Controller
         }
 
 
+
+        [Route("api/nutritionroutine/user")]
+        [HttpGet]
+        public IEnumerable<NutritionRoutineResultDto> GetByUserId()
+        {
+            return _nutritionRoutineService.GetByUserId(new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+        }
+
+
+
         [Route("api/nutritionroutine/delete")]
         [HttpPost]
         public ActionResult<bool> Delete(NutritionRoutineUpdateDto input)

@@ -26,6 +26,7 @@ namespace NepFit.Repository.Dto
         public String Name { get; set; }
 
         public String NutritionTypeName { get; set; }
+        public String NutritionPackageName { get; set; }
 
         /// <summary>
         /// 

@@ -8,6 +8,7 @@
 
     function nutritionRoutineService($http) {
         var service = {
+            getNutritionRoutineByUser: getNutritionRoutineByUser,
             getAllNutritionRoutine: getAllNutritionRoutine,
             getAllNutritionRoutineById: getAllNutritionRoutineById,
             updateNutritionRoutine: updateNutritionRoutine,
@@ -30,7 +31,22 @@
                     });
             
         }
-        
+
+
+        function getAllNutritionRoutine() {
+
+            return $http({
+                method: 'GET',
+                url: 'api/nutritionroutine/user',
+                headers: { 'Authorization': 'Bearer ' + app.jwtToken },
+            }).then(
+                function (data, status, headers, config) {
+                    return data;
+                });
+
+        }
+
+
         function  getAllNutritionRoutineById(item) {
             
                 return $http({
