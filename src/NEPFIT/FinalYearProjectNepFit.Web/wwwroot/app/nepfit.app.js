@@ -87,12 +87,22 @@
                             templateUrl: "/app/nepfituser/postRegister.html",
                             title: "Register"
                         })
+
                     .state("userexerciseroutine",
                         {
                             url: "/user/exercise/routine",
                             templateUrl: "/app/exerciseroutine/userexerciseroutine.html",
                             title: "Exercise Routine"
                         })
+
+
+                    .state("usernutritionroutine",
+                        {
+                            url: "/user/nutrition/routine",
+                            templateUrl: "/app/nutritionroutine/usernutritionroutine.html",
+                            title: "Nutrition Routine"
+                        })
+
 
                   .state("articles",
                       {
