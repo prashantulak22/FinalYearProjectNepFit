@@ -1,0 +1,31 @@
+
+
+.table-for-nutirtion {
+    height: 70%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #111112;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #111112;
+    color: white;
+    border-bottom: 1px solid #ddd;
+}
