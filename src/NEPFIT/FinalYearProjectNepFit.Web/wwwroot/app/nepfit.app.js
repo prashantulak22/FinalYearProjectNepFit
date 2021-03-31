@@ -80,7 +80,7 @@
                             title: "NepFitUser"
                         })
 
-                    
+
                     .state("register",
                         {
                             url: "/register/postregister",
@@ -104,86 +104,95 @@
                         })
 
 
-                  .state("articles",
-                      {
-                          url: "/articles",
-                          templateUrl: "/app/User/articles.html",
-                          title: "Articles"
-                      })
+                    .state("articles",
+                        {
+                            url: "/articles",
+                            templateUrl: "/app/User/articles.html",
+                            title: "Articles"
+                        })
 
                     .state("bcaa",
-                      {
-                          url: "/bcaa",
-                          templateUrl: "/app/User/bcaa.html",
-                          title: "Bcaa"
-                      })
-                  .state("caesin",
-                      {
-                          url: "/caesin",
-                          templateUrl: "/app/User/caesin.html",
-                          title: "Caesin"
-                      })
-                  .state("creatine",
-                      {
-                          url: "/creatine",
-                          templateUrl: "/app/User/creatine.html",
-                          title: "Creatine"
-                      })
-                  .state("exercise",
-                      {
-                          url: "/exercise",
-                          templateUrl: "/app/User/exercise.html",
-                          title: "Exercise"
-                      })
-                  .state("food",
-                      {
-                          url: "/food",
-                          templateUrl: "/app/User/food.html",
-                          title: "Food"
-                      })
-                  .state("plant",
-                      {
-                          url: "/plant",
-                          templateUrl: "/app/User/plant.html",
-                          title: "Plant"
-                      })
-                  .state("pre",
-                      {
-                          url: "/pre",
-                          templateUrl: "/app/User/pre.html",
-                          title: "Pre"
-                      })
-                  .state("proteinbar",
-                      {
-                          url: "/proteinbar",
-                          templateUrl: "/app/User/proteinbar.html",
-                          title: "Proteinbar"
-                      })
-                  .state("supplements",
-                      {
-                          url: "/supplements",
-                          templateUrl: "/app/User/supplements.html",
-                          title: "Supplements"
-                      })
-                  .state("weightgainer",
-                      {
-                          url: "/weightgainer",
-                          templateUrl: "/app/User/weightgainer.html",
-                          title: "Weightgainer"
-                      })
-                  .state("wheyisolate",
-                      {
-                          url: "/wheyisolate",
-                          templateUrl: "/app/User/wheyisolate.html",
-                          title: "Wheyisolate"
-                      })
-                  .state("wheyprotein",
-                      {
-                          url: "/wheyprotein",
-                          templateUrl: "/app/User/wheyprotein.html",
-                          title: "Wheyprotein"
-                      });
+                        {
+                            url: "/bcaa",
+                            templateUrl: "/app/User/bcaa.html",
+                            title: "Bcaa"
+                        })
+                    .state("caesin",
+                        {
+                            url: "/caesin",
+                            templateUrl: "/app/User/caesin.html",
+                            title: "Caesin"
+                        })
+                    .state("creatine",
+                        {
+                            url: "/creatine",
+                            templateUrl: "/app/User/creatine.html",
+                            title: "Creatine"
+                        })
+                    .state("exercise",
+                        {
+                            url: "/exercise",
+                            templateUrl: "/app/User/exercise.html",
+                            title: "Exercise"
+                        })
+                    .state("food",
+                        {
+                            url: "/food",
+                            templateUrl: "/app/User/food.html",
+                            title: "Food"
+                        })
+                    .state("plant",
+                        {
+                            url: "/plant",
+                            templateUrl: "/app/User/plant.html",
+                            title: "Plant"
+                        })
+                    .state("pre",
+                        {
+                            url: "/pre",
+                            templateUrl: "/app/User/pre.html",
+                            title: "Pre"
+                        })
+                    .state("proteinbar",
+                        {
+                            url: "/proteinbar",
+                            templateUrl: "/app/User/proteinbar.html",
+                            title: "Proteinbar"
+                        })
+                    .state("supplements",
+                        {
+                            url: "/supplements",
+                            templateUrl: "/app/User/supplements.html",
+                            title: "Supplements"
+                        })
+                    .state("weightgainer",
+                        {
+                            url: "/weightgainer",
+                            templateUrl: "/app/User/weightgainer.html",
+                            title: "Weightgainer"
+                        })
+                    .state("wheyisolate",
+                        {
+                            url: "/wheyisolate",
+                            templateUrl: "/app/User/wheyisolate.html",
+                            title: "Wheyisolate"
+                        }) 
 
+                    .state("contact",
+                        {
+                            url: "/contact",
+                            templateUrl: "/app/User/contact.html",
+                            title: "Contact"
+                        })
+
+                    .state("wheyprotein",
+                        {
+                            url: "/wheyprotein",
+                            templateUrl: "/app/User/wheyprotein.html",
+                            title: "Wheyprotein"
+                        });
+
+                   
 
 
                 $urlRouterProvider.otherwise(function ($injector, $location) {
