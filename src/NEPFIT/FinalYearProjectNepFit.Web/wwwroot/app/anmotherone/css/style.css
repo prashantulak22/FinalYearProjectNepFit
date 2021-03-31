@@ -409,7 +409,7 @@ a.icon {
 }
 
 .header-two {
-    background: url('../images/bg.jpg') no-repeat;
+    background: url('/app/anmotherone/images/bg.jpg') no-repeat;
 }
 
 .header-two-isolate {
