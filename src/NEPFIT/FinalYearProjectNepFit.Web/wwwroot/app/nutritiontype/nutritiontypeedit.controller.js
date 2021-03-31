@@ -9,7 +9,6 @@
     function nutritiontypeEditCtrl(nutritionTypeService, $uibModalInstance, $scope, param, blockUI) {
         var vm = this;
                 vm.isNew = false;
-        vm.title = ' Edit NutritionType';
         activate();
         function showLoading() {
             blockUI.start();

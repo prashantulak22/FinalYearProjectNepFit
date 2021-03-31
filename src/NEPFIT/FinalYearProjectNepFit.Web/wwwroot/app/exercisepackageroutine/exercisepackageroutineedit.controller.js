@@ -9,7 +9,6 @@
     function exercisepackageroutineEditCtrl(exercisePackageRoutineService, $uibModalInstance, $scope, param, blockUI, exercisePackageService, exerciseRoutineService) {
         var vm = this;
                 vm.isNew = false;
-        vm.title = ' Edit ExercisePackageRoutine';
         activate();
         function showLoading() {
             blockUI.start();

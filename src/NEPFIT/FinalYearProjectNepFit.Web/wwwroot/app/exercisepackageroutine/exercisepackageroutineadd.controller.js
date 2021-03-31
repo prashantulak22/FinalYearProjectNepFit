@@ -9,7 +9,6 @@
     function exercisepackageroutineAddCtrl(exercisePackageRoutineService, $uibModalInstance, $scope, blockUI, exercisePackageService, exerciseRoutineService) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add ExercisePackageRoutine';
         
         activate();
         function showLoading() {

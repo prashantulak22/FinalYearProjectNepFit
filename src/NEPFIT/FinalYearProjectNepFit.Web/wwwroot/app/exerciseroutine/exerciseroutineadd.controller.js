@@ -9,7 +9,7 @@
     function exerciseroutineAddCtrl(exerciseRoutineService, $uibModalInstance, $scope, blockUI, exerciseTypeService) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add ExerciseRoutine';
+        
 
         activate();
         function showLoading() {

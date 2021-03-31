@@ -3,36 +3,35 @@
     <div class="portlet-title">
         <div class="caption">
             <i class="navicon icon-bell font-red"></i>
-            Add ExercisePackageRoutine
+           
         </div>
-        <a ng-click="vm.close()" class=" pull-right">
-            <i class="far fa-times-circle fa-lg"></i>
+        <a ng-click="vm.close()" class=" pull-right mr-4">
+            <i class="fa fa-times-circle fa-lg"></i>
         </a>
     </div>
-    <div class="portlet-body">
+    <div class="portlet-body p-5">
+        <div class="text-center mb-5">
+            <h1>Edit Exercise Package Routine</h1>
+        </div>
         <div class="form-group">
-            <label class="control-label col-md-3">
-                Exercise Package
-                <span class="required"> * </span>
+            <label class="control-label col-md-4">
+                Choose Exercise Package
             </label>
             <div class="col-md-6">
                 <select kendo-drop-down-list class="required form-control"
                         k-options="vm.exercisePackageIdDropdownOptions"
                         ng-model="vm.exercisePackageRoutine.exercisePackageId"></select>
-                <span class="help-block">  Exercise Package</span>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-3">
-                Exercise Routine
-                <span class="required"> * </span>
+            <label class="control-label col-md-4">
+                Choose Exercise Routine
             </label>
             <div class="col-md-6">
                 <select kendo-drop-down-list class="required form-control"
                         k-options="vm.exerciseRoutineIdDropdownOptions"
                         ng-model="vm.exercisePackageRoutine.exerciseRoutineId"></select>
-                <span class="help-block">  Exercise Routine</span>
             </div>
         </div>
 
@@ -57,7 +56,7 @@
 
         <div class="form-actions">
             <div class="row">
-                <div class="col-md-offset-5 col-md-12">
+                <div class="col-md-offset-5 col-md-12 text-center mt-5 mb-3">
                     <a ng-disabled="addExercisePackageRoutineCreateForm.$invalid" ng-click="vm.saveExercisePackageRoutine()" class="btn green button-submit button-next">
                         Save
                         <i class="fa fa-check"></i>

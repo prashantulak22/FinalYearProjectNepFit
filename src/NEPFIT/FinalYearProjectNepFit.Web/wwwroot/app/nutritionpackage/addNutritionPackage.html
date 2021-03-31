@@ -5,58 +5,56 @@
             <i class="navicon icon-bell font-red"></i>
            {{vm.title}}
         </div>
-        <a ng-click="vm.close()" class=" pull-right">
+        <a ng-click="vm.close()" class=" pull-right mr-4">
             <i class="fa fa-times-circle fa-lg"></i>
         </a>
     </div>
-    <div class="portlet-body">      
+    <div class="portlet-body p-5">      
         <form class="form-horizontal" kendo-validator="validator" ame="addNutritionPackageCreateForm">
+            <div class="text-center mb-5">
+                <h1>Add Nutrition Package</h1>
+            </div>
 
-      
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            Name
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.nutritionPackage.name" />
-            <span class="help-block"> Short Name for your NutritionPackage (Max [StringLength(5000)] characters </span>
-        </div>
-    </div>
-    
-      
-    
-    <div class="form-group">
-        <label class="control-label col-md-3">
-            Description
-            <span class="required"> * </span>
-        </label>
-        <div class="col-md-6">
-            <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.nutritionPackage.description" ></textarea>
-            <span class="help-block"> Short Description for your NutritionPackage (Max [StringLength(5000)] characters </span>
-        </div>
-    </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">
+                    Nutrition Package Name
+                </label>
+                <div class="col-md-7">
+                    <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.nutritionPackage.name" />
+                </div>
+            </div>
 
-                <div class="item form-group" ng-show="vm.validationError.length > 0">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">Please review the following field</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li ng-repeat="message in vm.validationError">
-                                        <span class="black">{{message}}</span>
-                                    </li>
-                                </ul>
-                            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-md-4">
+                    Description
+                </label>
+                <div class="col-md-7">
+                    <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.nutritionPackage.description"></textarea>
+                </div>
+            </div>
+
+            <div class="item form-group" ng-show="vm.validationError.length > 0">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Please review the following field</div>
+                        <div class="panel-body">
+                            <ul>
+                                <li ng-repeat="message in vm.validationError">
+                                    <span class="black">{{message}}</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
 
-             </form>
+        </form>
              
           <div class="form-actions">
             <div class="row">
-                <div class="col-md-offset-5 col-md-12">
+                <div class="col-md-offset-5 col-md-12 text-center mt-5 mb-3">
                     <a ng-disabled="addNutritionPackageCreateForm.$invalid"  ng-click="vm.saveNutritionPackage()" class="btn green button-submit button-next">
                         Save
                         <i class="fa fa-check"></i>

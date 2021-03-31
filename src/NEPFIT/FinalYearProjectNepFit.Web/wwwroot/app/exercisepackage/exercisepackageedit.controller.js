@@ -9,7 +9,6 @@
     function exercisepackageEditCtrl(exercisePackageService, $uibModalInstance, $scope, param, blockUI) {
         var vm = this;
                 vm.isNew = false;
-        vm.title = ' Edit ExercisePackage';
         activate();
         function showLoading() {
             blockUI.start();

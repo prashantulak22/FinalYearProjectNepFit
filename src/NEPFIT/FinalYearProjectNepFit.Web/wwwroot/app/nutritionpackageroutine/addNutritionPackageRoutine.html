@@ -5,34 +5,33 @@
             <i class="navicon icon-bell font-red"></i>
            {{vm.title}}
         </div>
-        <a ng-click="vm.close()" class=" pull-right">
+        <a ng-click="vm.close()" class=" pull-right mr-4">
             <i class="fa fa-times-circle fa-lg"></i>
         </a>
     </div>
-    <div class="portlet-body">
+    <div class="portlet-body p-5">
+        <div class="text-center mb-5">
+            <h1>Add Nutrition Package Routine</h1>
+        </div>
         <div class="form-group">
-            <label class="control-label col-md-3">
-                Nutrition Package
-                <span class="required"> * </span>
+            <label class="control-label col-md-4">
+                Choose Nutrition Package
             </label>
             <div class="col-md-6">
                 <select kendo-drop-down-list class="required form-control"
                         k-options="vm.nutritionPackageIdDropdownOptions"
                         ng-model="vm.nutritionPackageRoutine.nutritionPackageId"></select>
-                <span class="help-block">  Nutrition Package</span>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-3">
-                Nutrition Routine
-                <span class="required"> * </span>
+            <label class="control-label col-md-4">
+                Choose Nutrition Routine
             </label>
             <div class="col-md-6">
                 <select kendo-drop-down-list class="required form-control"
                         k-options="vm.nutritionRoutineIdDropdownOptions"
                         ng-model="vm.nutritionPackageRoutine.nutritionRoutineId"></select>
-                <span class="help-block">  Nutrition Routine</span>
             </div>
         </div>
 
@@ -58,7 +57,7 @@
 
         <div class="form-actions">
             <div class="row">
-                <div class="col-md-offset-5 col-md-12">
+                <div class="col-md-offset-5 col-md-12 text-center mt-5 mb-3">
                     <a ng-disabled="addNutritionPackageRoutineCreateForm.$invalid" ng-click="vm.saveNutritionPackageRoutine()" class="btn green button-submit button-next">
                         Save
                         <i class="fa fa-check"></i>

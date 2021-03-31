@@ -5,16 +5,16 @@
             <i class="navicon icon-bell font-red"></i>
             {{vm.title}}
         </div>
-        <a ng-click="vm.close()" class=" pull-right">
+        <a ng-click="vm.close()" class="pull-right mr-4">
             <i class="fa fa-times-circle fa-lg"></i>
         </a>
     </div>
     <form>
-    <div class="container mx-18">
+    <div class="container">
 
 
-        <div class=" col-md-12 bodyMetrics shadow ">
-            <div class="text-center mb-4">
+        <div class=" col-md-12 bodyMetrics mt-5 ">
+            <div class="text-center mb-5">
                 <h1>Enter Your Body Details</h1>
             </div>
             <div class="form-row ">
@@ -136,7 +136,7 @@
 
     <div class="form-actions">
         <div class="row">
-            <div class="col-md-offset-5 col-md-12">
+            <div class="col-md-offset-5 col-md-12 text-center mt-5 mb-3">
                 <a ng-disabled="addBodyMetricsCreateForm.$invalid" ng-click="vm.saveBodyMetrics()" class="btn green button-submit button-next">
                     Save
                     <i class="fa fa-check"></i>

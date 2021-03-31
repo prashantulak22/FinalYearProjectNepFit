@@ -9,7 +9,7 @@
     function exercisetypeAddCtrl(exerciseTypeService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add ExerciseType';
+       
 
         activate();
         function showLoading() {

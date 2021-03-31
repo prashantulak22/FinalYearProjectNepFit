@@ -9,7 +9,6 @@
     function exercisepackageAddCtrl(exercisePackageService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add ExercisePackage';
         
         activate();
         function showLoading() {

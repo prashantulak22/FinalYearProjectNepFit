@@ -9,7 +9,6 @@
     function exercisenutritionpackageEditCtrl(exerciseNutritionPackageService, $uibModalInstance, $scope, param, blockUI, exercisePackageService, nutritionPackageService ) {
         var vm = this;
                 vm.isNew = false;
-        vm.title = ' Edit ExerciseNutritionPackage';
         activate();
         function showLoading() {
             blockUI.start();

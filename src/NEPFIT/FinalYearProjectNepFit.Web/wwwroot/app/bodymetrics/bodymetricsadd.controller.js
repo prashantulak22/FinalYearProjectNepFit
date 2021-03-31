@@ -9,7 +9,7 @@
     function bodymetricsAddCtrl(bodyMetricsService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add BodyMetrics';
+        
 
         activate();
         function showLoading() {

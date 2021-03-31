@@ -9,7 +9,6 @@
     function nutritionpackageroutineAddCtrl(nutritionPackageRoutineService, $uibModalInstance, $scope, blockUI, nutritionPackageService, nutritionRoutineService) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add NutritionPackageRoutine';
         
         activate();
         function showLoading() {

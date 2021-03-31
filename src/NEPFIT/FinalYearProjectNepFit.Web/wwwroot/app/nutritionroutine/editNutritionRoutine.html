@@ -3,38 +3,36 @@
     <div class="portlet-title">
         <div class="caption">
             <i class="navicon icon-bell font-red"></i>
-            Add NutritionRoutine
+           
         </div>
-        <a ng-click="vm.close()" class=" pull-right">
+        <a ng-click="vm.close()" class=" pull-right mr-4">
             <i class="fa fa-times-circle fa-lg"></i>
         </a>
     </div>
-    <div class="portlet-body">      
+    <div class="portlet-body p-5">      
         <form class="form-horizontal" kendo-validator="validator" ame="addNutritionRoutineCreateForm">
-
+            <div class="text-center mb-5">
+                <h1>Edit Nutrition Routine</h1>
+            </div>
 
             <div class="form-group">
                 <label class="control-label col-md-3">
-                    Nutrition Type
-                    <span class="required"> * </span>
+                    Choose Nutrition Type
                 </label>
                 <div class="col-md-6">
                     <select kendo-drop-down-list class="required form-control"
                             k-options="vm.nutritionTypeIdDropdownOptions"
                             ng-model="vm.nutritionRoutine.nutritionTypeId"></select>
-                    <span class="help-block">  Nutrition Type</span>
                 </div>
             </div>
 
 
             <div class="form-group">
-                <label class="control-label col-md-3">
-                    Name
-                    <span class="required"> * </span>
+                <label class="control-label col-md-4">
+                    Nutrition Routine Name
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <input type="text" maxlength="[StringLength(5000)]" class="form-control" name="Name" placeholder="Name" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.name" />
-                    <span class="help-block"> Short Name for your NutritionRoutine (Max [StringLength(5000)] characters </span>
                 </div>
             </div>
 
@@ -43,11 +41,9 @@
             <div class="form-group">
                 <label class="control-label col-md-3">
                     Description
-                    <span class="required"> * </span>
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="Description" placeholder="Description" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.description"></textarea>
-                    <span class="help-block"> Short Description for your NutritionRoutine (Max [StringLength(5000)] characters </span>
                 </div>
             </div>
 
@@ -55,12 +51,10 @@
 
             <div class="form-group">
                 <label class="control-label col-md-3">
-                    HowToPrepare
-                    <span class="required"> * </span>
+                    How To Prepare
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <textarea type="text" maxlength="[StringLength(5000)]" class="form-control" name="HowToPrepare" placeholder="HowToPrepare" required validationMessage="Enter {0}" ng-model="vm.nutritionRoutine.howToPrepare"></textarea>
-                    <span class="help-block"> Short HowToPrepare for your NutritionRoutine (Max [StringLength(5000)] characters </span>
                 </div>
             </div>
 
@@ -83,7 +77,7 @@
              
           <div class="form-actions">
             <div class="row">
-                <div class="col-md-offset-5 col-md-12">
+                <div class="col-md-offset-5 col-md-12 text-center mt-5 mb-3">
                     <a ng-disabled="addNutritionRoutineCreateForm.$invalid"  ng-click="vm.saveNutritionRoutine()" class="btn green button-submit button-next">
                         Save
                         <i class="fa fa-check"></i>

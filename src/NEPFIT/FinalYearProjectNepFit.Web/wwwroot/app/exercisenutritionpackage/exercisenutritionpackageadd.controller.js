@@ -9,7 +9,6 @@
     function exercisenutritionpackageAddCtrl(exerciseNutritionPackageService, $uibModalInstance, $scope, blockUI, exercisePackageService, nutritionPackageService) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add ExerciseNutritionPackage';
 
         activate();
         function showLoading() {

@@ -9,7 +9,6 @@
     function nutritionpackageAddCtrl(nutritionPackageService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add NutritionPackage';
         
         activate();
         function showLoading() {

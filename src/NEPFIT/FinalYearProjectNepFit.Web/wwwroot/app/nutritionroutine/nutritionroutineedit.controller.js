@@ -9,7 +9,6 @@
     function nutritionroutineEditCtrl(nutritionRoutineService, $uibModalInstance, $scope, param, blockUI, nutritionTypeService) {
         var vm = this;
                 vm.isNew = false;
-        vm.title = ' Edit NutritionRoutine';
         activate();
 
         function showLoading() {

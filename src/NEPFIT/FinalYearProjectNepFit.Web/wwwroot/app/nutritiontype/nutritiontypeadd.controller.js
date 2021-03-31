@@ -9,7 +9,6 @@
     function nutritiontypeAddCtrl(nutritionTypeService, $uibModalInstance, $scope, blockUI) {
         var vm = this;
         vm.isNew = true;
-        vm.title = ' Add NutritionType';
         
         activate();
         function showLoading() {

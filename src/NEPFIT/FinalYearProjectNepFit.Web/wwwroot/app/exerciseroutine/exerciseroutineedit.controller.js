@@ -9,7 +9,7 @@
     function exerciseroutineEditCtrl(exerciseRoutineService, $uibModalInstance, $scope, param, blockUI, exerciseTypeService) {
         var vm = this;
         vm.isNew = false;
-        vm.title = ' Edit ExerciseRoutine';
+        
         activate();
         function showLoading() {
             blockUI.start();
