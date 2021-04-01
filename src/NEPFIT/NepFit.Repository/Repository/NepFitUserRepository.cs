@@ -30,7 +30,7 @@ namespace NepFit.Repository.Repository
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             conn.Execute("	UPDATE NepFitUser SET [UserId] = @UserId ,[FirstName] = @FirstName " +
-                ",[LastName] = @LastName ,[DateOfBirth] = @DateOfBirth ,[Gender] = @Gender,[ExperienceLevel] = @ExperienceLevel , " +
+                ",[LastName] = @LastName ,[DateOfBirth] = @DateOfBirth ,[Gender] = @Gender, [ExperienceLevel] = @ExperienceLevel " +
                 ",[IsAdmin] = @IsAdmin ,[Active] = @Active ,[UpdatedBy] = @UpdatedBy " +
                 ",[CreatedBy] = @CreatedBy ,[DateUpdated] = @DateUpdated ,[DateCreated] = @DateCreated, [ExerciseNutritionPackageId] = @ExerciseNutritionPackageId " +
                 " WHERE [UserId]=@UserId", input);

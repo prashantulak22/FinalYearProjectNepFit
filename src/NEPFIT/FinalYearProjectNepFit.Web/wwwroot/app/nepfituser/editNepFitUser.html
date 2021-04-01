@@ -3,22 +3,23 @@
     <div class="portlet-title">
         <div class="caption">
             <i class="navicon icon-bell font-red"></i>
-            Add NepFitUser
+            
         </div>
-        <a ng-click="vm.close()" class=" pull-right">
+        <a ng-click="vm.close()" class=" pull-right mr-4">
             <i class="fa fa-times-circle fa-lg"></i>
         </a>
     </div>
-    <div class="portlet-body">      
+    <div class="portlet-body p-5">      
         <form class="form-horizontal" kendo-validator="validator" ame="addNepFitUserCreateForm">
-
+            <div class="text-center mb-5">
+                <h1>Edit NepFit User</h1>
+            </div>
 
             <div class="form-group">
                 <label class="control-label col-md-3">
-                    FirstName
-                    <span class="required"> * </span>
+                    First Name
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <input type="text" maxlength="[StringLength(50)]" class="form-control" name="FirstName" placeholder="FirstName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.firstName" />
 
                 </div>
@@ -28,10 +29,9 @@
 
             <div class="form-group">
                 <label class="control-label col-md-3">
-                    LastName
-                    <span class="required"> * </span>
+                    Last Name
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <input type="text" maxlength="[StringLength(50)]" class="form-control" name="LastName" placeholder="LastName" required validationMessage="Enter {0}" ng-model="vm.nepFitUser.lastName" />
 
                 </div>
@@ -40,9 +40,8 @@
             <div class="form-group">
                 <label class="control-label col-md-3">
                     Date Of Birth
-                    <span class="required"> * </span>
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <input type="datetime" class="required form-control" id="asd" name="dob" placeholder="MM/dd/yyyy" ng-model="vm.nepFitUser.dateOfBirth">
                 </div>
             </div>
@@ -51,18 +50,17 @@
             <div class="form-group">
                 <label class="control-label col-md-3">
                     Gender
-                    <span class="required"> * </span>
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <label>
                         <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="M" />
                         MALE
                     </label>
-                    <label style="padding-left:20px;">
+                    <label style="padding-left:30px;">
                         <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="F" />
                         FEMALE
                     </label>
-                    <label style="padding-left:20px;">
+                    <label style="padding-left:30px;">
                         <input type="radio" class="required form-control" ng-model="vm.nepFitUser.gender" value="O" />
                         OTHERS
                     </label>
@@ -75,9 +73,8 @@
             <div class="form-group">
                 <label class="control-label col-md-3">
                     Experience Level
-                    <span class="required"> * </span>
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <label>
                         <input type="radio" class="required form-control" ng-model="vm.nepFitUser.experienceLevel" value="0" />
                         Beginner
@@ -97,9 +94,8 @@
             <div class="form-group">
                 <label class="control-label col-md-3">
                     IsAdmin
-                    <span class="required"> * </span>
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <label>
                         <input type="radio" class="required form-control" ng-model="vm.nepFitUser.isAdmin" ng-value="true" />
                         Admin
@@ -134,7 +130,7 @@
           
           <div class="form-actions">
             <div class="row">
-                <div class="col-md-offset-5 col-md-12">
+                <div class="col-md-offset-5 col-md-12 text-center mt-5 mb-3">
                     <a ng-disabled="addNepFitUserCreateForm.$invalid"  ng-click="vm.saveNepFitUser()" class="btn green button-submit button-next">
                         Save
                         <i class="fa fa-check"></i>
