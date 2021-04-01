@@ -1,7 +1,11 @@
-
+#postregister {
+    display: flex;
+    justify-content: center;
+    
+}
 
 .postregform {
-  height: 85vh;
+  height: 82vh;
   max-width: 450px;
   width: 100%;
   background: #fff;
@@ -58,21 +62,21 @@
   height: 45px;
   width: 100%;
   outline-color: rgb(20, 223, 238);
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .user-details .gender select {
   height: 45px;
   width: 100%;
   outline-color: rgb(20, 223, 238);
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
-.user-details .programme select {
-  height: 45px;
-  width: 100%;
-  outline-color: rgb(20, 223, 238);
-  margin-top: 10px;
+.user-details .experiencelevel select {
+    height: 45px;
+    width: 85%;
+    outline-color: rgb(20, 223, 238);
+    margin-top: 6px;
 }
 
 .user-details .input-box .details {
