@@ -1,19 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Arial", sans-serif;
-}
 
-body {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
 
-.container {
+.postregform {
   height: 85vh;
   max-width: 450px;
   width: 100%;
@@ -22,39 +9,39 @@ body {
   box-shadow: 8px 11px 7px 2px grey;
 }
 
-.container .title {
+.postregform .title {
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 25px;
 }
 
-.container form .user-details {
+.postregform form .user-details {
   display: block;
 }
 
-.container form .button {
+.postregform form .button {
   display: block;
 }
 
-.container form .user-details .input-box {
-  display: block;
-  width: 85%;
-  margin-bottom: 25px;
-}
-
-.container form .user-details .date {
+.postregform form .user-details .input-box {
   display: block;
   width: 85%;
   margin-bottom: 25px;
 }
 
-.container form .user-details .gender {
+.postregform form .user-details .date {
   display: block;
   width: 85%;
   margin-bottom: 25px;
 }
 
-.container form .user-details .programme {
+.postregform form .user-details .gender {
+  display: block;
+  width: 85%;
+  margin-bottom: 25px;
+}
+
+.postregform form .user-details .programme {
   display: block;
   width: 85%;
   margin-bottom: 25px;
