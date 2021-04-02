@@ -35,6 +35,6 @@ img {
 .btn1:hover {
         background: #111112;
         border-color: transparent;
-        color: #ffffff;
+        color: #ffffff !important;
 }
 
