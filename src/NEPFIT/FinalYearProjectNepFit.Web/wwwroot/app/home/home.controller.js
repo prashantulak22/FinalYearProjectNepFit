@@ -11,8 +11,10 @@
         vm.dispalyContent = false;
         activate();
         function activate() {
+            app.user = {};
             nepFitUserService.getLoggedInUser().then(function (result) {
-                console.log(result.data);
+                app.user = result.data;
+                vm.isAdmin = app.user.isAdmin;
                 if (!result.data) {
                     $state.go('register');
                 } else {

@@ -13,10 +13,12 @@ namespace FinalYearProjectNepFit.Web.Controller
     public class ExerciseNutritionPackageController : ControllerBase
     {
         private readonly IExerciseNutritionPackageService _exerciseNutritionPackageService;
+        private readonly INepFitUserService _nepFitUserService;
 
-        public ExerciseNutritionPackageController(IExerciseNutritionPackageService ExerciseNutritionPackageService)
+        public ExerciseNutritionPackageController(IExerciseNutritionPackageService exerciseNutritionPackageService, INepFitUserService nepFitUserService)
         {
-            _exerciseNutritionPackageService = ExerciseNutritionPackageService;
+            _exerciseNutritionPackageService = exerciseNutritionPackageService;
+            _nepFitUserService = nepFitUserService;
         }
 
         [Route("api/exerciseNutritionPackage/all")]
@@ -31,15 +33,20 @@ namespace FinalYearProjectNepFit.Web.Controller
         [HttpPost]
         public ActionResult<bool> Delete(ExerciseNutritionPackageUpdateDto input)
         {
-            if (TryValidateModel(input))
+            if (_nepFitUserService.GetByUserId(new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier))).IsAdmin)
             {
-                input.UpdatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                return _exerciseNutritionPackageService.Delete(input);
+
+                if (TryValidateModel(input))
+                {
+                    input.UpdatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                    return _exerciseNutritionPackageService.Delete(input);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
-            else
-            {
-                return BadRequest(ModelState);
-            }
+            return Unauthorized();
         }
 
         [Route("api/exerciseNutritionPackage/add")]

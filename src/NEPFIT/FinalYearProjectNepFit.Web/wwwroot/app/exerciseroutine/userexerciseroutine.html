@@ -18,21 +18,37 @@
 
 
 <div class=" wow fadeInUp containertable-for-nutirtion py-5" ng-controller="userexerciseroutineCtrl as vm">
+    <h3>Chest</h3>
     <table>
         <tr>
             <th>Exercise Package Name</th>
-            <th>Exercise Type</th>
             <th>Exercise Name</th>
             <th>Repetition</th>
         </tr>
-        <tr ng-repeat="row in vm.userExerciseRoutine">
+        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'chests'}">
             <td> {{row.exercisePackageName}}</td>
-            <td> {{row.exerciseTypeName}}</td>
             <td> {{row.name}}</td>
             <td> {{row.repetition}}</td>
 
         </tr>
-        
+
+    </table>
+    <hr />
+    <h3>Back</h3>
+
+    <table>
+        <tr>
+            <th>Exercise Package Name</th>
+            <th>Exercise Name</th>
+            <th>Repetition</th>
+        </tr>
+        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'back'}">
+            <td> {{row.exercisePackageName}}</td>
+            <td> {{row.name}}</td>
+            <td> {{row.repetition}}</td>
+
+        </tr>
+
     </table>
 </div>
 

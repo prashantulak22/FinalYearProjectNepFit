@@ -1,7 +1,7 @@
 ﻿(function (angular, app) {
     'use strict';
     angular
-        .module('nepFitApp', ['kendo.directives', 'ui.bootstrap', 'ui.router', 'blockUI'])
+        .module('nepFitApp', ['kendo.directives', 'ui.bootstrap', 'ui.router', 'blockUI', 'commonModule'])
         .config([
             "$stateProvider", "$urlRouterProvider", '$locationProvider', 'blockUIConfig',
             function ($stateProvider, $urlRouterProvider, $locationProvider, blockUIConfig) {
@@ -27,7 +27,9 @@
                         {
                             url: "/exerciseRoutine",
                             templateUrl: "/app/exerciseroutine/exerciseRoutine.html",
-                            title: "ExerciseType"
+                            title: "ExerciseType",
+                            resolve: { checkAccess: checkAccess }
+
                         })
                     .state("exercisePackage",
                         {
@@ -176,7 +178,7 @@
                             url: "/wheyisolate",
                             templateUrl: "/app/User/wheyisolate.html",
                             title: "Wheyisolate"
-                        }) 
+                        })
 
                     .state("contact",
                         {
@@ -192,7 +194,12 @@
                             title: "Wheyprotein"
                         });
 
-                   
+                function checkAccess($state) {
+                    if (app.user.isAdmin) {
+                        return true;
+                    }
+                    $state.go('home');
+                }
 
 
                 $urlRouterProvider.otherwise(function ($injector, $location) {
@@ -204,4 +211,71 @@
         ]);
 
 })(angular, app);
+
+(function (angular) {
+    'use strict';
+    angular
+        .module('commonModule', [])
+        .config(httpConfig);
+
+
+    httpConfig.$inject = ['$httpProvider'];
+    var notification = $("#notification").kendoNotification({
+        position: {
+            pinned: false,
+            bottom: 30,
+            right: 30,
+            allowHideAfter: 1000
+        },
+        autoHideAfter: 0,
+        stacking: "down"
+    }).data("kendoNotification");
+
+    function httpConfig($httpProvider) {
+        $httpProvider.interceptors.push(['$q', function ($q) {
+            return {
+                'responseError': function (rejection) {
+                    // do something on error
+                    var rejectionData = '';
+                    if (rejection.data !== null) {
+                        if (typeof rejection.data === "object") {
+                            rejectionData = JSON.stringify(rejection.data);
+                        }
+                        else
+                            rejectionData = rejection.data;
+                    }
+                    if (rejection.status === 400) {
+                        console.log("Bad Request (400) " + moment().format()
+                            , "error");
+                    }
+                    else if (rejection.status === 401) {
+                        alert("User not authorized or authenticated (401) " + moment().format()
+                            , "error");
+                    }
+                    else if (rejection.status === 404) {
+                        alert("Oops! We can't seem to find resource you are looking for (404) " + moment().format()
+                            , "error");
+                    }
+                    else if (rejection.status === 502) {
+                        alert("502 Bad Gateway server error, while acting as a gateway or proxy, received an invalid response from the upstream server. " + moment().format()
+                            , "error");
+                    }
+                    else if (rejection.data !== null && (rejection.data.Message || rejection.data.message)) {
+                        alert((rejection.data.Message || rejection.data.message) + moment().format(), "error");
+                    }
+                    else {
+                        //alert("Unexpected Error"
+                        //    , "error " + moment().format());
+                        console.log("Unexpected Error " + rejection.data + " " + moment().format());
+                        rejection.data = "";
+                    }
+                    return $q.reject(rejection);
+                }
+            };
+        }]);
+    }
+
+
+
+})(angular);
 
