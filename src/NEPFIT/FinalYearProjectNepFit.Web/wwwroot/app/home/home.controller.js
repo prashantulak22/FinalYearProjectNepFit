@@ -84,36 +84,8 @@
 
         }
 
-        vm.showExcerciseType = function () {
-            $state.go('exerciseType');
-        }
-        vm.showExcerciseRoutine = function () {
-            $state.go('exerciseRoutine');
-        }
-        vm.showExcercisePackage = function () {
-            $state.go('exercisePackage');
-        }
-        vm.showNutritionType = function () {
-            $state.go('nutritionType');
-        }
-        vm.showNutritionPackage = function () {
-            $state.go('nutritionPackage');
-        }
-        vm.showNutritionRoutine = function () {
-            $state.go('nutritionRoutine');
-        }
-        vm.showNutritionPackageRoutine = function () {
-            $state.go('nutritionPackageRoutine');
-        }
-        vm.showExercisePackageRoutine = function () {
-            $state.go('exercisePackageRoutine');
-        }
-        vm.showExerciseNutritionPackage = function () {
-            $state.go('exerciseNutritionPackage');
-        }
-        vm.showNepFitUser = function () {
-            $state.go('nepFitUser');
-        }
+     
+        
 
         vm.showPostRegister = function () {
             $state.go('register');
