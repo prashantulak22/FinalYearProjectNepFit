@@ -23,6 +23,14 @@
                             templateUrl: "/app/exercisetype/index.html",
                             title: "ExerciseType"
                         })
+
+                    .state("admin",
+                        {
+                            url: "/adminpanel",
+                            templateUrl: "/app/admin/admin.html",
+                            title: "Admin Panel"
+                        }) 
+
                     .state("exerciseRoutine",
                         {
                             url: "/exerciseRoutine",
