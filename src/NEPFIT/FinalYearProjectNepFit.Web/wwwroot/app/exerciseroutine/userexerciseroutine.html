@@ -50,9 +50,98 @@
         </tr>
 
     </table>
+
+    <hr />
+    <h3>Biceps</h3>
+
+    <table>
+        <tr>
+            <th>Exercise Package Name</th>
+            <th>Exercise Name</th>
+            <th>Repetition</th>
+        </tr>
+        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'biceps'}">
+            <td> {{row.exercisePackageName}}</td>
+            <td> {{row.name}}</td>
+            <td> {{row.repetition}}</td>
+
+        </tr>
+
+    </table>
+
+    <hr />
+    <h3>Triceps</h3>
+
+    <table>
+        <tr>
+            <th>Exercise Package Name</th>
+            <th>Exercise Name</th>
+            <th>Repetition</th>
+        </tr>
+        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'triceps'}">
+            <td> {{row.exercisePackageName}}</td>
+            <td> {{row.name}}</td>
+            <td> {{row.repetition}}</td>
+
+        </tr>
+
+    </table>
+
+    <hr />
+    <h3>Shoulders</h3>
+
+    <table>
+        <tr>
+            <th>Exercise Package Name</th>
+            <th>Exercise Name</th>
+            <th>Repetition</th>
+        </tr>
+        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'shoulders'}">
+            <td> {{row.exercisePackageName}}</td>
+            <td> {{row.name}}</td>
+            <td> {{row.repetition}}</td>
+
+        </tr>
+
+    </table>
+
+
+    <hr />
+    <h3>Legs</h3>
+
+    <table>
+        <tr>
+            <th>Exercise Package Name</th>
+            <th>Exercise Name</th>
+            <th>Repetition</th>
+        </tr>
+        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'legs'}">
+            <td> {{row.exercisePackageName}}</td>
+            <td> {{row.name}}</td>
+            <td> {{row.repetition}}</td>
+
+        </tr>
+
+    </table>
 </div>
 
+<hr />
+<h3>Abs</h3>
 
+<table>
+    <tr>
+        <th>Exercise Package Name</th>
+        <th>Exercise Name</th>
+        <th>Repetition</th>
+    </tr>
+    <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'abs'}">
+        <td> {{row.exercisePackageName}}</td>
+        <td> {{row.name}}</td>
+        <td> {{row.repetition}}</td>
+
+    </tr>
+
+</table>
 
 
 
