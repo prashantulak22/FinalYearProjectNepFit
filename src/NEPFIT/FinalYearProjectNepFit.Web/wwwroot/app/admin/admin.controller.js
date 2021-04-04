@@ -8,7 +8,7 @@
     adminCtrl.$inject = ['$uibModal', '$state', 'nepFitUserService'];
     function adminCtrl($uibModal, $state, nepFitUserService) {
         var vm = this;
-        vm.dispalyContent = false;
+        vm.dispalyContent = true;
         activate();
         function activate() {
             

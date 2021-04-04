@@ -85,7 +85,9 @@
         }
 
      
-        
+        vm.showAdmin = function () {
+            $state.go('admin');
+        }
 
         vm.showPostRegister = function () {
             $state.go('register');

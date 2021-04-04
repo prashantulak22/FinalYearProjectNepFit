@@ -28,7 +28,9 @@
                         {
                             url: "/adminpanel",
                             templateUrl: "/app/admin/admin.html",
-                            title: "Admin Panel"
+                            title: "Admin Panel",
+                            //resolve: { checkAccess: checkAccess }
+                            
                         }) 
 
                     .state("exerciseRoutine",
