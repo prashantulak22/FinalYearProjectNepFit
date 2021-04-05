@@ -9,11 +9,11 @@
 
 <section class="Form  mt-2 mx-5">
     <div class="container">
-        <div class="row no-gutters mb-3">
+        <div class="row no-gutters mb-1">
             <div class="col-lg-5">
                 <img src="~/Images/login3.jpg" alt="Responsive image">
             </div>
-            <div class="col-lg-7 px-5 pt-5">
+            <div class="col-lg-7 px-5 ">
                 <h1 class="font-weight-bold py-3">NEPFIT</h1>
                 <h1></h1>
                 <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
@@ -45,23 +45,15 @@
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="form-row">
+                    
+
+                    <div class="form-row mt-3 mb-2">
                         <div class="col-lg-7">
-                            <label for="sel1">Gender</label>
-                            <select class="form-control" id="sel1">
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Others</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-lg-7">
-                            <button type="submit" class="btn1 mt-3 mb-2">Sign Up</button>
+                            <button type="submit" class="btn1 my-2">Sign Up</button>
                         </div>
                     </div>
                     <p>
-                        Don't have an account ?
+                        Already have an account ?
                         <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl"> Log In</a>
                     </p>
 
