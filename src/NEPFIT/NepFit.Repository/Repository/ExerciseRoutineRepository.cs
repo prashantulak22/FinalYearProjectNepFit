@@ -19,11 +19,10 @@ namespace NepFit.Repository.Repository
         public int Add(ExerciseRoutine input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO ExerciseRoutine ( [Name] ,[Description], [Repetition], [Duration], [ExerciseTypeId]" +
-                                ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated], [Gender] )" +
-                                "	VALUES" +
-                                "	( @Name ,@Description ,@Repetition, @Duration, @ExerciseTypeId  " +
-                                ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated , @Gender)", input);
+            return conn.Execute("INSERT INTO ExerciseRoutine([Name] ,[Description] ,[Repetition] " +
+                ",[Duration] ,[Gender] ,[ExperienceLevel] ,[ExerciseTypeId] ,[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] " +
+                ",[DateCreated] )VALUES	(@Name ,@Description ,@Repetition ,@Duration ,@Gender ,@ExperienceLevel" +
+                " ,@ExerciseTypeId ,@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )  ", input);
         }
 
         public ExerciseRoutine Update(ExerciseRoutine input)
@@ -31,7 +30,7 @@ namespace NepFit.Repository.Repository
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             conn.Execute("	UPDATE ExerciseRoutine SET 	" +
                                 "	[ExerciseRoutineId] = @ExerciseRoutineId ,		" +
-                                "	[Gender] = @Gender ,		" +
+                                "	[Gender] = @Gender ,	[ExperienceLevel] = @ExperienceLevel,	" +
                                 "[Name] = @Name ,		[Description] = @Description ,	" +
                                 "[Repetition] = @Repetition, [Duration] =@Duration , [ExerciseTypeId]=@ExerciseTypeId" +
                                 "	,[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +

@@ -66,6 +66,15 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
+        [DisplayName("ExperienceLevel")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public String ExperienceLevel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [DisplayName("ExerciseTypeId")]
         [DataMember]
         [Required]

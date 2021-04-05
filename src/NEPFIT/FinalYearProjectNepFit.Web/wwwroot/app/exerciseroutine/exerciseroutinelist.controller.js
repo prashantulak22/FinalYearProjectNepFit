@@ -61,7 +61,16 @@
                     }, {
                         title: 'ExerciseTypeName',
                         field: 'exerciseTypeName',
-                    }, {
+                    },
+                    {
+                        title: 'Gender',
+                        field: 'gender',
+                    },
+                    {
+                        title: 'ExperienceLevel',
+                        field: 'experienceLevel',
+                    },
+                    {
                         title: 'DateUpdated',
                         field: 'dateUpdated',
                         template: "#= kendo.toString(kendo.parseDate(dateUpdated), 'MM/dd/yyyy h:mm tt') #",

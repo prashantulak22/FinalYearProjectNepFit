@@ -16,7 +16,7 @@
                 app.user = result.data;
                 vm.isAdmin = app.user.isAdmin;
                 if (!result.data) {
-                    $state.go('register');
+                  $state.go('register');
                 } else {
                     vm.dispalyContent = true;
                 }

@@ -42,6 +42,7 @@
                     duration: 1,
                     exerciseTypeId: "",
                     gender: "M",
+                    experienceLevel: 1,
 
                 };
             }
