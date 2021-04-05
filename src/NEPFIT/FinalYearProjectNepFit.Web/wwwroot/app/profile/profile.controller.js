@@ -4,9 +4,9 @@
 
     angular
         .module('nepFitApp')
-        .controller('homeCtrl', homeCtrl);
-    homeCtrl.$inject = ['$uibModal', '$state', 'nepFitUserService'];
-    function homeCtrl($uibModal, $state, nepFitUserService) {
+        .controller('profileCtrl', profileCtrl);
+    profileCtrl.$inject = ['$uibModal', '$state', 'nepFitUserService'];
+    function profileCtrl($uibModal, $state, nepFitUserService) {
         var vm = this;
         vm.dispalyContent = false;
         activate();

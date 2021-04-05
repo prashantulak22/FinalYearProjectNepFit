@@ -32,6 +32,14 @@
                             //resolve: { checkAccess: checkAccess }
                             
                         }) 
+                    .state("profile",
+                        {
+                            url: "/profile",
+                            templateUrl: "/app/profile/profile.html",
+                            title: "Profile",
+                            
+
+                        }) 
 
                     .state("exerciseRoutine",
                         {

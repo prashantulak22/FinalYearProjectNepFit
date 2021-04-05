@@ -1,7 +1,7 @@
 
 <section id="header" class="header-five-exer">
-    <div class="helo">
-        <div class="wau">
+    <div class="container">
+        <div class="row">
 
             <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
                 <div class="header-thumb" style="left:55%; position:relative;">
@@ -17,133 +17,146 @@
 
 
 
-<div class=" wow fadeInUp containertable-for-nutirtion py-5" ng-controller="userexerciseroutineCtrl as vm">
-    <h3>Chest</h3>
-    <table>
-        <tr>
-            <th>Exercise Package Name</th>
-            <th>Exercise Name</th>
-            <th>Repetition</th>
-        </tr>
-        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'chests'}">
-            <td> {{row.exercisePackageName}}</td>
-            <td> {{row.name}}</td>
-            <td> {{row.repetition}}</td>
+<div class="container">
+    <div class=" wow fadeInUp containertable-for-nutirtion py-5" ng-controller="userexerciseroutineCtrl as vm">
+        <h3>Chest</h3>
+        <table>
+            <tr>
+                <th>Exercise Package Name</th>
+                <th>Exercise Name</th>
+                <th>Repetition</th>
+            </tr>
+            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'chests'}">
+                <td> {{row.exercisePackageName}}</td>
+                <td> {{row.name}}</td>
+                <td> {{row.repetition}}</td>
 
-        </tr>
+            </tr>
 
-    </table>
-    <hr />
-    <h3>Back</h3>
+        </table>
+        <hr />
+        <br />
+        <h3>Back</h3>
 
-    <table>
-        <tr>
-            <th>Exercise Package Name</th>
-            <th>Exercise Name</th>
-            <th>Repetition</th>
-        </tr>
-        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'back'}">
-            <td> {{row.exercisePackageName}}</td>
-            <td> {{row.name}}</td>
-            <td> {{row.repetition}}</td>
+        <table>
+            <tr>
+                <th>Exercise Package Name</th>
+                <th>Exercise Name</th>
+                <th>Repetition</th>
+            </tr>
+            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'back'}">
+                <td> {{row.exercisePackageName}}</td>
+                <td> {{row.name}}</td>
+                <td> {{row.repetition}}</td>
 
-        </tr>
+            </tr>
 
-    </table>
+        </table>
 
-    <hr />
-    <h3>Biceps</h3>
+        <hr />
+        <br />
 
-    <table>
-        <tr>
-            <th>Exercise Package Name</th>
-            <th>Exercise Name</th>
-            <th>Repetition</th>
-        </tr>
-        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'biceps'}">
-            <td> {{row.exercisePackageName}}</td>
-            <td> {{row.name}}</td>
-            <td> {{row.repetition}}</td>
+        <h3>Biceps</h3>
 
-        </tr>
+        <table>
+            <tr>
+                <th>Exercise Package Name</th>
+                <th>Exercise Name</th>
+                <th>Repetition</th>
+            </tr>
+            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'biceps'}">
+                <td> {{row.exercisePackageName}}</td>
+                <td> {{row.name}}</td>
+                <td> {{row.repetition}}</td>
 
-    </table>
+            </tr>
 
-    <hr />
-    <h3>Triceps</h3>
+        </table>
 
-    <table>
-        <tr>
-            <th>Exercise Package Name</th>
-            <th>Exercise Name</th>
-            <th>Repetition</th>
-        </tr>
-        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'triceps'}">
-            <td> {{row.exercisePackageName}}</td>
-            <td> {{row.name}}</td>
-            <td> {{row.repetition}}</td>
+        <hr />
+        <br />
 
-        </tr>
+        <h3>Triceps</h3>
 
-    </table>
+        <table>
+            <tr>
+                <th>Exercise Package Name</th>
+                <th>Exercise Name</th>
+                <th>Repetition</th>
+            </tr>
+            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'triceps'}">
+                <td> {{row.exercisePackageName}}</td>
+                <td> {{row.name}}</td>
+                <td> {{row.repetition}}</td>
 
-    <hr />
-    <h3>Shoulders</h3>
+            </tr>
 
-    <table>
-        <tr>
-            <th>Exercise Package Name</th>
-            <th>Exercise Name</th>
-            <th>Repetition</th>
-        </tr>
-        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'shoulders'}">
-            <td> {{row.exercisePackageName}}</td>
-            <td> {{row.name}}</td>
-            <td> {{row.repetition}}</td>
+        </table>
 
-        </tr>
+        <hr />
+        <br />
 
-    </table>
+        <h3>Shoulders</h3>
+
+        <table>
+            <tr>
+                <th>Exercise Package Name</th>
+                <th>Exercise Name</th>
+                <th>Repetition</th>
+            </tr>
+            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'shoulders'}">
+                <td> {{row.exercisePackageName}}</td>
+                <td> {{row.name}}</td>
+                <td> {{row.repetition}}</td>
+
+            </tr>
+
+        </table>
 
 
-    <hr />
-    <h3>Legs</h3>
+        <hr />
+        <br />
 
-    <table>
-        <tr>
-            <th>Exercise Package Name</th>
-            <th>Exercise Name</th>
-            <th>Repetition</th>
-        </tr>
-        <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'legs'}">
-            <td> {{row.exercisePackageName}}</td>
-            <td> {{row.name}}</td>
-            <td> {{row.repetition}}</td>
+        <h3>Legs</h3>
 
-        </tr>
+        <table>
+            <tr>
+                <th>Exercise Package Name</th>
+                <th>Exercise Name</th>
+                <th>Repetition</th>
+            </tr>
+            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'legs'}">
+                <td> {{row.exercisePackageName}}</td>
+                <td> {{row.name}}</td>
+                <td> {{row.repetition}}</td>
 
-    </table>
+            </tr>
+
+        </table>
+
+
+        <hr />
+        <br />
+
+        <h3>Abs</h3>
+
+        <table>
+            <tr>
+                <th>Exercise Package Name</th>
+                <th>Exercise Name</th>
+                <th>Repetition</th>
+            </tr>
+            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'abs'}">
+                <td> {{row.exercisePackageName}}</td>
+                <td> {{row.name}}</td>
+                <td> {{row.repetition}}</td>
+
+            </tr>
+
+        </table>
+    </div>
 </div>
-
-<hr />
-<h3>Abs</h3>
-
-<table>
-    <tr>
-        <th>Exercise Package Name</th>
-        <th>Exercise Name</th>
-        <th>Repetition</th>
-    </tr>
-    <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'abs'}">
-        <td> {{row.exercisePackageName}}</td>
-        <td> {{row.name}}</td>
-        <td> {{row.repetition}}</td>
-
-    </tr>
-
-</table>
-
-
+<br />
 
 <footer>
     <div class="container">

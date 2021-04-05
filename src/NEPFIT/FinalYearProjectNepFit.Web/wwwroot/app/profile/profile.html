@@ -1,13 +1,23 @@
-﻿<!-- Header section
-================================================== -->
-<section id="header" class="header-five">
+﻿<style>
+
+    .btn:hover {
+        background: #111112;
+        border-color: transparent;
+        color: #ffffff !important;
+    }
+    .header-five-profile {
+        background: url('/app/anmotherone/images/userr.jpg') no-repeat;
+    }
+</style>
+
+<section id="header" class="header-five-profile">
     <div class="container">
         <div class="row">
 
             <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
                 <div class="header-thumb" style="left:55%; position:relative;">
-                    <h1 class="wow fadeIn" data-wow-delay="0.6s">NEPFIT</h1>
-                    <h3 class="wow fadeInUp" data-wow-delay="0.9s">Lastest News and Articles on fitness</h3>
+                    <h1 class="wow fadeIn" data-wow-delay="0.6s">Profile</h1>
+                    <h3 class="wow fadeInUp" data-wow-delay="0.9s">Hello User</h3>
                 </div>
             </div>
 
@@ -16,159 +26,19 @@
 </section>
 
 
-<!-- Blog section
-================================================== -->
-<section id="blog">
-    <div class="container">
-        <div class="row">
+<div class="container my-5">
 
-            <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/the-best-protein-powders-of-2021.html"><img src="images/ar1.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/the-best-protein-powders-of-2021.html">
-                        <h1>The Best Protein Powders </h1>
+    <div ng-controller="profileCtrl as vm" ng-show="vm.dispalyContent">
 
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Ben Creicos</a></span>
-                        <span><i class="fa fa-date"></i> March 25, 2021, Sunday</span>
-                    </div>
-                    <p>High-quality protein powders are more popular than ever, but they're also being used by a broader range of people than ever. A post-workout shake definitely isn't just for athletes training for a competition or </p>
-                    <a href="https://www.bodybuilding.com/content/the-best-protein-powders-of-2021.html" class="btn btn-default">Full Article</a>
-                </div>
-            </div>
-
-            <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="1.6s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/the-best-mass-gainers-of-2021.html"><img src="images/ar2.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/the-best-mass-gainers-of-2021.html">
-                        <h1>Best Mass Gainers</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Shoshanna Cohen</a></span>
-                        <span><i class="fa fa-date"></i> March 25, 2021, Saturday</span>
-                    </div>
-                    <p>When you're on a mission to put on weight, you need a one-two punch of calories and protein. If you're someone who struggles to put on weight, or who needs to gain it for a sport or a weight-classed competition, </p>
-                    <a href="https://www.bodybuilding.com/content/the-best-mass-gainers-of-2021.html" class="btn btn-default">Read More</a>
-                </div>
-            </div>
-
-
-
-            <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.9s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/recipes"><img src="images/ar3.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/recipes">
-                        <h1>Healthy Recipes</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">bodybuilding.com</a></span>
-                        <span><i class="fa fa-date"></i> March 25, 2021, Friday</span>
-                    </div>
-                    <p>Contains 1856 different healthy recipes to try out. </p>
-                    <a href="https://www.bodybuilding.com/recipes" class="btn btn-default">Details</a>
-                </div>
-            </div>
-
-            <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="2.2s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/a-scientific-approach-to-hamstring-training.html"><img src="images/ar4.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/a-scientific-approach-to-hamstring-training.html">
-                        <h1>Scientific Approach</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Brad Schoenfeld</a></span>
-                        <span><i class="fa fa-date"></i> March 05, 2021, Thursday</span>
-                    </div>
-                    <p>Your post-workout quad flex may rack up the likes, but you can't have a set of truly impressive, </p>
-                    <a href="https://www.bodybuilding.com/content/a-scientific-approach-to-hamstring-training.html" class="btn btn-default">Read More</a>
-                </div>
-            </div>
-
-            <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="2s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/10-best-muscle-building-biceps-exercises.html"><img src="images/ar5.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/10-best-muscle-building-biceps-exercises.htmll">
-                        <h1>Best Arms Workout</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Cindy</a></span>
-                        <span><i class="fa fa-date"></i> 1 June 2016, Wednesday</span>
-                    </div>
-                    <p>Over the years, a number of studies have sought to investigate the best biceps exercises.It might surprise you at first—</p>
-                    <a href="https://www.bodybuilding.com/content/10-best-muscle-building-biceps-exercises.html" class="btn btn-default">Full Story</a>
-                </div>
-            </div>
-
-            <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="2.4s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/i-love-the-way-muscle-looks-and-feels-and-i-love-the-way-my-body-feels.html"><img src="images/ar6.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/i-love-the-way-muscle-looks-and-feels-and-i-love-the-way-my-body-feels.html">
-                        <h1>Transforms</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Ashley Moore</a></span>
-                        <span><i class="fa fa-date"></i> March 17, 2021 , Tuesday</span>
-                    </div>
-                    <p>Ashley Moore is a nurse, military wife, and mother of four. </p>
-                    <a href="https://www.bodybuilding.com/content/i-love-the-way-muscle-looks-and-feels-and-i-love-the-way-my-body-feels.html" class="btn btn-default">Read More</a>
-                </div>
-            </div>
-
-            <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="1.5s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/10-best-chest-exercises-for-building-muscle.html"><img src="images/ar7.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/10-best-chest-exercises-for-building-muscle.html">
-                        <h1>Chest</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Parker Hyde</a></span>
-                        <span><i class="fa fa-date"></i> January 20, 2021, Monday</span>
-                    </div>
-                    <p>There are dozens of exercises you can do on chest day. </p>
-                    <a href="https://www.bodybuilding.com/content/10-best-chest-exercises-for-building-muscle.html" class="btn btn-default">Details</a>
-                </div>
-            </div>
-
-            <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="1s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/10-best-muscle-building-leg-exercises.html"><img src="images/ar8.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/10-best-muscle-building-leg-exercises.html">
-                        <h1>Legs</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Parker Hyde</a></span>
-                        <span><i class="fa fa-date"></i> February 23, 2021, Sunday</span>
-                    </div>
-                    <p>As much as you may have wanted to see them here, leg extensions</p>
-                    <a href="https://www.bodybuilding.com/content/10-best-muscle-building-leg-exercises.html" class="btn btn-default">Read More</a>
-                </div>
-            </div>
-
-            <div class="wow fadeInUp col-md-3 col-sm-3" data-wow-delay="1.3s">
-                <div class="blog-thumb">
-                    <a href="https://www.bodybuilding.com/content/what-is-the-best-5-day-workout-split.html"><img src="images/ar9.png" class="img-responsive" alt="Blog"></a>
-                    <a href="https://www.bodybuilding.com/content/what-is-the-best-5-day-workout-split.html">
-                        <h1>Splits</h1>
-                    </a>
-                    <div class="post-format">
-                        <span>By <a href="#">Bill Geiger</a></span>
-                        <span><i class="fa fa-date"></i> March 16, 2021, Saturday</span>
-                    </div>
-                    <p>Sure, you can build muscle on a three-days-a-week training schedule. </p>
-                    <a href="https://www.bodybuilding.com/content/what-is-the-best-5-day-workout-split.html" class="btn btn-default">Details</a>
-                </div>
-            </div>
-
-            <div ng-controller="homeCtrl as vm" ng-show="vm.dispalyContent">
-                <a ng-click="vm.showAdmin()" class="btn btn-default">Admin</a>
-                <button ng-click="vm.showPostRegister()">postRegister</button>
-            </div>
-
-
-            </div>
+        <div class="demo-section k-content wide">
+            <div id="chart"></div>
         </div>
-</section>
+        <div class="row justify-content-center mt-5">
+            <a ng-click="vm.showAddBodyMetrics()" class="btn " style="border-radius: 0px; padding: 10px 32px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.4s ease-in-out;">Add Body Metrics</a>
+        </div>
+    </div>
+</div>
+
 
 <!-- Footer section
 ================================================== -->
