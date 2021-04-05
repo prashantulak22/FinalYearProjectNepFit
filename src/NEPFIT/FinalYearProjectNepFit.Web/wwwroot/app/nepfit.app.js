@@ -21,7 +21,8 @@
                         {
                             url: "/exerciseType",
                             templateUrl: "/app/exercisetype/index.html",
-                            title: "ExerciseType"
+                            title: "ExerciseType",
+                            resolve: { checkAccess: checkAccess }
                         })
 
                     .state("admin",
@@ -29,7 +30,7 @@
                             url: "/adminpanel",
                             templateUrl: "/app/admin/admin.html",
                             title: "Admin Panel",
-                            //resolve: { checkAccess: checkAccess }
+                            resolve: { checkAccess: checkAccess }
                             
                         }) 
                     .state("profile",
@@ -37,6 +38,7 @@
                             url: "/profile",
                             templateUrl: "/app/profile/profile.html",
                             title: "Profile",
+
                             
 
                         }) 
@@ -53,44 +55,51 @@
                         {
                             url: "/exercisePackage",
                             templateUrl: "/app/exercisepackage/exercisePackage.html",
-                            title: "ExercisePackage"
+                            title: "ExercisePackage",
+                            resolve: { checkAccess: checkAccess }
                         })
                     .state("nutritionType",
                         {
                             url: "/nutritionType",
                             templateUrl: "/app/nutritiontype/nutritionType.html",
-                            title: "NutritionType"
+                            title: "NutritionType",
+                            resolve: { checkAccess: checkAccess }
                         })
                     .state("nutritionPackage",
                         {
                             url: "/nutritionPackage",
                             templateUrl: "/app/nutritionpackage/nutritionPackage.html",
-                            title: "NutritionPackage"
+                            title: "NutritionPackage",
+                            resolve: { checkAccess: checkAccess }
                         })
                     .state("nutritionRoutine",
                         {
                             url: "/nutritionRoutine",
                             templateUrl: "/app/nutritionroutine/nutritionRoutine.html",
-                            title: "NutritionRoutine"
+                            title: "NutritionRoutine",
+                            resolve: { checkAccess: checkAccess }
                         })
                     .state("nutritionPackageRoutine",
                         {
                             url: "/nutritionPackageRoutine",
                             templateUrl: "/app/nutritionpackageroutine/nutritionPackageRoutine.html",
-                            title: "NutritionPackageRoutine"
+                            title: "NutritionPackageRoutine",
+                            resolve: { checkAccess: checkAccess }
                         })
                     .state("exercisePackageRoutine",
                         {
                             url: "/exercisePackageRoutine",
                             templateUrl: "/app/exercisepackageroutine/exercisePackageRoutine.html",
-                            title: "ExercisePackageRoutine"
+                            title: "ExercisePackageRoutine",
+                            resolve: { checkAccess: checkAccess }
                         })
 
                     .state("exerciseNutritionPackage",
                         {
                             url: "/exerciseNutritionPackage",
                             templateUrl: "/app/exercisenutritionpackage/exercisenutritionpackage.html",
-                            title: "ExerciseNutritionPackage"
+                            title: "ExerciseNutritionPackage",
+                            resolve: { checkAccess: checkAccess }
                         })
 
                     .state("nepFitUser",
@@ -113,6 +122,7 @@
                             url: "/user/exercise/routine",
                             templateUrl: "/app/exerciseroutine/userexerciseroutine.html",
                             title: "Exercise Routine"
+
                         })
 
 
