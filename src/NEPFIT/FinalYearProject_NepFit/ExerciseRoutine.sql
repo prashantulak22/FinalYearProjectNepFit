@@ -7,6 +7,7 @@ CREATE TABLE [dbo].[ExerciseRoutine]
 	Repetition INT NOT NULL,	
 	Duration INT NOT NULL,
 	[Gender] CHAR(1) NOT NULL,
+	[ExperienceLevel] CHAR(1) NOT NULL,
 	[ExerciseTypeId] UNIQUEIDENTIFIER NOT NULL,
 	Active bit,
 	UpdatedBy UNIQUEIDENTIFIER NULL,
