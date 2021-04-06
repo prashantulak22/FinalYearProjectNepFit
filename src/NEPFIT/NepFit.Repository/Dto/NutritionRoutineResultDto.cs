@@ -46,6 +46,16 @@ namespace NepFit.Repository.Dto
         [StringLength(5000)]
         public String HowToPrepare { get; set; }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("FoodCategory")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public String FoodCategory { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

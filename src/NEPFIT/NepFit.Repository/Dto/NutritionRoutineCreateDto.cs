@@ -38,6 +38,15 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
+        [DisplayName("FoodCategory")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public String FoodCategory { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [DisplayName("Active")]
         [DataMember]
         

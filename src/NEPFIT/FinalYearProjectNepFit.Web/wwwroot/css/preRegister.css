@@ -5,7 +5,7 @@
 }
 
 .postregform {
-  height: 82vh;
+  height: 89vh;
   max-width: 450px;
   width: 100%;
   background: #fff;
@@ -69,7 +69,7 @@
   height: 45px;
   width: 100%;
   outline-color: rgb(20, 223, 238);
-  margin-top: 6px;
+ 
 }
 
 .user-details .experiencelevel select {
@@ -79,6 +79,13 @@
     margin-top: 6px;
 }
 
+
+.user-details .foodcategory select {
+    height: 45px;
+    width: 85%;
+    outline-color: rgb(20, 223, 238);
+    margin-top: 6px;
+}
 .user-details .input-box .details {
   display: block;
   font-weight: 500;

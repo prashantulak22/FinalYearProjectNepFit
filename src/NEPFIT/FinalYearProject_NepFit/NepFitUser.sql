@@ -6,6 +6,7 @@
     [DateOfBirth] DateTime NOT NULL, 
     [Gender] CHAR(1) NOT NULL, 
     [ExperienceLevel] CHAR(1) NOT NULL,
+    [FoodCategory] CHAR(1) NULL,
     [IsAdmin] bit NOT NULL,
     Active bit,
 	UpdatedBy UNIQUEIDENTIFIER NULL,
