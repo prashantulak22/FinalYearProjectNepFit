@@ -57,6 +57,30 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label class="control-label col-md-3">
+                    FoodType
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-6">
+                    <label>
+                        <input type="radio" class="required form-control" ng-model="vm.nutritionRoutine.foodCategory" value="V" />
+                        Vegeterian
+                    </label>
+                    <label style="padding-left:20px;">
+                        <input type="radio" class="required form-control" ng-model="vm.nutritionRoutine.foodCategory" value="N" />
+                        Non-Vegeterian
+                    </label>
+                    <label style="padding-left:20px;">
+                        <input type="radio" class="required form-control" ng-model="vm.nutritionRoutine.foodCategory" value="O" />
+                        Vegan
+                    </label>
+                </div>
+            </div>
+
+
+
+
             <div class="item form-group" ng-show="vm.validationError.length > 0">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="panel panel-danger">

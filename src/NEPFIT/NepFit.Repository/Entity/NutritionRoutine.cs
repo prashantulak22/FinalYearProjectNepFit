@@ -25,6 +25,7 @@ namespace NepFit.Repository.Entity
                         String name,
                         String description,
                         String howToPrepare,
+                        String foodCategory,
                         System.Guid createdBy,
                         DateTime dateCreated,
                         System.Guid nutritionTypeId,
@@ -39,6 +40,7 @@ namespace NepFit.Repository.Entity
             Name = name,
             Description = description,
             HowToPrepare = howToPrepare,
+            FoodCategory = foodCategory,
             Active = active,
             UpdatedBy = updatedBy,
             CreatedBy = createdBy,
@@ -85,6 +87,15 @@ namespace NepFit.Repository.Entity
         [Required]
         [StringLength(5000)]
         public  String HowToPrepare { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("FoodCategory")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public String FoodCategory { get; set; }
 
         /// <summary>
         /// 

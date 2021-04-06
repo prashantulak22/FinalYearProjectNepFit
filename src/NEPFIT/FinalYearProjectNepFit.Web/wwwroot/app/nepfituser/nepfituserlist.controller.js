@@ -64,7 +64,14 @@
                     {
                         title: 'ExperienceLevel',
                         field: 'experienceLevel',
-                    },{
+                    },
+                    {
+                        title: 'FoodCategory',
+                        field: 'foodCategory',
+                    },
+
+
+                    {
                     title: 'IsAdmin',
                     field: 'isAdmin',
                     }, {

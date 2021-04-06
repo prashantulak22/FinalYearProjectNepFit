@@ -55,7 +55,11 @@
       {
        title: 'HowToPrepare',
        field: 'howToPrepare'
-      },
+                    },
+                    {
+                        title: 'FoodCategory',
+                        field: 'foodCategory'
+                    },
       {
        title: 'DateUpdated',
        field: 'dateUpdated',

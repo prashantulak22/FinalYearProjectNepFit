@@ -19,10 +19,10 @@ namespace NepFit.Repository.Repository
         public int Add(NutritionRoutine input)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Execute("INSERT INTO NutritionRoutine ( [Name] ,[Description] ,[HowToPrepare], [NutritionTypeId]" +
+            return conn.Execute("INSERT INTO NutritionRoutine ( [Name] ,[Description] ,[HowToPrepare], [FoodCategory], [NutritionTypeId]" +
                                 ",[Active] ,[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated] )" +
                                 "	VALUES" +
-                                "	( @Name ,@Description, @HowToPrepare, @NutritionTypeId" +
+                                "	( @Name ,@Description, @HowToPrepare, @FoodCategory, @NutritionTypeId" +
                                 ",@Active ,@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated )", input);
         }
 
@@ -32,7 +32,7 @@ namespace NepFit.Repository.Repository
             conn.Execute("	UPDATE NutritionRoutine SET 	" +
                                 "	[NutritionRoutineId] = @NutritionRoutineId ,		" +
                                 "[Name] = @Name ,		[Description] = @Description ,	" +
-                                "[HowToPrepare] = @HowToPrepare, [NutritionTypeId] = @NutritionTypeId" +
+                                "[HowToPrepare] = @HowToPrepare, [FoodCategory] = @FoodCategory, [NutritionTypeId] = @NutritionTypeId" +
                                 "	,[Active] = @Active ,		[UpdatedBy] = @UpdatedBy ,	" +
                                 "	[CreatedBy] = @CreatedBy ,		[DateUpdated] = @DateUpdated ,		" +
                                 "[DateCreated] = @DateCreated 	WHERE [NutritionRoutineId]=@NutritionRoutineId", input);
@@ -57,7 +57,7 @@ namespace NepFit.Repository.Repository
                 " INNER JOIN ExerciseNutritionPackage enp on nfu.ExerciseNutritionPackageId  = enp.ExerciseNutritionPackageId " +
                 " INNER JOIN NutritionPackageRoutine npr on enp.NutritionPackageId = npr.NutritionPackageId" +
                 " INNER JOIN NutritionPackage np on npr.NutritionPackageId = np.NutritionPackageId" +
-                " INNER JOIN NutritionRoutine nr on npr.NutritionRoutineId = nr.NutritionRoutineId" +
+                " INNER JOIN NutritionRoutine nr on npr.NutritionRoutineId = nr.NutritionRoutineId and nfu.FoodCategory = nr.FoodCategory" +
                 " INNER JOIN NutritionType nt on nr.NutritionTypeId = nt.NutritionTypeId" +
                 " where nfu.Active = 1 and nfu.UserId = @UserId" +
                 " and enp.Active = 1 and npr.Active=1 and nr.Active=1 and nt.Active=1", new

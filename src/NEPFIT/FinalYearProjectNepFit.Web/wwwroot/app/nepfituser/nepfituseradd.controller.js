@@ -41,9 +41,9 @@
                     firstName: "",
                     lastName: "",
                     dateOfBirth: "",
-                gender: "M",
-                isAdmin: false,
-                exerciseNutritionPackageId:"",
+                    gender: "M",
+                    isAdmin: false,
+                    exerciseNutritionPackageId:"",
 
                                
             };

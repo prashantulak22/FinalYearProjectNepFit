@@ -38,7 +38,8 @@
                    
                     name: "",
                     description: "",
-                    howToPrepare: "",
+                howToPrepare: "",
+                foodCategory: "N",
                     nutritionTypeId: "",            
             };
             }

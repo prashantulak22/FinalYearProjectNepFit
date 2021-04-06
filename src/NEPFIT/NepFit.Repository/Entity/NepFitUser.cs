@@ -27,6 +27,7 @@ namespace NepFit.Repository.Entity
                         DateTime dateOfBirth,
                         String gender,
                         String experienceLevel,
+                        String foodCategory,
                         Boolean isAdmin,
                         System.Guid createdBy,
                         DateTime dateCreated,
@@ -44,6 +45,7 @@ namespace NepFit.Repository.Entity
             DateOfBirth = dateOfBirth,
             Gender = gender,
             ExperienceLevel = experienceLevel,
+            FoodCategory = foodCategory,
             IsAdmin = isAdmin,
             Active = active,
             UpdatedBy = updatedBy,
@@ -109,6 +111,15 @@ namespace NepFit.Repository.Entity
         [Required]
         [StringLength(1)]
         public  String ExperienceLevel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("FoodCategory")]
+        [DataMember]
+        [Required]
+        [StringLength(1)]
+        public String FoodCategory { get; set; }
 
         /// <summary>
         /// 

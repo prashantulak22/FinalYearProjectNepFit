@@ -20,9 +20,9 @@ namespace NepFit.Repository.Repository
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             return conn.Execute("INSERT INTO NepFitUser( [UserId],[FirstName] " +
-                ",[LastName] ,[DateOfBirth] ,[Gender] ,[ExperienceLevel], [IsAdmin] ,[Active] " +
+                ",[LastName] ,[DateOfBirth] ,[Gender] ,[ExperienceLevel], [FoodCategory], [IsAdmin] ,[Active] " +
                 ",[UpdatedBy] ,[CreatedBy] ,[DateUpdated] ,[DateCreated], [ExerciseNutritionPackageId] )VALUES	" +
-                "( @CreatedBy, @FirstName ,@LastName ,@DateOfBirth ,@Gender, @ExperienceLevel ,@IsAdmin ,@Active " +
+                "( @CreatedBy, @FirstName ,@LastName ,@DateOfBirth ,@Gender, @ExperienceLevel, @FoodCategory, @IsAdmin, @Active " +
                 ",@UpdatedBy ,@CreatedBy ,@DateUpdated ,@DateCreated, @ExerciseNutritionPackageId )", input);
         }
 
@@ -30,7 +30,7 @@ namespace NepFit.Repository.Repository
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
             conn.Execute("	UPDATE NepFitUser SET [UserId] = @UserId ,[FirstName] = @FirstName " +
-                ",[LastName] = @LastName ,[DateOfBirth] = @DateOfBirth ,[Gender] = @Gender, [ExperienceLevel] = @ExperienceLevel " +
+                ",[LastName] = @LastName ,[DateOfBirth] = @DateOfBirth ,[Gender] = @Gender, [ExperienceLevel] = @ExperienceLevel, [FoodCategory] = @FoodCategory " +
                 ",[IsAdmin] = @IsAdmin ,[Active] = @Active ,[UpdatedBy] = @UpdatedBy " +
                 ",[CreatedBy] = @CreatedBy ,[DateUpdated] = @DateUpdated ,[DateCreated] = @DateCreated, [ExerciseNutritionPackageId] = @ExerciseNutritionPackageId " +
                 " WHERE [UserId]=@UserId", input);
