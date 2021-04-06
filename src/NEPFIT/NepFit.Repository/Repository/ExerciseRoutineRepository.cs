@@ -55,11 +55,11 @@ namespace NepFit.Repository.Repository
             return conn.Query<ExerciseRoutineResultDto>(
                 "Select et.Name ExerciseTypeName, ep.Name ExercisePackageName, er.* from NepFitUser nfu" +
                 " INNER JOIN ExerciseNutritionPackage enp on nfu.ExerciseNutritionPackageId = enp.ExerciseNutritionPackageId " +
-                "INNER JOIN ExercisePackageRoutine epr on enp.ExercisePackageId = epr.ExercisePackageId " +
-                "INNER JOIN ExercisePackage ep on epr.ExercisePackageId = ep.ExercisePackageId " +
-                "INNER JOIN ExerciseRoutine er on epr.ExerciseRoutineId = er.ExerciseRoutineId and nfu.Gender = er.Gender " +
-                "INNER JOIN ExerciseType et on er.ExerciseTypeId = et.ExerciseTypeId " +
-                "where nfu.Active =1 and nfu.UserId =@UserId" +
+                " INNER JOIN ExercisePackageRoutine epr on enp.ExercisePackageId = epr.ExercisePackageId " +
+                " INNER JOIN ExercisePackage ep on epr.ExercisePackageId = ep.ExercisePackageId " +
+                " INNER JOIN ExerciseRoutine er on epr.ExerciseRoutineId = er.ExerciseRoutineId and nfu.Gender = er.Gender  and nfu.ExperienceLevel = er.ExperienceLevel" +
+                " INNER JOIN ExerciseType et on er.ExerciseTypeId = et.ExerciseTypeId " +
+                " where nfu.Active =1 and nfu.UserId =@UserId" +
                 " and enp.Active =1 and epr.Active =1  and er.Active =1  and et.Active =1 ", new
                 {
                     UserId = id
