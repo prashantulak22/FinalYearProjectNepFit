@@ -22,16 +22,24 @@ namespace NepFit.BL
 
         public int Add(NepFitUserCreateDto inputDto)
         {
-            inputDto.DateCreated = DateTime.Now;
-            inputDto.DateUpdated = DateTime.Now;
-            inputDto.UpdatedBy = inputDto.CreatedBy;
-            inputDto.Active = true;
-            return _nepFitUserRepository.Add(_mapper.Map<NepFitUser>(inputDto));
+            if (GetByUserId(inputDto.CreatedBy) == null)
+            {
+                inputDto.DateCreated = DateTime.Now; 
+                inputDto.DateUpdated = DateTime.Now;
+                inputDto.UpdatedBy = inputDto.CreatedBy;
+                inputDto.Active = true;
+                return _nepFitUserRepository.Add(_mapper.Map<NepFitUser>(inputDto));
+
+            }
+
+            Update((_mapper.Map<NepFitUserUpdateDto>(inputDto)));
+            return 1;
+
         }
 
         public bool Update(NepFitUserUpdateDto input)
         {
-            var original = _nepFitUserRepository.GetById(input.UserId);
+            var original = _nepFitUserRepository.GetByUserId(input.CreatedBy);
             original.DateUpdated = DateTime.Now;
             _mapper.Map(input, original);
             _nepFitUserRepository.Update(original);
@@ -41,7 +49,7 @@ namespace NepFit.BL
         public IEnumerable<NepFitUserResultDto> GetAll()
         {
             return
-              
+
                 _nepFitUserRepository.GetAll();
         }
 

@@ -34,8 +34,10 @@ namespace NepFit.Repository.Mapper
 
 
             CreateMap<NepFitUserCreateDto, NepFitUser>().ReverseMap();
+            CreateMap<NepFitUserCreateDto, NepFitUserUpdateDto>().ReverseMap();
             CreateMap<NepFitUserUpdateDto, NepFitUser>().ReverseMap();
             CreateMap<NepFitUserResultDto, NepFitUser>().ReverseMap();
+
 
             CreateMap<NutritionTypeCreateDto, NutritionType>().ReverseMap();
             CreateMap<NutritionTypeUpdateDto, NutritionType>().ReverseMap();

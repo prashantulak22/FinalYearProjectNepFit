@@ -48,7 +48,8 @@
                                
             };
             }
-             vm.nepFitUser = initialize();
+            vm.nepFitUser = app.user;
+            vm.nepFitUser.dateOfBirth = moment(app.user.dateOfBirth).toDate();
      vm.validationError = [];
      
              function validateForm() {
