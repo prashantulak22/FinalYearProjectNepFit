@@ -30,6 +30,7 @@
                             dataTextField: "nutritionPackageName",
                             dataValueField: "exerciseNutritionPackageId",
                             valuePrimitive: true,
+                            value: vm.nepFitUser.exerciseNutritionPackageId,
                             dataSource: {
                                 data: result.data
                             }
