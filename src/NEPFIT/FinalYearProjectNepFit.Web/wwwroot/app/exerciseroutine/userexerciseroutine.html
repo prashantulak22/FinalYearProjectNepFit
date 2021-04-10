@@ -21,15 +21,18 @@
     <div class=" wow fadeInUp containertable-for-nutirtion py-5" ng-controller="userexerciseroutineCtrl as vm">
         <h3>Chest</h3>
         <table>
+
             <tr>
                 <th>Exercise Package Name</th>
                 <th>Exercise Name</th>
                 <th>Repetition</th>
+                <th>Sets</th>
             </tr>
             <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'chest'}">
                 <td> {{row.exercisePackageName}}</td>
                 <td> {{row.name}}</td>
                 <td> {{row.repetition}}</td>
+                <td> {{row.duration}}</td>
 
             </tr>
 
@@ -43,6 +46,7 @@
                 <th>Exercise Package Name</th>
                 <th>Exercise Name</th>
                 <th>Repetition</th>
+                <th>Sets</th>
             </tr>
             <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'back'}">
                 <td> {{row.exercisePackageName}}</td>
@@ -65,6 +69,7 @@
                 <th>Exercise Package Name</th>
                 <th>Exercise Name</th>
                 <th>Repetition</th>
+                <th>Sets</th>
             </tr>
             <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'biceps'}">
                 <td> {{row.exercisePackageName}}</td>
@@ -86,11 +91,13 @@
                 <th>Exercise Package Name</th>
                 <th>Exercise Name</th>
                 <th>Repetition</th>
+                <th>Sets</th>
             </tr>
             <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'triceps'}">
                 <td> {{row.exercisePackageName}}</td>
                 <td> {{row.name}}</td>
                 <td> {{row.repetition}}</td>
+                <td> {{row.duration}}</td>
 
             </tr>
 
@@ -106,11 +113,13 @@
                 <th>Exercise Package Name</th>
                 <th>Exercise Name</th>
                 <th>Repetition</th>
+                <th>Sets</th>
             </tr>
             <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'shoulder'}">
                 <td> {{row.exercisePackageName}}</td>
                 <td> {{row.name}}</td>
                 <td> {{row.repetition}}</td>
+                <td> {{row.duration}}</td>
 
             </tr>
 
@@ -127,11 +136,13 @@
                 <th>Exercise Package Name</th>
                 <th>Exercise Name</th>
                 <th>Repetition</th>
+                <th>Sets</th>
             </tr>
             <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'legs'}">
                 <td> {{row.exercisePackageName}}</td>
                 <td> {{row.name}}</td>
                 <td> {{row.repetition}}</td>
+                <td> {{row.duration}}</td>
 
             </tr>
 
@@ -148,11 +159,13 @@
                 <th>Exercise Package Name</th>
                 <th>Exercise Name</th>
                 <th>Repetition</th>
+                <th>Sets</th>
             </tr>
             <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'abs'}">
                 <td> {{row.exercisePackageName}}</td>
                 <td> {{row.name}}</td>
                 <td> {{row.repetition}}</td>
+                <td> {{row.duration}}</td>
 
             </tr>
 
@@ -161,7 +174,6 @@
 </div>
 <br />
 <div class="container">
-    <iframe class="pl-4" width="540" height="315" src="https://www.youtube.com/embed/89e518dl4I8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <iframe class="pl-5" width="540" height="315" src="https://www.youtube.com/embed/89e518dl4I8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <footer>

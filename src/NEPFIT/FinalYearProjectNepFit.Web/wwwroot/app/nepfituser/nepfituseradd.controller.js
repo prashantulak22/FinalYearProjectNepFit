@@ -20,18 +20,35 @@
             blockUI.stop();
         }
         function activate() {
-            exerciseNutritionPackageService.getAllExerciseNutritionPackage()
-                .then(function (result) {
-                    vm.nutritionPackageIdDropdownOptions = {
-                        dataTextField: "nutritionPackageName",
-                        dataValueField: "exerciseNutritionPackageId",
-                        valuePrimitive: true,
-                        dataSource: {
-                            data: result.data
+            vm.nepFitUser = initialize();
+            nepFitUserService.getLoggedInUser().then(function (result) {
+                app.user = result.data;
+                vm.isAdmin = app.user.isAdmin;
+                exerciseNutritionPackageService.getAllExerciseNutritionPackage()
+                    .then(function (result) {
+                        vm.nutritionPackageIdDropdownOptions = {
+                            dataTextField: "nutritionPackageName",
+                            dataValueField: "exerciseNutritionPackageId",
+                            valuePrimitive: true,
+                            dataSource: {
+                                data: result.data
+                            }
                         }
-                    }
 
-                });
+                    });
+                
+                
+                if (app.user) {
+                    vm.isNewUser = false;
+                    vm.nepFitUser = app.user;
+                    vm.nepFitUser.dateOfBirth = moment(app.user.dateOfBirth).toDate();
+                } else {
+                    vm.isNewUser = true;
+                    
+                }
+
+            });
+            
        
         
                 function initialize() {
@@ -48,8 +65,7 @@
                                
             };
             }
-            vm.nepFitUser = app.user;
-            vm.nepFitUser.dateOfBirth = moment(app.user.dateOfBirth).toDate();
+           
              vm.validationError = [];
      
              function validateForm() {
