@@ -5,10 +5,10 @@
         border-color: transparent;
         color: #ffffff !important;
     }
+
     .header-five-profile {
         background: url('/app/anmotherone/images/userr.jpg') no-repeat;
     }
-
 </style>
 
 <section id="header" class="header-five-profile">
@@ -27,7 +27,7 @@
 </section>
 
 
-<div class="container my-5">
+<div class="container my-5 ">
 
     <div ng-controller="profileCtrl as vm" ng-show="vm.dispalyContent">
 
@@ -35,34 +35,51 @@
             <div id="chart"></div>
         </div>
         <div class="row justify-content-center mt-5">
-            <a ng-click="vm.showAddBodyMetrics()" class="btn " style="border-radius: 0px; padding: 10px 32px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.4s ease-in-out;">Add Body Metrics</a>
+            <a ng-click="vm.showAddBodyMetrics()" class="btn" style="border-radius: 0px; padding: 10px 32px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.4s ease-in-out; border: 1px solid black;">Add Body Metrics</a>
         </div>
     </div>
 </div>
 
-<!-- Footer section
-================================================== -->
-<footer>
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12 col-sm-12">
-                <p class="wow fadeInUp" data-wow-delay="0.3s">Copyright © 2021 NEPFIT - Designed by Prashant Ulak</p>
-                <ul class="social-icon wow fadeInUp" data-wow-delay="0.6s">
-                    <li>
-                        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/" class="fa fa-twitter"></a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
-                    </li>
-
-                </ul>
+<div class="container my-5">
+    <div class="row justify-content-center mt-5" ng-controller="profileCtrl as vm" ng-show="vm.dispalyContent">
+        
+            <div class="col-6">
+                <a ng-click="vm.showPostRegister()"><img src="/Images/pushupp.jpg" class="img-responsive pb-4" alt="Blog"></a>
             </div>
+            <div class="col-6">
+                <h1 >Change Your Programme</h1>
+                <hr />
+                <p class="pb-4">NEPFIT allows user to make changes to their chosen settings. You can make changes in your choices if necessary by clicking down the button below.</p>
 
-        </div>
+                <a ng-click="vm.showPostRegister()" class="btn " style=" border: 1px solid black; border-radius: 0px; padding: 10px 32px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.4s ease-in-out;">Change Settings</a>
+            </div>
+        
     </div>
-</footer>
+ </div>
+
+    <!-- Footer section
+    ================================================== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <p class="wow fadeInUp" data-wow-delay="0.3s">Copyright © 2021 NEPFIT - Designed by Prashant Ulak</p>
+                    <ul class="social-icon wow fadeInUp" data-wow-delay="0.6s">
+                        <li>
+                            <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 

@@ -50,7 +50,7 @@
             }
             vm.nepFitUser = app.user;
             vm.nepFitUser.dateOfBirth = moment(app.user.dateOfBirth).toDate();
-     vm.validationError = [];
+             vm.validationError = [];
      
              function validateForm() {
             vm.validationError = [];
