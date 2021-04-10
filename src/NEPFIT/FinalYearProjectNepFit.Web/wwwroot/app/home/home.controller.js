@@ -17,10 +17,14 @@
                 vm.isAdmin = app.user.isAdmin;
                 if (!result.data) {
                   $state.go('register');
-                } else {
+                } else
+                
+                {
                     vm.dispalyContent = true;
                 }
-
+                if (vm.isAdmin){
+                    $state.go('admin');
+                }
                
 
             });
