@@ -65,7 +65,13 @@
             nepFitUserService.createNepFitUser(vm.nepFitUser)
                 .then(function () {
                     hideLoading();
-                    $state.go("home");
+                    nepFitUserService.getLoggedInUser().then(function (result) {
+                        app.user = result.data;
+                      
+                        
+
+                    });
+
                 }, function errorCallback(response) {
                     hideLoading();
                     });

@@ -41,6 +41,7 @@ namespace NepFit.BL
         {
             var original = _nepFitUserRepository.GetByUserId(input.CreatedBy);
             original.DateUpdated = DateTime.Now;
+            input.UserId = original.UserId;
             _mapper.Map(input, original);
             _nepFitUserRepository.Update(original);
             return true;
