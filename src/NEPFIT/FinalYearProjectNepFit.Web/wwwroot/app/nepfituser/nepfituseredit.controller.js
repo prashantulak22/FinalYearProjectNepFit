@@ -29,6 +29,7 @@
                         dataValueField: "exerciseTypeId",
                         valuePrimitive: true,
                         value: vm.nepFitUser.exerciseTypeId,
+                        
                         dataSource: {
                             data: result.data
                         }
