@@ -14,5 +14,5 @@
 	DateUpdated DateTime NULL,
 	DateCreated DateTime NOT NULL,
     [ExerciseNutritionPackageId] UNIQUEIDENTIFIER NOT NUll,
-    --CONSTRAINT [FK_User_Exercise_Nutrition] FOREIGN KEY ([ExerciseNutritionPackageId]) REFERENCES [ExerciseNutritionPackage]([ExerciseNutritionPackageId]), 
+    CONSTRAINT [FK_User_Exercise_Nutrition] FOREIGN KEY ([ExerciseNutritionPackageId]) REFERENCES [ExerciseNutritionPackage]([ExerciseNutritionPackageId]), 
 )
