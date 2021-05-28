@@ -132,9 +132,16 @@ namespace FinalYearProjectNepFit.Web
             services.AddScoped<INepFitUserService, NepFitUserService>();
             services.AddScoped<INepFitUserRepository, NepFitUserRepository>();
 
+            services.AddScoped<IUserNotesService, UserNotesService>();
+            services.AddScoped<IUserNotesRepository, UserNotesRepository>();
+
+            services.AddScoped<ISendMailService, SendMailService>();
+            
 
 
-          
+
+
+
 
 
 

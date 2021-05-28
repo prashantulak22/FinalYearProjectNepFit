@@ -1,0 +1,11 @@
+
+<div class="modal-header">
+    <h5 class="modal-title"><i class="glyphicon glyphicon-trash"></i> Delete Confirmation</h5>
+</div>
+<div class="modal-body" id="modal-body">
+    <p>Would you like to delete this UserNotes with name : {{vm.userNotes.name}}</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="vm.close()" >Close</button>
+    <button type="button" ng-click="vm.deleteUserNotes(vm.userNotes)" class="btn btn-primary">Delete</button>
+</div>

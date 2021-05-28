@@ -39,6 +39,12 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div ng-controller="usernotesListCtrl as vm">
+        <div kendo-grid="vm.usernotesList" id="usernotesList" options="vm.mainGridOptions">
+        </div>
+    </div>
+</div>
 
 <div class="container my-5">
     <div class="row justify-content-center mt-5" ng-controller="profileCtrl as vm" ng-show="vm.dispalyContent">

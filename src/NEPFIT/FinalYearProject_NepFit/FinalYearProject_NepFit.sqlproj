@@ -70,7 +70,7 @@
     <Build Include="NutritionType.sql" />
     <Build Include="NutritionPackageRoutine.sql" />
     <Build Include="ExerciseNutritionPackage.sql" />
-    <Build Include="Notes.sql" />
+    <Build Include="UserNotes.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="FinalYearProject_NepFit.refactorlog" />
