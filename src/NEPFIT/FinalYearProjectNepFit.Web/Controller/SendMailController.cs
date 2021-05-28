@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using NepFit.BL.Interface;
 using NepFit.Repository.Dto;
@@ -12,21 +14,24 @@ namespace FinalYearProjectNepFit.Web.Controller
     [Authorize]
     public class SendMailController : ControllerBase
     {
-        private readonly ISendMailService _sendMailService;
-        public SendMailController(ISendMailService sendMailService)
+        private readonly IEmailSender _sendMailService;
+        public SendMailController(IEmailSender sendMailService)
         {
             _sendMailService = sendMailService;
         }
 
-        [Route("api/sendmail/add")]
+        [Route("api/contact/us")]
         [HttpPost]
-        public ActionResult<int> Add(SendMailCreateDto input)
+        public async Task<ActionResult> ContactUs(SendMailDto input)
         {
 
             if (TryValidateModel(input))
             {
-                input.UserId = input.CreatedBy = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                return _sendMailService.Add(input);
+                await _sendMailService.SendEmailAsync(input.Email,
+                       input.Subject,
+                       input.Message
+                       );
+                return Ok();
             }
             else
             {
