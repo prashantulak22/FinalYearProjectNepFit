@@ -213,7 +213,7 @@
                     .state("contact",
                         {
                             url: "/contact",
-                            templateUrl: "/app/User/contact.html",
+                            templateUrl: "/app/contactus/contact.html",
                             title: "Contact"
                         })
 
