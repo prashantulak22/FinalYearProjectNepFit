@@ -4,13 +4,13 @@
 
     angular
         .module('nepFitApp')
-        .controller('usernotesAddCtrl', usernotesAddCtrl);
-    usernotesAddCtrl.$inject = ['userNotesService', "$uibModalInstance", '$scope', 'blockUI'];
-    function usernotesAddCtrl(userNotesService, $uibModalInstance, $scope, blockUI) {
+        .controller('contactUsCtrl', contactUsCtrl);
+    contactUsCtrl.$inject = ['contactService', '$scope', 'blockUI','$state'];
+    function contactUsCtrl(contactService, $scope, blockUI, $state) {
         var vm = this;
         vm.isNew = true;
-        
-        
+
+
         activate();
         function showLoading() {
             blockUI.start();
@@ -20,49 +20,44 @@
             blockUI.stop();
         }
         function activate() {
-       
-        
-                function initialize() {
-            return {
-              
-                    
-                    userNotes: "",
-                    
-                               
-            };
+
+
+            function initialize() {
+                return {
+                    subject: "",
+                    email: "",
+                    message:""
+                }
             }
-             vm.userNotes = initialize();
-     vm.validationError = [];
-     
-             function validateForm() {
+            vm.contact = initialize();
             vm.validationError = [];
-                  if (vm.validationError.length > 0) return false;
+
+            function validateForm() {
+                vm.validationError = [];
+                if (vm.validationError.length > 0) return false;
                 if ($scope.validator.validate()) return true;
                 return false;
-        }
-        
-                vm.saveUserNotes = function (option) {
-            if (!validateForm()) return;
-           showLoading();
-            userNotesService.createUserNotes(vm.userNotes)
-                .then(function () {
-                    hideLoading();
-                      vm.close();
-                }, function errorCallback(response) {
-                    hideLoading();
+            }
+
+            vm.sendEmail = function (option) {
+                if (!validateForm()) return;
+                showLoading();
+                contactService.sendemail(vm.contact)
+                    .then(function () {
+                        hideLoading();
+                        alert("Message sucessfully sent") 
+                        $state.go("home");
+                    }, function errorCallback(response) {
+                        hideLoading();
                     });
+            }
+
+
         }
-        
-                vm.close = function () {
-            $uibModalInstance.close();
-        };
-        
-        
-        }
-             
- 
-        }
-        
+
+
+    }
+
 
 
 

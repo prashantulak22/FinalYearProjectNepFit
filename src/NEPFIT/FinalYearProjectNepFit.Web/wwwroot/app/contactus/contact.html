@@ -22,14 +22,19 @@
         <div class="row" style="justify-content:center; display:flex;">
             <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.6s">
                 <h1>Let's work together!</h1>
-                <div class="contact-form">
-                    <form id="contact-form" method="post" action="#" class="py-4 ">
-                        <input name="name" type="text" class="form-control my-3 py-4" placeholder="Your Name" required>
-                        <input name="mail" type="email" class="form-control my-3 py-4" placeholder="Your Email" required>
+                <div class="contact-form" ng-controller="contactUsCtrl as vm">
+                    <form id="contact-form"  kendo-validator="validator" class="py-4 ">
+                        <input name="name" type="text" class="form-control my-3 py-4" placeholder="Your Name"
+                               required ng-model="vm.contact.subject">
+                        <input name="mail" type="email" class="form-control my-3 py-4" placeholder="Your Email"
+                               required ng-model="vm.contact.email">
 
-                        <textarea name="message" class="form-control py-4" placeholder="Message" rows="4" required></textarea>
+                        <textarea name="message" class="form-control py-4" placeholder="Message" rows="4" 
+                                  required ng-model="vm.contact.message"></textarea>
                         <div class="contact-submit my-3 ">
-                            <input type="submit" class="form-control submit" value="Send a message">
+                            <a class="form-control button-submit" ng-click="vm.sendEmail()">
+                                Send a message
+                            </a>
                         </div>
                     </form>
                 </div>

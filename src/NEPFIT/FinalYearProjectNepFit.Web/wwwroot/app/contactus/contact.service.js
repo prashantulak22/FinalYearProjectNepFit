@@ -2,56 +2,21 @@
 (function (angular, app) {
     angular
         .module('nepFitApp')
-        .factory('userNotesService', userNotesService);
+        .factory('contactService', contactService);
 
-    userNotesService.$inject = ['$http'];
+    contactService.$inject = ['$http'];
 
-    function userNotesService($http) {
+    function contactService($http) {
         var service = {
-            getAllUserNotes: getAllUserNotes,
-            getAllUserNotesByUserId: getAllUserNotesByUserId,
-            updateUserNotes: updateUserNotes,
-            createUserNotes: createUserNotes,
-            deleteUserNotes: deleteUserNotes,
-
-
-        };
-
+            sendemail: sendemail,
+        }
         return service;
 
- 
-        function  getAllUserNotes() {
-            
-                return $http({
-                    method: 'GET',
-                    url: 'api/usernotes/all',
-                    headers: { 'Authorization': 'Bearer ' + app.jwtToken },
-                }).then(
-                    function (data, status, headers, config) {
-                        return data;
-                    });
-            
-            
-        }
-        
-        function  getAllUserNotesByUserId() {
-            
-                return $http({
-                    method: 'GET',
-                    url: 'api/usernotes/notes',
-                    headers: { 'Authorization': 'Bearer ' + app.jwtToken }
-                }).then(
-                    function (data, status, headers, config) {
-                        return data;
-                    });
-            
-        }
-
-        function  createUserNotes(item) {
+        function  sendemail(item) {
          
                 return $http({
                     method: 'POST',
-                    url: 'api/usernotes/add',
+                    url: 'api/contact/us',
                     headers: { 'Authorization': 'Bearer ' + app.jwtToken },
                     data: item
                 }).then(
@@ -60,32 +25,7 @@
                     });
            
         }
-        
-       function  updateUserNotes(item) {
-            
-                return $http({
-                    method: 'POST',
-                    url: 'api/usernotes/update',
-                    headers: { 'Authorization': 'Bearer ' + app.jwtToken },
-                    data: item
-                }).then(
-                    function (data, status, headers, config) {
-                        return data;
-                    });
-           
-       }
 
-        function deleteUserNotes(item) {
-            return $http({
-                method: 'POST',
-                url: '/api/usernotes/delete',
-                headers: { 'Authorization': 'Bearer ' + app.jwtToken },
-                data: item
-            }).then(
-                function (data, status, headers, config) {
-                    return data;
-                });
-        }
         
         
     }

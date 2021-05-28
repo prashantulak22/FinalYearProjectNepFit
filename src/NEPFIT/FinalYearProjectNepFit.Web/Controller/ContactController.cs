@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using NepFit.BL.Interface;
 using NepFit.Repository.Dto;
 
@@ -12,12 +13,14 @@ namespace FinalYearProjectNepFit.Web.Controller
 {
     [ApiController]
     [Authorize]
-    public class SendMailController : ControllerBase
+    public class ContactController : ControllerBase
     {
         private readonly IEmailSender _sendMailService;
-        public SendMailController(IEmailSender sendMailService)
+        private readonly IConfiguration _configuration;
+        public ContactController(IEmailSender sendMailService, IConfiguration configuration)
         {
             _sendMailService = sendMailService;
+            _configuration = configuration;
         }
 
         [Route("api/contact/us")]
@@ -27,8 +30,8 @@ namespace FinalYearProjectNepFit.Web.Controller
 
             if (TryValidateModel(input))
             {
-                await _sendMailService.SendEmailAsync(input.Email,
-                       input.Subject,
+                await _sendMailService.SendEmailAsync(_configuration["EmailSender:UserName"],
+                       $"{input.Subject} Email=>{input.Email}",
                        input.Message
                        );
                 return Ok();
