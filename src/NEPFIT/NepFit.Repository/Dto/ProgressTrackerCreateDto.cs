@@ -2,10 +2,9 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-
 namespace NepFit.Repository.Dto
 {
-    public class ProgressTrackerCreateDto 
+    public class ProgressTrackerCreateDto
     {
 
         /// <summary>
@@ -63,11 +62,29 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ForearmSize")]
+        [DisplayName("UpperAbsSize")]
         [DataMember]
         [Required]
 
-        public Decimal ForearmSize { get; set; }
+        public Decimal UpperAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LowerAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LowerAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("HipSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -90,20 +107,11 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("UpperAbsSize")]
+        [DisplayName("ForeArmSize")]
         [DataMember]
         [Required]
 
-        public Decimal UpperAbsSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("LowerAbsSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal LowerAbsSize { get; set; }
+        public Decimal ForeArmSize { get; set; }
 
         /// <summary>
         /// 
@@ -113,15 +121,6 @@ namespace NepFit.Repository.Dto
         [Required]
 
         public Decimal WaistSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("HipSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -165,7 +164,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("UserId")]
         [DataMember]
         [Required]
-        
+
         public System.Guid UserId { get; set; }
 
         /// <summary>
@@ -174,7 +173,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("DateCreated")]
         [DataMember]
         [Required]
-        
+
         public DateTime DateCreated { get; set; }
 
 

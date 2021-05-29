@@ -56,11 +56,29 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ForearmSize")]
+        [DisplayName("UpperAbsSize")]
         [DataMember]
         [Required]
 
-        public Decimal ForearmSize { get; set; }
+        public Decimal UpperAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LowerAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LowerAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("HipSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -83,20 +101,11 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("UpperAbsSize")]
+        [DisplayName("ForeArmSize")]
         [DataMember]
         [Required]
 
-        public Decimal UpperAbsSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("LowerAbsSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal LowerAbsSize { get; set; }
+        public Decimal ForeArmSize { get; set; }
 
         /// <summary>
         /// 
@@ -106,15 +115,6 @@ namespace NepFit.Repository.Dto
         [Required]
 
         public Decimal WaistSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("HipSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -166,23 +166,11 @@ namespace NepFit.Repository.Dto
         /// </summary>
         [DisplayName("UserId")]
         [DataMember]
-        [Required]
-        
+
         public System.Guid UserId { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("CreatedBy")]
-        [DataMember]
-        public String CreatedBy { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("UpdatedBy")]
-        [DataMember]
         
-        public String UpdatedBy { get; set; }
+
+        
     }
 }

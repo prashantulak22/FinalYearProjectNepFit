@@ -9,31 +9,31 @@ namespace NepFit.Repository.Entity
 
     [Serializable]
     [DataContract]
-    [Table("ProgressTracker", Schema="dbo")]
+    [Table("ProgressTracker", Schema = "dbo")]
     public partial class ProgressTracker
     {
-     /// <summary>
-    /// We don't make constructor public and forcing to create object using <see cref="Create"/> method.
-    /// But constructor can not be private since it's used by EntityFramework.
-    /// Thats why we did it protected.
-    /// </summary>
-    public ProgressTracker()
-    {
+        /// <summary>
+        /// We don't make constructor public and forcing to create object using <see cref="Create"/> method.
+        /// But constructor can not be private since it's used by EntityFramework.
+        /// Thats why we did it protected.
+        /// </summary>
+        public ProgressTracker()
+        {
 
-    }
+        }
         public static ProgressTracker Create(
                         Decimal height,
                         Decimal bodyMass,
                         Decimal neckSize,
                         Decimal shoulderSize,
                         Decimal chestSize,
-                        Decimal forearmSize,
-                        Decimal rightBicepSize,
-                        Decimal leftBicepSize,
                         Decimal upperAbsSize,
                         Decimal lowerAbsSize,
-                        Decimal waistSize,
                         Decimal hipSize,
+                        Decimal rightBicepSize,
+                        Decimal leftBicepSize,
+                        Decimal foreArmSize,
+                        Decimal waistSize,
                         Decimal rightThighSize,
                         Decimal leftThighSize,
                         Decimal rightCalveSize,
@@ -50,13 +50,13 @@ namespace NepFit.Repository.Entity
                 NeckSize = neckSize,
                 ShoulderSize = shoulderSize,
                 ChestSize = chestSize,
-                ForearmSize = forearmSize,
-                RightBicepSize = rightBicepSize,
-                LeftBicepSize = leftBicepSize,
                 UpperAbsSize = upperAbsSize,
                 LowerAbsSize = lowerAbsSize,
-                WaistSize = waistSize,
                 HipSize = hipSize,
+                RightBicepSize = rightBicepSize,
+                LeftBicepSize = leftBicepSize,
+                ForeArmSize = foreArmSize,
+                WaistSize = waistSize,
                 RightThighSize = rightThighSize,
                 LeftThighSize = leftThighSize,
                 RightCalveSize = rightCalveSize,
@@ -124,11 +124,29 @@ namespace NepFit.Repository.Entity
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ForearmSize")]
+        [DisplayName("UpperAbsSize")]
         [DataMember]
         [Required]
 
-        public Decimal ForearmSize { get; set; }
+        public Decimal UpperAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LowerAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LowerAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("HipSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -151,20 +169,11 @@ namespace NepFit.Repository.Entity
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("UpperAbsSize")]
+        [DisplayName("ForeArmSize")]
         [DataMember]
         [Required]
 
-        public Decimal UpperAbsSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("LowerAbsSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal LowerAbsSize { get; set; }
+        public Decimal ForeArmSize { get; set; }
 
         /// <summary>
         /// 
@@ -174,15 +183,6 @@ namespace NepFit.Repository.Entity
         [Required]
 
         public Decimal WaistSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("HipSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
