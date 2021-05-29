@@ -161,6 +161,15 @@ namespace NepFit.Repository.Dto
 
         public DateTime DateCreated { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UserId")]
+        [DataMember]
+        [Required]
+
+        public System.Guid UserId { get; set; }
+
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[BodyMetrics]
 (
+	
 	Height decimal(3,2) NOT NULL,
 	BodyMass decimal(5,2) NOT NULL,
 	[NeckSize] decimal(4,2) NOT NULL,

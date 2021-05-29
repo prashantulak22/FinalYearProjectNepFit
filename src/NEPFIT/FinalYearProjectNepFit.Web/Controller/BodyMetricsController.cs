@@ -25,7 +25,7 @@ namespace FinalYearProjectNepFit.Web.Controller
 
             if (TryValidateModel(input))
             {
-                input.UserId = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                input.UserId =  new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 return _bodyMetricsService.AddBodyMetrics(input);
             }
             else

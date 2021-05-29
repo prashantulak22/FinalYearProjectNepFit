@@ -3,6 +3,7 @@ using NepFit.BL.Interface;
 using NepFit.Repository.Dto;
 using NepFit.Repository.Entity;
 using NepFit.Repository.Repository.Interface;
+using System;
 
 namespace NepFit.BL
 {
@@ -18,6 +19,7 @@ namespace NepFit.BL
 
         public int AddBodyMetrics(BodyMetricsCreateDto inputDto)
         {
+            inputDto.DateCreated = DateTime.Now;
             return _bodyMetricsRepository.Add(_mapper.Map<BodyMetrics>(inputDto));
         }
     }
