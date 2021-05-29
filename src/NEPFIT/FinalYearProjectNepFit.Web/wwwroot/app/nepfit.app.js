@@ -197,6 +197,13 @@
                             templateUrl: "/app/User/supplements.html",
                             title: "Supplements"
                         })
+
+                    .state("videos",
+                        {
+                            url: "/videos",
+                            templateUrl: "/app/User/videos.html",
+                            title: "Videos"
+                        })
                     .state("weightgainer",
                         {
                             url: "/weightgainer",
