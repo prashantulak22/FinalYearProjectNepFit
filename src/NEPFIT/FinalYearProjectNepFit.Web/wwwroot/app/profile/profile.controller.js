@@ -40,10 +40,29 @@
                         type: "line"
                     },
                     series: [{
+                        field: "height",
+                        categoryField: "yearMonth",
+                        name: "Height"
+                    },
+                    {
+                        field: "bodyMass",
+                        categoryField: "yearMonth",
+                        name: "Body Mass"
+                        },
+                        {
+                            field: "hipSize",
+                            categoryField: "yearMonth",
+                            name: "Hip Size"
+                        },
+                    {
                         field: "chestSize",
                         categoryField: "yearMonth",
                         name: "Chest Size"
-                    }, {
+                    },
+
+
+
+                        {
                             field: "rightBicepSize",
                         categoryField: "yearMonth",
                         name: "Arm Size"
