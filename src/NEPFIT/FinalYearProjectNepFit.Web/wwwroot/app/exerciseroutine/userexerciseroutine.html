@@ -84,74 +84,7 @@
         <hr />
         <br />
 
-        <h3>Triceps</h3>
-
-        <table>
-            <tr>
-                <th>Exercise Package Name</th>
-                <th>Exercise Name</th>
-                <th>Repetition</th>
-                <th>Sets</th>
-            </tr>
-            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'triceps'}">
-                <td> {{row.exercisePackageName}}</td>
-                <td> {{row.name}}</td>
-                <td> {{row.repetition}}</td>
-                <td> {{row.duration}}</td>
-
-            </tr>
-
-        </table>
-
-        <hr />
-        <br />
-
-        <h3>Shoulders</h3>
-
-        <table>
-            <tr>
-                <th>Exercise Package Name</th>
-                <th>Exercise Name</th>
-                <th>Repetition</th>
-                <th>Sets</th>
-            </tr>
-            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'shoulder'}">
-                <td> {{row.exercisePackageName}}</td>
-                <td> {{row.name}}</td>
-                <td> {{row.repetition}}</td>
-                <td> {{row.duration}}</td>
-
-            </tr>
-
-        </table>
-
-
-        <hr />
-        <br />
-
-        <h3>Legs</h3>
-
-        <table>
-            <tr>
-                <th>Exercise Package Name</th>
-                <th>Exercise Name</th>
-                <th>Repetition</th>
-                <th>Sets</th>
-            </tr>
-            <tr ng-repeat="row in vm.userExerciseRoutine | filter:{exerciseTypeName: 'legs'}">
-                <td> {{row.exercisePackageName}}</td>
-                <td> {{row.name}}</td>
-                <td> {{row.repetition}}</td>
-                <td> {{row.duration}}</td>
-
-            </tr>
-
-        </table>
-
-
-        <hr />
-        <br />
-
+        
         
     </div>
 </div>

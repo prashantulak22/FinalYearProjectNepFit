@@ -6,6 +6,6 @@ namespace NepFit.Repository.Repository.Interface
 {
     public interface IProgressTrackerRepository
     {
-        IEnumerable<ProgressTracker> GetProgressByUser(Guid userId);
+        IEnumerable<BodyMetrics> GetProgressByUser(Guid userId);
     }
 }

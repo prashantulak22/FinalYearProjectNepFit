@@ -9,19 +9,19 @@ namespace NepFit.Repository.Entity
 
     [Serializable]
     [DataContract]
-    [Table("BodyMetrics", Schema = "dbo")]
+    [Table("BodyMetrics", Schema="dbo")]
     public partial class BodyMetrics
     {
-        /// <summary>
-        /// We don't make constructor public and forcing to create object using <see cref="Create"/> method.
-        /// But constructor can not be private since it's used by EntityFramework.
-        /// Thats why we did it protected.
-        /// </summary>
-        public BodyMetrics()
-        {
+     /// <summary>
+    /// We don't make constructor public and forcing to create object using <see cref="Create"/> method.
+    /// But constructor can not be private since it's used by EntityFramework.
+    /// Thats why we did it protected.
+    /// </summary>
+    public BodyMetrics()
+    {
 
-        }
-        public static BodyMetrics Create(
+    }
+        public static  BodyMetrics Create(
                         Decimal height,
                         Decimal bodyMass,
                         Decimal neckSize,
@@ -38,33 +38,35 @@ namespace NepFit.Repository.Entity
                         Decimal leftThighSize,
                         Decimal rightCalveSize,
                         Decimal leftCalveSize,
-                        DateTime dateCreated)
+                        DateTime dateCreated,
+                        System.Guid userId)
+    {
+        var @objectToReturn = new BodyMetrics
         {
-            var @objectToReturn = new BodyMetrics
-            {
+          
+            Height = height,
+            BodyMass = bodyMass,
+            NeckSize = neckSize,
+            ShoulderSize = shoulderSize,
+            ChestSize = chestSize,
+            UpperAbsSize = upperAbsSize,
+            LowerAbsSize = lowerAbsSize,
+            HipSize = hipSize,
+            RightBicepSize = rightBicepSize,
+            LeftBicepSize = leftBicepSize,
+            ForeArmSize = foreArmSize,
+            WaistSize = waistSize,
+            RightThighSize = rightThighSize,
+            LeftThighSize = leftThighSize,
+            RightCalveSize = rightCalveSize,
+            LeftCalveSize = leftCalveSize,
+            DateCreated = dateCreated,
+            UserId = userId,
+            BodyMetricsId = Guid.NewGuid()
+        };
 
-                Height = height,
-                BodyMass = bodyMass,
-                NeckSize = neckSize,
-                ShoulderSize = shoulderSize,
-                ChestSize = chestSize,
-                UpperAbsSize = upperAbsSize,
-                LowerAbsSize = lowerAbsSize,
-                HipSize = hipSize,
-                RightBicepSize = rightBicepSize,
-                LeftBicepSize = leftBicepSize,
-                ForeArmSize = foreArmSize,
-                WaistSize = waistSize,
-                RightThighSize = rightThighSize,
-                LeftThighSize = leftThighSize,
-                RightCalveSize = rightCalveSize,
-                LeftCalveSize = leftCalveSize,
-                DateCreated = dateCreated,
-                UserId = Guid.NewGuid()
-            };
-
-            return @objectToReturn;
-        }
+        return @objectToReturn;
+    }
 
         /// <summary>
         /// 
@@ -72,8 +74,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("Height")]
         [DataMember]
         [Required]
-
-        public Decimal Height { get; set; }
+        
+        public  Decimal Height { get; set; }
 
         /// <summary>
         /// 
@@ -81,8 +83,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("BodyMass")]
         [DataMember]
         [Required]
-
-        public Decimal BodyMass { get; set; }
+        
+        public  Decimal BodyMass { get; set; }
 
         /// <summary>
         /// 
@@ -90,8 +92,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("NeckSize")]
         [DataMember]
         [Required]
-
-        public Decimal NeckSize { get; set; }
+        
+        public  Decimal NeckSize { get; set; }
 
         /// <summary>
         /// 
@@ -99,8 +101,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("ShoulderSize")]
         [DataMember]
         [Required]
-
-        public Decimal ShoulderSize { get; set; }
+        
+        public  Decimal ShoulderSize { get; set; }
 
         /// <summary>
         /// 
@@ -108,8 +110,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("ChestSize")]
         [DataMember]
         [Required]
-
-        public Decimal ChestSize { get; set; }
+        
+        public  Decimal ChestSize { get; set; }
 
         /// <summary>
         /// 
@@ -117,8 +119,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("UpperAbsSize")]
         [DataMember]
         [Required]
-
-        public Decimal UpperAbsSize { get; set; }
+        
+        public  Decimal UpperAbsSize { get; set; }
 
         /// <summary>
         /// 
@@ -126,8 +128,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("LowerAbsSize")]
         [DataMember]
         [Required]
-
-        public Decimal LowerAbsSize { get; set; }
+        
+        public  Decimal LowerAbsSize { get; set; }
 
         /// <summary>
         /// 
@@ -135,8 +137,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("HipSize")]
         [DataMember]
         [Required]
-
-        public Decimal HipSize { get; set; }
+        
+        public  Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -144,8 +146,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("RightBicepSize")]
         [DataMember]
         [Required]
-
-        public Decimal RightBicepSize { get; set; }
+        
+        public  Decimal RightBicepSize { get; set; }
 
         /// <summary>
         /// 
@@ -153,8 +155,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("LeftBicepSize")]
         [DataMember]
         [Required]
-
-        public Decimal LeftBicepSize { get; set; }
+        
+        public  Decimal LeftBicepSize { get; set; }
 
         /// <summary>
         /// 
@@ -162,8 +164,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("ForeArmSize")]
         [DataMember]
         [Required]
-
-        public Decimal ForeArmSize { get; set; }
+        
+        public  Decimal ForeArmSize { get; set; }
 
         /// <summary>
         /// 
@@ -171,8 +173,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("WaistSize")]
         [DataMember]
         [Required]
-
-        public Decimal WaistSize { get; set; }
+        
+        public  Decimal WaistSize { get; set; }
 
         /// <summary>
         /// 
@@ -180,8 +182,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("RightThighSize")]
         [DataMember]
         [Required]
-
-        public Decimal RightThighSize { get; set; }
+        
+        public  Decimal RightThighSize { get; set; }
 
         /// <summary>
         /// 
@@ -189,8 +191,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("LeftThighSize")]
         [DataMember]
         [Required]
-
-        public Decimal LeftThighSize { get; set; }
+        
+        public  Decimal LeftThighSize { get; set; }
 
         /// <summary>
         /// 
@@ -198,8 +200,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("RightCalveSize")]
         [DataMember]
         [Required]
-
-        public Decimal RightCalveSize { get; set; }
+        
+        public  Decimal RightCalveSize { get; set; }
 
         /// <summary>
         /// 
@@ -207,8 +209,8 @@ namespace NepFit.Repository.Entity
         [DisplayName("LeftCalveSize")]
         [DataMember]
         [Required]
-
-        public Decimal LeftCalveSize { get; set; }
+        
+        public  Decimal LeftCalveSize { get; set; }
 
         /// <summary>
         /// 
@@ -216,17 +218,26 @@ namespace NepFit.Repository.Entity
         [DisplayName("DateCreated")]
         [DataMember]
         [Required]
-
-        public DateTime DateCreated { get; set; }
+        
+        public  DateTime DateCreated { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [DisplayName("UserId")]
         [DataMember]
+        [Required]
+        
+        public  System.Guid UserId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("BodyMetricsId")]
+        [DataMember]
+        
         [Key, Column(Order = 0)]
-        public System.Guid UserId { get; set; }
+        public  System.Guid BodyMetricsId { get; set; }
 
     }
 

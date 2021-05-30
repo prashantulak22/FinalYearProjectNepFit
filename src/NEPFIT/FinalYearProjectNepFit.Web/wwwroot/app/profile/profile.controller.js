@@ -40,11 +40,11 @@
                         type: "line"
                     },
                     series: [{
-                        field: "newChestSize",
+                        field: "chestSize",
                         categoryField: "yearMonth",
                         name: "Chest Size"
                     }, {
-                        field: "newArmSize",
+                            field: "rightBicepSize",
                         categoryField: "yearMonth",
                         name: "Arm Size"
                     }],

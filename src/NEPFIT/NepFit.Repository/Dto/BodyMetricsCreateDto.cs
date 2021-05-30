@@ -2,10 +2,9 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-
 namespace NepFit.Repository.Dto
 {
-    public class BodyMetricsCreateDto
+    public class BodyMetricsCreateDto 
     {
 
         /// <summary>
@@ -14,7 +13,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("Height")]
         [DataMember]
         [Required]
-
+        
         public Decimal Height { get; set; }
 
         /// <summary>
@@ -23,7 +22,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("BodyMass")]
         [DataMember]
         [Required]
-
+        
         public Decimal BodyMass { get; set; }
 
         /// <summary>
@@ -32,7 +31,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("NeckSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal NeckSize { get; set; }
 
         /// <summary>
@@ -41,7 +40,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("ShoulderSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal ShoulderSize { get; set; }
 
         /// <summary>
@@ -50,7 +49,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("ChestSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal ChestSize { get; set; }
 
         /// <summary>
@@ -59,7 +58,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("UpperAbsSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal UpperAbsSize { get; set; }
 
         /// <summary>
@@ -68,7 +67,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("LowerAbsSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal LowerAbsSize { get; set; }
 
         /// <summary>
@@ -77,7 +76,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("HipSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal HipSize { get; set; }
 
         /// <summary>
@@ -86,7 +85,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("RightBicepSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal RightBicepSize { get; set; }
 
         /// <summary>
@@ -95,7 +94,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("LeftBicepSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal LeftBicepSize { get; set; }
 
         /// <summary>
@@ -104,7 +103,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("ForeArmSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal ForeArmSize { get; set; }
 
         /// <summary>
@@ -113,7 +112,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("WaistSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal WaistSize { get; set; }
 
         /// <summary>
@@ -122,7 +121,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("RightThighSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal RightThighSize { get; set; }
 
         /// <summary>
@@ -131,7 +130,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("LeftThighSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal LeftThighSize { get; set; }
 
         /// <summary>
@@ -140,7 +139,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("RightCalveSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal RightCalveSize { get; set; }
 
         /// <summary>
@@ -149,7 +148,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("LeftCalveSize")]
         [DataMember]
         [Required]
-
+        
         public Decimal LeftCalveSize { get; set; }
 
         /// <summary>
@@ -158,7 +157,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("DateCreated")]
         [DataMember]
         [Required]
-
+        
         public DateTime DateCreated { get; set; }
 
         /// <summary>
@@ -167,7 +166,7 @@ namespace NepFit.Repository.Dto
         [DisplayName("UserId")]
         [DataMember]
         [Required]
-
+        
         public System.Guid UserId { get; set; }
 
 

@@ -15,10 +15,10 @@ namespace NepFit.Repository.Repository
             _sqlServerConnectionProvider = sqlServerConnectionProvider;
         }
 
-        public IEnumerable<ProgressTracker> GetProgressByUser(Guid userId)
+        public IEnumerable<BodyMetrics> GetProgressByUser(Guid userId)
         {
             var conn = _sqlServerConnectionProvider.GetDbConnection();
-            return conn.Query<ProgressTracker>("Select * From [dbo].[ProgressTracker] WHERE UserId = @UserId order by DateCreated", new
+            return conn.Query<BodyMetrics>("Select * From [dbo].[BodyMetrics] WHERE UserId = @UserId order by DateCreated", new
             {
                 UserId = userId
             });

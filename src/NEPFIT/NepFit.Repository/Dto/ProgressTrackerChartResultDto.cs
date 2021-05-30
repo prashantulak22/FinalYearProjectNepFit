@@ -57,11 +57,29 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("ForearmSize")]
+        [DisplayName("UpperAbsSize")]
         [DataMember]
         [Required]
 
-        public Decimal ForearmSize { get; set; }
+        public Decimal UpperAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("LowerAbsSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal LowerAbsSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("HipSize")]
+        [DataMember]
+        [Required]
+
+        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -84,20 +102,11 @@ namespace NepFit.Repository.Dto
         /// <summary>
         /// 
         /// </summary>
-        [DisplayName("UpperAbsSize")]
+        [DisplayName("ForeArmSize")]
         [DataMember]
         [Required]
 
-        public Decimal UpperAbsSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("LowerAbsSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal LowerAbsSize { get; set; }
+        public Decimal ForeArmSize { get; set; }
 
         /// <summary>
         /// 
@@ -107,15 +116,6 @@ namespace NepFit.Repository.Dto
         [Required]
 
         public Decimal WaistSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DisplayName("HipSize")]
-        [DataMember]
-        [Required]
-
-        public Decimal HipSize { get; set; }
 
         /// <summary>
         /// 
@@ -153,15 +153,23 @@ namespace NepFit.Repository.Dto
 
         public Decimal LeftCalveSize { get; set; }
 
-
         /// <summary>
         /// 
         /// </summary>
         [DisplayName("DateCreated")]
         [DataMember]
         [Required]
-        
+
         public DateTime DateCreated { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DisplayName("UserId")]
+        [DataMember]
+        [Required]
+
+        public System.Guid UserId { get; set; }
 
         public string YearMonth => DateCreated.ToString("MM-yyyy");
 

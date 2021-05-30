@@ -23,22 +23,22 @@
 
             function initialize() {
                 return {
-                    height: 0,
-                    bodyMass: 0,
-                    neckSize: 0,
-                    shoulderSize: 0,
-                    chestSize: 0,
-                    foreArmSize: 0,
-                    rightBicepSize: 0,
-                    leftBicepSize: 0,
-                    upperAbsSize: 0,
-                    lowerAbsSize: 0,
-                    waistSize: 0,
-                    hipSize: 0,
-                    rightThighSize: 0,
-                    leftThighSize: 0,
-                    rightCalveSize: 0,
-                    leftCalveSize: 0,
+                    height: 1,
+                    bodyMass: 1,
+                    neckSize: 1,
+                    shoulderSize: 1,
+                    chestSize: 1,
+                    foreArmSize: 1,
+                    rightBicepSize: 1,
+                    leftBicepSize: 1,
+                    upperAbsSize: 1,
+                    lowerAbsSize: 1,
+                    waistSize: 1,
+                    hipSize: 1,
+                    rightThighSize: 1,
+                    leftThighSize: 1,
+                    rightCalveSize: 1,
+                    leftCalveSize: 1,
                     
                 };
             }
