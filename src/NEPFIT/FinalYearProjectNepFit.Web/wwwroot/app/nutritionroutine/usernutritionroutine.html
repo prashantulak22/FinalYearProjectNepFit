@@ -26,7 +26,7 @@
                 <th>How To Prepare</th>
             </tr>
 
-            <tr ng-repeat="row in vm.userNutritionRoutine">
+            <tr ng-repeat="row in vm.userNutritionRoutine | filter:{nutritionTypeName: 'mealOne'}">
                 <td>{{row.nutritionPackageName}}</td>
                 <td>{{row.nutritionTypeName}}</td>
                 <td>{{row.name}}</td>
@@ -46,7 +46,7 @@
                 <th>How To Prepare</th>
             </tr>
 
-            <tr ng-repeat="row in vm.userNutritionRoutine">
+            <tr ng-repeat="row in vm.userNutritionRoutine | filter:{nutritionTypeName: 'mealTwo'}">
                 <td>{{row.nutritionPackageName}}</td>
                 <td>{{row.nutritionTypeName}}</td>
                 <td>{{row.name}}</td>
@@ -67,7 +67,7 @@
                 <th>How To Prepare</th>
             </tr>
 
-            <tr ng-repeat="row in vm.userNutritionRoutine">
+            <tr ng-repeat="row in vm.userNutritionRoutine | filter:{nutritionTypeName: 'mealThree'}">
                 <td>{{row.nutritionPackageName}}</td>
                 <td>{{row.nutritionTypeName}}</td>
                 <td>{{row.name}}</td>
